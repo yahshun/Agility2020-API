@@ -1,0 +1,36 @@
+Lab – Applications
+------------------------------------------------
+
+In this section you will define two applications
+
+Task – Create basic.acme.com application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+#. Enter the **basic.acme.com** for the application name
+#. Enter the **basic.acme.com** for the FQDN
+
+#. Enter the IP address **10.1.20.6** for the pool member
+#. **Click** Save 
+
+|image22|
+
+
+
+Task – Create header.acme.com application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. TODO:: Needs task description
+
+In this task we will start and instance of |bip| using the image uploaded in
+the previous task.
+
+Follow these steps to complete this task:
+
+#. Open your hypervisor management console
+#. Click the |bip| image
+#. Click the 'Start' button (or it's equivalent)
+
+
+.. |image22| image:: /media/image022.png

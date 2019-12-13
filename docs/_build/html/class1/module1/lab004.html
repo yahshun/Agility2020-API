@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+  
+  <!--STAGING:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
+  <!--Production:-->
+  <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
+    <title>2.1.4. Lab – User Identity</title>
+  
+
+  <meta charset="utf-8">
+  <!-- Twitter Bootstrap viewport setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- F5 metadata -->
+  <meta name="kb_doc_type" content="Manual"/>
+  <meta name="kb_doc_type" content="User Guide"/>
+  <meta name="title" content="2.1.4. Lab – User Identity"/>
+  <meta name="product" content="Access 201: Zero Trust - Identity Aware Proxy"/>
+  <meta name="version" content=""/>
+  <meta name="updated_date"  content="None"/>
+  <meta name="archived" content="Archived documents excluded"/>
+
+  
+  
+  
+  <link href="https://cdn.f5.com/favicon.ico" rel="icon">
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text"> jQuery.noConflict(true)</script>
+
+</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2.1.4. Lab – User Identity &#8212; Access 201: Zero Trust - Identity Aware Proxy  documentation</title>
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/f5-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/21fb8a09c3.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1.5. Lab – MFA" href="lab005.html" />
+    <link rel="prev" title="2.1.3. Lab – Virtual Server" href="lab003.html" />
+  </head><body>
+  <div id="clouddocs-header"></div>
+
+    <div id="dismiss">
+      <button type="button" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>
+    </div>
+    <div id="sidebar" class="section-nav">
+      <nav class="nav-sidebartoc">
+        <h5>Access 201: Zero Trust - Identity Aware Proxy  documentation </h5>
+<div id="searchbox" role="search">
+  <form class="search" action="../../search.html" method="get">
+    <input type="text" class="search" name="q" placeholder=" Search..." />
+    <button type="submit" class="btn btn-info navbar-btn"><i class="fa fa-search"></i></button>
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        <hr>
+        <h5>Current Page</h5>
+        <span class="nav-sidebartoc">
+            <ul>
+<li><a class="reference internal" href="#">2.1.4. Lab – User Identity</a><ul>
+<li><a class="reference internal" href="#task-configure-active-directory-aaa">2.1.4.1. Task – Configure Active Directory AAA</a></li>
+<li><a class="reference internal" href="#task-configure-certificate-authentication">2.1.4.2. Task – Configure Certificate Authentication</a></li>
+</ul>
+</li>
+</ul>
+
+         </span>
+        <hr>
+        <h5>Site Contents</h5>
+        <span class="nav-sidebartoc">
+            <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Getting Started</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - Access 201: Zero Trust - Identity Aware Proxy</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Create an Identity Aware Proxy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../markdown.html">4. Markdown files are also supported</a></li>
+</ul>
+
+        </span><!-- Use this file to add extra links to the bottom of the ToC sidebar -->
+<hr>
+  <span class="nav-sidebartoc">
+ <!-- insert content here -->
+  </span>
+      </nav>
+    </div>
+
+  
+  <div class="main active" id="content">
+    <article class="docs-container site-article-inner">
+            <nav class="site-breadcrumb-nav site-nav">
+          <ul class="site-breadcrumb-list">
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Access 201: Zero Trust - Identity Aware Proxy </a> &gt; 2.1.4. Lab – User Identity</li>
+          </ul>
+      </nav>
+      
+      
+
+    
+  <div class="section" id="lab-user-identity">
+<h1>2.1.4. Lab – User Identity<a class="headerlink" href="#lab-user-identity" title="Permalink to this headline">¶</a></h1>
+<p>In this section you will configure two locations for User Identities.  You will first configure Active Directory and secondly you will configure certificate authentication using OCSP.</p>
+<div class="section" id="task-configure-active-directory-aaa">
+<h2>2.1.4.1. Task – Configure Active Directory AAA<a class="headerlink" href="#task-configure-active-directory-aaa" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Enter “AD” for the name</li>
+<li>Ensure the Authentication Type is <strong>AAA</strong></li>
+<li>Ensure the Choose Authentication Server Type is set to <strong>Active Directory</strong></li>
+<li>Select <strong>Create New</strong> from the Choose Authentication Server dropdown box</li>
+</ol>
+<p><img alt="image11" src="media/image011.png" /></p>
+<p>#.Enter <strong>f5lab.local</strong> for the Domain Name
+#. Enter <strong>AD_POOL</strong> for the Domain Controller Pool Name
+#. Enter <strong>10.1.20.7</strong> for the Domain Controller IP address
+#. Enter <strong>dc.f5lab.local</strong> for the Domain Controller Hostname
+#. Enter <strong>admin</strong> for the Admin Name
+#. Enter <strong>admin</strong> for the Admin Password
+#. Click Save</p>
+<p><img alt="image12" src="media/image012.png" /></p>
+</div>
+<div class="section" id="task-configure-certificate-authentication">
+<h2>2.1.4.2. Task – Configure Certificate Authentication<a class="headerlink" href="#task-configure-certificate-authentication" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Needs task description</p>
+</div>
+<p>In this task we will start and instance of BIG-IP using the image uploaded in
+the previous task.</p>
+<p>Follow these steps to complete this task:</p>
+<ol class="arabic simple">
+<li>Open your hypervisor management console</li>
+<li>Click the BIG-IP image</li>
+<li>Click the ‘Start’ button (or it’s equivalent)</li>
+</ol>
+</div>
+</div>
+
+
+
+    
+     <div class="row next-prev-btn-row">
+       <div class="col-lg-12">
+       
+        <a href="lab003.html" title="2.1.3. Lab – Virtual Server" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+       
+       
+          <a href="lab005.html" title="2.1.5. Lab – MFA" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+       
+     </div>
+     </div>
+    
+
+    </article>
+  </div>
+
+</div>
+
+
+  <div id="clouddocs-footer"></div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="../../_static/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    jQuery.noConflict(true)
+  </script>
+  <script src="../../_static/js/clouddocs.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+Lab – Virtual Server
+------------------------------------------------
+
+In this section, you will define the virtual server IP address its SSL profile settings 
+
+Task – Create a virtual server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+#. **Click** Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings
+
+|image8|
+
+#. Enter the IP address **10.1.10.100**
+#. Select **acme.com-wildcard** from the Client SSL certificate dropdown box
+#. Select **acme.com-wild ard** from the Associated Private Key dropdown box
+#. Select **ca.f5lab.local** from the Trusted Certificate Authorities for Client Authentication drop down box
+
+|image9|
+
+#. Select **serverssl** from the Server SSL Profile options
+#. **Click** Save & Next
+
+|image10|
+
+
+
+
+.. |image8| image:: /media/image008.png
+.. |image9| image:: /media/image009.png
+.. |image10| image:: /media/image010.png

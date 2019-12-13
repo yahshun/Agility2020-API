@@ -1,0 +1,51 @@
+Lab – Contextual Access
+------------------------------------------------
+
+In this section you will define contextual access for the two previously created applications.  Context access is where all of the previously created objects are put together to provide fine-grain access control.
+
+Task – Create Contextual Access for basic.acme.com
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+#. Enter **basic.acme.com** for the contextual access name
+#. Select **basic.acme.com** from the Resource dropdown box
+#. Select **FW_CHECK** from the Device Posture dropdown box
+#. Select **AD** from the Primary Authentication dropdown box
+#. Select **BASIC_SSO** from the Single Sign-On dropdown box
+#. **Check** Enable Additional Checks
+
+|image23|
+
+#. Enter **POSTURE_AND_RADIUS** for the name of the trigger
+#. **Check** Client Posture Information
+#. **Select** Signed
+#. **Click** Save
+
+|image24|
+
+#. **Click** Save
+
+|image25|
+
+
+
+Task – Start a |bip| |ve| Instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. TODO:: Needs task description
+
+In this task we will start and instance of |bip| using the image uploaded in
+the previous task.
+
+Follow these steps to complete this task:
+
+#. Open your hypervisor management console
+#. Click the |bip| image
+#. Click the 'Start' button (or it's equivalent)
+
+
+.. |image23| image:: /media/image023.png
+.. |image24| image:: /media/image024.png
+.. |image25| image:: /media/image025.png
+
+
