@@ -1,33 +1,58 @@
-Lab – Access Guided Configuration
+Lab – Create Authentication objects
 -----------------------------------
 
-The first step in deploying the IAP is accessing the guided configuration
+The first step in deploying CertSSO is creating the objects required for the user to authenticate to APM.  In this lab the user will authenticate via Active Directory and simulated MFA via RADIUS.  How the user authenticates to APM is independent of how the BIG-IP authenticates the user to the server for Single-Sign-On.  This allows an organization to choose an authentication scheme that matches their organizations needs such as SAML, OAuth, or other method.
 
-Task – Access the Zero Trust IAP guided configuration
+Task – Create an Active Directory AAA Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. From the webbrowser, click on the **Access** tab located on the lefthand side.
 
 |image0|
 
-2. Click **Guided Configuration**
+2. Go Authentication>Active Directory, then click the **+** symbol to create a new AAA object
 
 |image1|
 
-3. Click **Zero Trust**
+3. Enter the following information for the AD Authentication Object
+
+- Name: f5lab.local
+- Domain Name: f5lab.local
+- Domain Controller Pool Name: AD_POOL
+- Domain Controller IP address: 10.1.20.7
+- Domain Controller Hostname: dc.f5lab.local
+- admin name: admin
+- admin Password: admin
+
+Click **Finished**
 
 |image2|
 
-4. Click **Identity Aware Proxy**
+4. Go Authentication>Active Directory, then click the **+** symbol to create a new AAA object
+
+
+
+Task – Create an Active Directory AAA Object
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. From the webbrowser, click on the **Access** tab located on the lefthand side.
+
+|image0|
+
+2. 4. Go Authentication>RADIUS, then click the **+** symbol to create a new AAA object
 
 |image3|
 
-5. Click **Next**
+3. Enter the following information for the AD Authentication Object
 
-
-.. NOTE::  BLAH BLAH Different topologies for IAP.
+-Name: RADIUS_SERVERS
+-Server Pool Name: RADIUS_POOL
+- secret password: secret
 
 |image4|
+
+
+
 
 
 .. |image0| image:: /media/image000.png
