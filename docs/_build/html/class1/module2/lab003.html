@@ -5,7 +5,7 @@
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
   <!--Production:-->
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.4. Lab – Virtual Server</title>
+    <title>2.2.3. Lab – Create the Access Policy</title>
   
 
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <!-- F5 metadata -->
   <meta name="kb_doc_type" content="Manual"/>
   <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.4. Lab – Virtual Server"/>
+  <meta name="title" content="2.2.3. Lab – Create the Access Policy"/>
   <meta name="product" content="Access 301: Ephemeral Authentication"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
@@ -36,7 +36,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.4. Lab – Virtual Server &#8212; Access 301: Ephemeral Authentication  documentation</title>
+    <title>2.2.3. Lab – Create the Access Policy &#8212; Access 301: Ephemeral Authentication  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
@@ -51,8 +51,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.5. Lab – User Identity" href="lab004.html" />
-    <link rel="prev" title="2.3. Lab – Device Posture" href="lab002.html" />
+    <link rel="next" title="2.2.4. Lab – Create the SSL Profiles" href="lab004.html" />
+    <link rel="prev" title="2.2.2. Lab – Create the Access profile" href="lab002.html" />
   </head><body>
   <div id="clouddocs-header"></div>
 
@@ -75,8 +75,8 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.4. Lab – Virtual Server</a><ul>
-<li><a class="reference internal" href="#task-create-a-virtual-server">2.4.1. Task – Create a virtual server</a></li>
+<li><a class="reference internal" href="#">2.2.3. Lab – Create the Access Policy</a><ul>
+<li><a class="reference internal" href="#task-create-a-virtual-server">2.2.3.1. Task – Create a virtual server</a></li>
 </ul>
 </li>
 </ul>
@@ -90,18 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - Access 301: Ephemeral Authentication</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Module – Implement APM C3D Enhancements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab001.html">2.2. Lab – Access Guided Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab002.html">2.3. Lab – Device Posture</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.4. Lab – Virtual Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab004.html">2.5. Lab – User Identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab005.html">2.6. Lab – MFA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab006.html">2.7. Lab – SSO &amp; HTTP Header</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab007.html">2.8. Lab – Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab008.html">2.9. Lab – Application Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab009.html">2.10. Lab – Contextual Access</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab010.html">2.11. Lab – Customization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab011.html">2.12. Lab – Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab012.html">2.13. Lab – Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module2.html">2.2. Module – Implement Ephemeral Authentication</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
@@ -121,18 +110,18 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Access 301: Ephemeral Authentication </a> &gt; 2.4. Lab – Virtual Server</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Access 301: Ephemeral Authentication </a> &gt; 2.2.3. Lab – Create the Access Policy</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-virtual-server">
-<h1>2.4. Lab – Virtual Server<a class="headerlink" href="#lab-virtual-server" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="lab-create-the-access-policy">
+<h1>2.2.3. Lab – Create the Access Policy<a class="headerlink" href="#lab-create-the-access-policy" title="Permalink to this headline">¶</a></h1>
 <p>In this section, you will define the virtual server IP address its SSL profile settings</p>
 <div class="section" id="task-create-a-virtual-server">
-<h2>2.4.1. Task – Create a virtual server<a class="headerlink" href="#task-create-a-virtual-server" title="Permalink to this headline">¶</a></h2>
+<h2>2.2.3.1. Task – Create a virtual server<a class="headerlink" href="#task-create-a-virtual-server" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><strong>Click</strong> Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings</li>
 </ol>
@@ -158,10 +147,10 @@
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="lab002.html" title="2.3. Lab – Device Posture" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="lab002.html" title="2.2.2. Lab – Create the Access profile" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab004.html" title="2.5. Lab – User Identity" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab004.html" title="2.2.4. Lab – Create the SSL Profiles" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

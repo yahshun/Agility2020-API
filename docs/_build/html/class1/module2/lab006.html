@@ -5,7 +5,7 @@
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
   <!--Production:-->
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.7. Lab – SSO &amp; HTTP Header</title>
+    <title>2.2.6. Lab – Create the Virtual Server</title>
   
 
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <!-- F5 metadata -->
   <meta name="kb_doc_type" content="Manual"/>
   <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.7. Lab – SSO &amp; HTTP Header"/>
+  <meta name="title" content="2.2.6. Lab – Create the Virtual Server"/>
   <meta name="product" content="Access 301: Ephemeral Authentication"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
@@ -36,7 +36,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.7. Lab – SSO &amp; HTTP Header &#8212; Access 301: Ephemeral Authentication  documentation</title>
+    <title>2.2.6. Lab – Create the Virtual Server &#8212; Access 301: Ephemeral Authentication  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
@@ -51,8 +51,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.8. Lab – Applications" href="lab007.html" />
-    <link rel="prev" title="2.6. Lab – MFA" href="lab005.html" />
+    <link rel="next" title="2.2.7. Lab – Test the Configuration" href="lab007.html" />
+    <link rel="prev" title="2.2.5. Lab – Create a Pool" href="lab005.html" />
   </head><body>
   <div id="clouddocs-header"></div>
 
@@ -75,8 +75,8 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.7. Lab – SSO &amp; HTTP Header</a><ul>
-<li><a class="reference internal" href="#task-create-a-http-basic-sso-object">2.7.1. Task – Create a HTTP basic SSO object</a></li>
+<li><a class="reference internal" href="#">2.2.6. Lab – Create the Virtual Server</a><ul>
+<li><a class="reference internal" href="#task-configure-a-radius-aaa-server">2.2.6.1. Task – Configure a RADIUS AAA Server</a></li>
 </ul>
 </li>
 </ul>
@@ -90,18 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - Access 301: Ephemeral Authentication</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Module – Implement APM C3D Enhancements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab001.html">2.2. Lab – Access Guided Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab002.html">2.3. Lab – Device Posture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab003.html">2.4. Lab – Virtual Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab004.html">2.5. Lab – User Identity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab005.html">2.6. Lab – MFA</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">2.7. Lab – SSO &amp; HTTP Header</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab007.html">2.8. Lab – Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab008.html">2.9. Lab – Application Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab009.html">2.10. Lab – Contextual Access</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab010.html">2.11. Lab – Customization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab011.html">2.12. Lab – Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lab012.html">2.13. Lab – Testing</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module2.html">2.2. Module – Implement Ephemeral Authentication</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
@@ -121,40 +110,40 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Access 301: Ephemeral Authentication </a> &gt; 2.7. Lab – SSO &amp; HTTP Header</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">Access 301: Ephemeral Authentication </a> &gt; 2.2.6. Lab – Create the Virtual Server</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-sso-http-header">
-<h1>2.7. Lab – SSO &amp; HTTP Header<a class="headerlink" href="#lab-sso-http-header" title="Permalink to this headline">¶</a></h1>
-<p>In this section you will configure two SSO methods.  You will first configure basic authentication SSO and then header authentication</p>
-<div class="section" id="task-create-a-http-basic-sso-object">
-<h2>2.7.1. Task – Create a HTTP basic SSO object<a class="headerlink" href="#task-create-a-http-basic-sso-object" title="Permalink to this headline">¶</a></h2>
-<p>.</p>
+  <div class="section" id="lab-create-the-virtual-server">
+<h1>2.2.6. Lab – Create the Virtual Server<a class="headerlink" href="#lab-create-the-virtual-server" title="Permalink to this headline">¶</a></h1>
+<p>In this section you will configure a RADIUS server to enable simulated MFA capabilities.</p>
+<div class="section" id="task-configure-a-radius-aaa-server">
+<h2>2.2.6.1. Task – Configure a RADIUS AAA Server<a class="headerlink" href="#task-configure-a-radius-aaa-server" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><strong>Check</strong> Enable Single Sign-On</li>
+<li><strong>Check</strong> Enable MultiFactor Authentication</li>
 </ol>
-<p><img alt="image18" src="media/image018.png" /></p>
+<p><img alt="image13" src="media/image013.png" /></p>
 <ol class="arabic simple">
-<li>Enter the name BASIC_SSO</li>
-<li>Verify <strong>HTTP Basic</strong> is selected</li>
-<li>Select <strong>Create New</strong> from the SSO Configuration Object dropdown box</li>
+<li>Select <strong>Custom Radius Based</strong></li>
 </ol>
-<p><img alt="image19" src="media/image019.png" /></p>
+<p><img alt="image14" src="media/image014.png" /></p>
+<p>#.Select <strong>Create New</strong> from the Choose RADIUS Server dropdown</p>
+<p><img alt="image15" src="media/image015.png" /></p>
 <ol class="arabic simple">
-<li>Verify the Username Source is <strong>session.sso.token.last.username</strong></li>
-<li>Verify the Password Source is <strong>session.sso.token.last.password</strong></li>
+<li>Enter the Server Pool Name <strong>RADIUS_POOL</strong></li>
+<li>Enter the Server Address <strong>10.1.20.8</strong></li>
+<li>Enter the Secret <strong>P&#64;$$w0rd</strong></li>
 <li><strong>Click</strong> Save</li>
 </ol>
-<p><img alt="image20" src="media/image020.png" /></p>
+<p><img alt="image16" src="media/image016.png" /></p>
 <ol class="arabic simple">
-<li>Verify the <strong>BASIC_SSO</strong> object was created</li>
-<li><em>click*</em> Save &amp; Next</li>
+<li>Verify Custom RADIUS based Authentication appears</li>
+<li><strong>Click</strong> Save &amp; Next</li>
 </ol>
-<p><img alt="image21" src="media/image021.png" /></p>
+<p><img alt="image17" src="media/image017.png" /></p>
 </div>
 </div>
 
@@ -164,10 +153,10 @@
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="lab005.html" title="2.6. Lab – MFA" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="lab005.html" title="2.2.5. Lab – Create a Pool" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab007.html" title="2.8. Lab – Applications" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab007.html" title="2.2.7. Lab – Test the Configuration" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

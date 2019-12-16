@@ -1,36 +1,41 @@
-Lab – Applications
+Lab – Test the Configuration
 ------------------------------------------------
 
-In this section you will define two applications
+In this section you will configure a RADIUS server to enable simulated MFA capabilities.
 
-Task – Create basic.acme.com application
+
+Task – Configure a RADIUS AAA Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+#. **Check** Enable MultiFactor Authentication
 
-#. Enter the **basic.acme.com** for the application name
-#. Enter the **basic.acme.com** for the FQDN
+|image13|
 
-#. Enter the IP address **10.1.20.6** for the pool member
-#. **Click** Save 
+#. Select **Custom Radius Based**
 
-|image22|
+|image14|
 
+#.Select **Create New** from the Choose RADIUS Server dropdown
 
+|image15|
 
-Task – Create header.acme.com application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Enter the Server Pool Name **RADIUS_POOL**
+#. Enter the Server Address **10.1.20.8**
+#. Enter the Secret **P@$$w0rd**
+#. **Click** Save
 
-.. TODO:: Needs task description
+|image16|
 
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
+#. Verify Custom RADIUS based Authentication appears
+#. **Click** Save & Next
 
-Follow these steps to complete this task:
-
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
+|image17|
 
 
-.. |image22| image:: /media/image022.png
+
+.. |image13| image:: /media/image013.png
+.. |image14| image:: /media/image014.png
+.. |image15| image:: /media/image015.png
+.. |image16| image:: /media/image016.png
+.. |image17| image:: /media/image017.png

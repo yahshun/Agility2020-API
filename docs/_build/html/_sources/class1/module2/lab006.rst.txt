@@ -1,36 +1,41 @@
-Lab – SSO & HTTP Header
+Lab – Create the Virtual Server
 ------------------------------------------------
 
-In this section you will configure two SSO methods.  You will first configure basic authentication SSO and then header authentication
+In this section you will configure a RADIUS server to enable simulated MFA capabilities.
 
-Task – Create a HTTP basic SSO object
+
+Task – Configure a RADIUS AAA Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.
 
-#. **Check** Enable Single Sign-On
+#. **Check** Enable MultiFactor Authentication
 
-|image18|
+|image13|
 
-#. Enter the name BASIC_SSO
-#. Verify **HTTP Basic** is selected
-#. Select **Create New** from the SSO Configuration Object dropdown box
+#. Select **Custom Radius Based**
 
-|image19|
+|image14|
 
-#. Verify the Username Source is **session.sso.token.last.username**
-#. Verify the Password Source is **session.sso.token.last.password**
+#.Select **Create New** from the Choose RADIUS Server dropdown
+
+|image15|
+
+#. Enter the Server Pool Name **RADIUS_POOL**
+#. Enter the Server Address **10.1.20.8**
+#. Enter the Secret **P@$$w0rd**
 #. **Click** Save
 
-|image20|
+|image16|
+
+#. Verify Custom RADIUS based Authentication appears
+#. **Click** Save & Next
+
+|image17|
 
 
-#. Verify the **BASIC_SSO** object was created
-#. *click** Save & Next
 
-|image21|
-
-.. |image18| image:: /media/image018.png
-.. |image19| image:: /media/image019.png
-.. |image20| image:: /media/image020.png
-.. |image21| image:: /media/image021.png
+.. |image13| image:: /media/image013.png
+.. |image14| image:: /media/image014.png
+.. |image15| image:: /media/image015.png
+.. |image16| image:: /media/image016.png
+.. |image17| image:: /media/image017.png
