@@ -76,7 +76,7 @@
         <span class="nav-sidebartoc">
             <ul>
 <li><a class="reference internal" href="#">2.1.4. Lab – Create the SSL Profiles</a><ul>
-<li><a class="reference internal" href="#task-create-a-virtual-server">2.1.4.1. Task – Create a virtual server</a></li>
+<li><a class="reference internal" href="#task-create-a-client-ssl-profile">2.1.4.1. Task – Create a Client SSL Profile</a></li>
 </ul>
 </li>
 </ul>
@@ -120,24 +120,46 @@
   <div class="section" id="lab-create-the-ssl-profiles">
 <h1>2.1.4. Lab – Create the SSL Profiles<a class="headerlink" href="#lab-create-the-ssl-profiles" title="Permalink to this headline">¶</a></h1>
 <p>In this section, you will define the virtual server IP address its SSL profile settings</p>
-<div class="section" id="task-create-a-virtual-server">
-<h2>2.1.4.1. Task – Create a virtual server<a class="headerlink" href="#task-create-a-virtual-server" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-create-a-client-ssl-profile">
+<h2>2.1.4.1. Task – Create a Client SSL Profile<a class="headerlink" href="#task-create-a-client-ssl-profile" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Navigate to Local Traffic&gt;&gt;Profiles&gt;&gt;SSL&gt;&gt;Client, then <strong>click</strong> the + symbol to create a new SSL Profile</li>
+</ol>
+<p><img alt="image23" src="media/image023.png" /></p>
+<ol class="arabic simple">
+<li>Enter the name <strong>CLIENT_CERTSSO</strong></li>
+<li><strong>Check</strong> Custom box to the right of Certificate Key Chain</li>
+<li><strong>Click</strong> add</li>
+</ol>
+<p><img alt="image24" src="media/image024.png" /></p>
+<ol class="arabic simple">
+<li>Select <strong>acme.com-wildcard</strong> from the certificate dropdown box</li>
+<li>Select <strong>acme.com-wildcard</strong> from the key dropdown box</li>
+<li><strong>Click</strong> Add</li>
+</ol>
+<p><img alt="image25" src="media/image025.png" /></p>
+<ol class="arabic simple">
+<li><strong>Check</strong> the custom box to the right of Client Certificate Constrained Delegation</li>
+<li>Select <strong>Enabled</strong> from the Client Certificate Constrained Delegation Dropdown box</li>
+</ol>
+<p><img alt="image26" src="media/image026.png" /></p>
+<p><strong>Click</strong> Finished</p>
 <ol class="arabic simple">
 <li><strong>Click</strong> Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings</li>
 </ol>
-<p><img alt="image8" src="media/image008.png" /></p>
+<p><img alt="image27" src="media/image027.png" /></p>
 <ol class="arabic simple">
-<li>Enter the IP address <strong>10.1.10.100</strong></li>
-<li>Select <strong>acme.com-wildcard</strong> from the Client SSL certificate dropdown box</li>
-<li>Select <strong>acme.com-wild ard</strong> from the Associated Private Key dropdown box</li>
-<li>Select <strong>ca.f5lab.local</strong> from the Trusted Certificate Authorities for Client Authentication drop down box</li>
+<li>Enter <strong>SERVER_CERTSSO</strong> for profile name</li>
 </ol>
-<p><img alt="image9" src="media/image009.png" /></p>
+<p><img alt="image28" src="media/image028.png" /></p>
 <ol class="arabic simple">
-<li>Select <strong>serverssl</strong> from the Server SSL Profile options</li>
-<li><strong>Click</strong> Save &amp; Next</li>
+<li><strong>Check</strong> the three custom boxes next to Client Certificate Constrained Delegation, CA Certificate, and CA Key</li>
+<li>Select <strong>Enabled</strong> from the Client Certificate Constrained Delegation Dropdown Box</li>
+<li>Select <strong>f5lab.local-wildcard</strong> from the CA Certificate dropdown box</li>
+<li>Select <strong>f5lab.local-wildcard</strong> from the CA Key dropdown box</li>
 </ol>
-<p><img alt="image10" src="media/image010.png" /></p>
+<p><strong>Click</strong> Finished</p>
+<p><img alt="image29" src="media/image029.png" /></p>
 </div>
 </div>
 
