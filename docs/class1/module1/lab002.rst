@@ -12,6 +12,7 @@ Task – Create the Access Profile
 |image0|
 
 2. Navigate to Profile/ Policies >> Access Profile(Per-Session Policies), then **click** the + symbol to create a new Access Profile
+
 |image5|
 
 #. Enter the Name **CERT_SSO** 
