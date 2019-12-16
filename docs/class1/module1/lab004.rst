@@ -1,44 +1,32 @@
-Lab – User Identity
+Lab – Create the SSL Profiles
 ------------------------------------------------
 
-In this section you will configure two locations for User Identities.  You will first configure Active Directory and secondly you will configure certificate authentication using OCSP.
+In this section, you will define the virtual server IP address its SSL profile settings 
 
-Task – Configure Active Directory AAA
+Task – Create a virtual server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Enter "AD" for the name
-#. Ensure the Authentication Type is **AAA**
-#. Ensure the Choose Authentication Server Type is set to **Active Directory**
-#. Select **Create New** from the Choose Authentication Server dropdown box
-
-|image11|
-
-#.Enter **f5lab.local** for the Domain Name
-#. Enter **AD_POOL** for the Domain Controller Pool Name
-#. Enter **10.1.20.7** for the Domain Controller IP address
-#. Enter **dc.f5lab.local** for the Domain Controller Hostname
-#. Enter **admin** for the Admin Name
-#. Enter **admin** for the Admin Password
-#. Click Save
-
-|image12|
 
 
-Task – Configure Certificate Authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. **Click** Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings
 
-.. TODO:: Needs task description
+|image8|
 
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
+#. Enter the IP address **10.1.10.100**
+#. Select **acme.com-wildcard** from the Client SSL certificate dropdown box
+#. Select **acme.com-wild ard** from the Associated Private Key dropdown box
+#. Select **ca.f5lab.local** from the Trusted Certificate Authorities for Client Authentication drop down box
 
-Follow these steps to complete this task:
+|image9|
 
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
+#. Select **serverssl** from the Server SSL Profile options
+#. **Click** Save & Next
+
+|image10|
 
 
 
-.. |image11| image:: /media/image011.png
-.. |image12| image:: /media/image012.png
+
+.. |image8| image:: /media/image008.png
+.. |image9| image:: /media/image009.png
+.. |image10| image:: /media/image010.png

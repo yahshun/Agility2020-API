@@ -1,4 +1,4 @@
-Lab – Device Posture 
+Lab – Create the Access profile
 ------------------------------------------------
 
 In this section, you will configure the IAP to perform posture assessment from client devices.  

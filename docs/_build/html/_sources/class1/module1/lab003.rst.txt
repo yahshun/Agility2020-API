@@ -1,4 +1,4 @@
-Lab – Virtual Server
+Lab – Create the Access Policy
 ------------------------------------------------
 
 In this section, you will define the virtual server IP address its SSL profile settings 
