@@ -10,7 +10,7 @@ Task – Create an Active Directory AAA Object
 
 |image0|
 
-2. Go Authentication>Active Directory, then **click** the + symbol to create a new AAA object
+2. Navigate to Authentication>Active Directory, then **click** the + symbol to create a new AAA object
 
 |image1|
 
@@ -36,7 +36,7 @@ Task – Create a RADIUS AAA Object
 
 |image0|
 
-2. 4. Go Authentication>RADIUS, then **click** the + symbol to create a new AAA object
+2. 4. Navigate to Authentication>RADIUS, then **click** the + symbol to create a new AAA object
 
 |image3|
 

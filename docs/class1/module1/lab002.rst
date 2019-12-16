@@ -1,47 +1,33 @@
 Lab – Create the Access profile
 ------------------------------------------------
 
-In this section, you will configure the IAP to perform posture assessment from client devices.  
+In this section, you will create and define the setting of the access profile
 
-Task – Configure name of IAP Policy and enable Posture Checks
+Task – Create the Access Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+1. From the webbrowser, click on the **Access** tab located on the lefthand side.
 
+|image0|
 
-#. Define the configuration name **IAP_DEMO**
-
-#. **Check** Enable F5 Client Posture Check
-
-#. select **ca.f5lab.local** from the CA Trust Certificate dropdown list
-
-#. Select **add** to create a posture assessment group
-
+2. Navigate to Profile/ Policies >> Access Profile(Per-Session Policies), then **click** the + symbol to create a new Access Profile
 |image5|
 
-Task – Define a firewall Posture Assessment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-#. Define the Posture Group Name **FW_CHECK**
-#. **Check** the enable a Firewall check box
-#. **Check** the enable a Domain Managed Devices box
-#. enter the Domain Name **f5lab.local** 
-#. Click **Done**
+#. Enter the Name **CERT_SSO** 
+#. Select the profile Type **All** from the dropdown
 
 |image6|
 
+#. Scroll to the bottom of the profile settings to set the default language to **English**
 
-Task – Verify the posture assessment 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-#. posture settings should be populated **FW_CHECK** should be populated
-#. **Click** Save & Next
+#. Click **Finished**
 
 |image7|
 
 
+
+.. |image0| image:: /media/image000.png
 .. |image5| image:: /media/image005.png
 .. |image6| image:: /media/image006.png
 .. |image7| image:: /media/image007.png

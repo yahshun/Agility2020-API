@@ -76,9 +76,7 @@
         <span class="nav-sidebartoc">
             <ul>
 <li><a class="reference internal" href="#">2.1.2. Lab – Create the Access profile</a><ul>
-<li><a class="reference internal" href="#task-configure-name-of-iap-policy-and-enable-posture-checks">2.1.2.1. Task – Configure name of IAP Policy and enable Posture Checks</a></li>
-<li><a class="reference internal" href="#task-define-a-firewall-posture-assessment">2.1.2.2. Task – Define a firewall Posture Assessment</a></li>
-<li><a class="reference internal" href="#task-verify-the-posture-assessment">2.1.2.3. Task – Verify the posture assessment</a></li>
+<li><a class="reference internal" href="#task-create-the-access-profile">2.1.2.1. Task – Create the Access Profile</a></li>
 </ul>
 </li>
 </ul>
@@ -121,33 +119,23 @@
     
   <div class="section" id="lab-create-the-access-profile">
 <h1>2.1.2. Lab – Create the Access profile<a class="headerlink" href="#lab-create-the-access-profile" title="Permalink to this headline">¶</a></h1>
-<p>In this section, you will configure the IAP to perform posture assessment from client devices.</p>
-<div class="section" id="task-configure-name-of-iap-policy-and-enable-posture-checks">
-<h2>2.1.2.1. Task – Configure name of IAP Policy and enable Posture Checks<a class="headerlink" href="#task-configure-name-of-iap-policy-and-enable-posture-checks" title="Permalink to this headline">¶</a></h2>
+<p>In this section, you will create and define the setting of the access profile</p>
+<div class="section" id="task-create-the-access-profile">
+<h2>2.1.2.1. Task – Create the Access Profile<a class="headerlink" href="#task-create-the-access-profile" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Define the configuration name <strong>IAP_DEMO</strong></li>
-<li><strong>Check</strong> Enable F5 Client Posture Check</li>
-<li>select <strong>ca.f5lab.local</strong> from the CA Trust Certificate dropdown list</li>
-<li>Select <strong>add</strong> to create a posture assessment group</li>
+<li>From the webbrowser, click on the <strong>Access</strong> tab located on the lefthand side.</li>
 </ol>
-<p><img alt="image5" src="media/image005.png" /></p>
-</div>
-<div class="section" id="task-define-a-firewall-posture-assessment">
-<h2>2.1.2.2. Task – Define a firewall Posture Assessment<a class="headerlink" href="#task-define-a-firewall-posture-assessment" title="Permalink to this headline">¶</a></h2>
+<p><img alt="image0" src="media/image000.png" /></p>
+<p>2. Navigate to Profile/ Policies &gt;&gt; Access Profile(Per-Session Policies), then <strong>click</strong> the + symbol to create a new Access Profile
+<img alt="image5" src="media/image005.png" /></p>
 <ol class="arabic simple">
-<li>Define the Posture Group Name <strong>FW_CHECK</strong></li>
-<li><strong>Check</strong> the enable a Firewall check box</li>
-<li><strong>Check</strong> the enable a Domain Managed Devices box</li>
-<li>enter the Domain Name <strong>f5lab.local</strong></li>
-<li>Click <strong>Done</strong></li>
+<li>Enter the Name <strong>CERT_SSO</strong></li>
+<li>Select the profile Type <strong>All</strong> from the dropdown</li>
 </ol>
 <p><img alt="image6" src="media/image006.png" /></p>
-</div>
-<div class="section" id="task-verify-the-posture-assessment">
-<h2>2.1.2.3. Task – Verify the posture assessment<a class="headerlink" href="#task-verify-the-posture-assessment" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>posture settings should be populated <strong>FW_CHECK</strong> should be populated</li>
-<li><strong>Click</strong> Save &amp; Next</li>
+<li>Scroll to the bottom of the profile settings to set the default language to <strong>English</strong></li>
+<li>Click <strong>Finished</strong></li>
 </ol>
 <p><img alt="image7" src="media/image007.png" /></p>
 </div>
