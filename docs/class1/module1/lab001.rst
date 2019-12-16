@@ -42,10 +42,10 @@ Task – Create an Active Directory AAA Object
 
 3. Enter the following information for the AD Authentication Object
 
--Name: **RADIUS_SERVERS**
--Server Pool Name: **RADIUS_POOL**
+- Name: **RADIUS_SERVERS**
+- Server Pool Name: **RADIUS_POOL**
 - secret password: **secret**
--**Click** Finished
+- **Click** Finished
 
 
 |image4|
