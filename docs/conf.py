@@ -5,10 +5,10 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "Access 201: Zero Trust - Identity Aware Proxy"
+classname = "Access 301: Ephemeral Authentication"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/yahshun/Agility2020-IAP.git"
+github_repo = "https://github.com/yahshun/Agility2020-EA.git"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'
