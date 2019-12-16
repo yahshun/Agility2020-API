@@ -29,7 +29,7 @@ Click **Finished**
 |image2|
 
 
-Task – Create an Active Directory AAA Object
+Task – Create a RADIUS AAA Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. From the webbrowser, click on the **Access** tab located on the lefthand side.
