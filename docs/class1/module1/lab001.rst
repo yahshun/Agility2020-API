@@ -16,20 +16,17 @@ Task – Create an Active Directory AAA Object
 
 3. Enter the following information for the AD Authentication Object
 
-- Name: f5lab.local
-- Domain Name: f5lab.local
-- Domain Controller Pool Name: AD_POOL
-- Domain Controller IP address: 10.1.20.7
-- Domain Controller Hostname: dc.f5lab.local
-- admin name: admin
-- admin Password: admin
+- Name: **f5lab.local**
+- Domain Name: **f5lab.local**
+- Domain Controller Pool Name: **AD_POOL**
+- Domain Controller IP address: **10.1.20.7**
+- Domain Controller Hostname: **dc.f5lab.local**
+- admin name: **admin**
+- admin Password: **admin**
 
 Click **Finished**
 
 |image2|
-
-4. Go Authentication>Active Directory, then click the **+** symbol to create a new AAA object
-
 
 
 Task – Create an Active Directory AAA Object
@@ -45,9 +42,11 @@ Task – Create an Active Directory AAA Object
 
 3. Enter the following information for the AD Authentication Object
 
--Name: RADIUS_SERVERS
--Server Pool Name: RADIUS_POOL
-- secret password: secret
+-Name: **RADIUS_SERVERS**
+-Server Pool Name: **RADIUS_POOL**
+- secret password: **secret**
+-**Click** Finished
+
 
 |image4|
 
