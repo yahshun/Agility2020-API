@@ -76,8 +76,7 @@
         <span class="nav-sidebartoc">
             <ul>
 <li><a class="reference internal" href="#">2.1.5. Lab – Create a Pool</a><ul>
-<li><a class="reference internal" href="#task-configure-active-directory-aaa">2.1.5.1. Task – Configure Active Directory AAA</a></li>
-<li><a class="reference internal" href="#task-configure-certificate-authentication">2.1.5.2. Task – Configure Certificate Authentication</a></li>
+<li><a class="reference internal" href="#task-create-the-pool">2.1.5.1. Task – Create the Pool</a></li>
 </ul>
 </li>
 </ul>
@@ -120,9 +119,9 @@
     
   <div class="section" id="lab-create-a-pool">
 <h1>2.1.5. Lab – Create a Pool<a class="headerlink" href="#lab-create-a-pool" title="Permalink to this headline">¶</a></h1>
-<p>In this section you will configure two locations for User Identities.  You will first configure Active Directory and secondly you will configure certificate authentication using OCSP.</p>
-<div class="section" id="task-configure-active-directory-aaa">
-<h2>2.1.5.1. Task – Configure Active Directory AAA<a class="headerlink" href="#task-configure-active-directory-aaa" title="Permalink to this headline">¶</a></h2>
+<p>In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.</p>
+<div class="section" id="task-create-the-pool">
+<h2>2.1.5.1. Task – Create the Pool<a class="headerlink" href="#task-create-the-pool" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Enter “AD” for the name</li>
 <li>Ensure the Authentication Type is <strong>AAA</strong></li>
@@ -138,21 +137,6 @@
 #. Enter <strong>admin</strong> for the Admin Password
 #. Click Save</p>
 <p><img alt="image12" src="media/image012.png" /></p>
-</div>
-<div class="section" id="task-configure-certificate-authentication">
-<h2>2.1.5.2. Task – Configure Certificate Authentication<a class="headerlink" href="#task-configure-certificate-authentication" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Needs task description</p>
-</div>
-<p>In this task we will start and instance of BIG-IP using the image uploaded in
-the previous task.</p>
-<p>Follow these steps to complete this task:</p>
-<ol class="arabic simple">
-<li>Open your hypervisor management console</li>
-<li>Click the BIG-IP image</li>
-<li>Click the ‘Start’ button (or it’s equivalent)</li>
-</ol>
 </div>
 </div>
 

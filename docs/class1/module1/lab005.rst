@@ -1,9 +1,9 @@
 Lab – Create a Pool
 ------------------------------------------------
 
-In this section you will configure two locations for User Identities.  You will first configure Active Directory and secondly you will configure certificate authentication using OCSP.
+In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.
 
-Task – Configure Active Directory AAA
+Task – Create the Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Enter "AD" for the name
@@ -22,21 +22,6 @@ Task – Configure Active Directory AAA
 #. Click Save
 
 |image12|
-
-
-Task – Configure Certificate Authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. TODO:: Needs task description
-
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
-
-Follow these steps to complete this task:
-
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
 
 
 

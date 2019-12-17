@@ -30,11 +30,17 @@ Task – Create a Client SSL Profile
 
 **Click** Finished
 
+Task – Create a Server SSL Profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 #. **Click** Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings
 
 |image27|
 
 #. Enter **SERVER_CERTSSO** for profile name
+#. **Check** the two custom boxes next to Certificate and Key
+#. Select **default.crt** from the certificate dropbox box
+#. Select **default.key** from the key dropdown box
 
 |image28|
 
