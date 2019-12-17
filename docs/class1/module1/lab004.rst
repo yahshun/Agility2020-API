@@ -48,8 +48,7 @@ Task – Create a Server SSL Profile
 #. Select **Enabled** from the Client Certificate Constrained Delegation Dropdown Box
 #. Select **f5lab.local-wildcard** from the CA Certificate dropdown box
 #. Select **f5lab.local-wildcard** from the CA Key dropdown box
-
-**Click** Finished
+#. **Click** Finished
 
 |image29|
 

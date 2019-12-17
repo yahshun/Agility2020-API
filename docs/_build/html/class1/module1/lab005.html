@@ -123,20 +123,17 @@
 <div class="section" id="task-create-the-pool">
 <h2>2.1.5.1. Task – Create the Pool<a class="headerlink" href="#task-create-the-pool" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Enter “AD” for the name</li>
-<li>Ensure the Authentication Type is <strong>AAA</strong></li>
-<li>Ensure the Choose Authentication Server Type is set to <strong>Active Directory</strong></li>
-<li>Select <strong>Create New</strong> from the Choose Authentication Server dropdown box</li>
+<li>Navigate to Local Traffic&gt;&gt;Pools&gt;&gt;Pool List, then <strong>click</strong> the + symbol to create a new Pool</li>
 </ol>
-<p><img alt="image11" src="media/image011.png" /></p>
-<p>#.Enter <strong>f5lab.local</strong> for the Domain Name
-#. Enter <strong>AD_POOL</strong> for the Domain Controller Pool Name
-#. Enter <strong>10.1.20.7</strong> for the Domain Controller IP address
-#. Enter <strong>dc.f5lab.local</strong> for the Domain Controller Hostname
-#. Enter <strong>admin</strong> for the Admin Name
-#. Enter <strong>admin</strong> for the Admin Password
-#. Click Save</p>
-<p><img alt="image12" src="media/image012.png" /></p>
+<p><img alt="image30" src="media/image030.png" /></p>
+<ol class="arabic simple">
+<li>Enter mTLS_POOL for the Pool Name</li>
+<li>Select <strong>https</strong> from the list of available monitors</li>
+<li>Enter <strong>10.1.20.6</strong> for the member address</li>
+<li>Enter <strong>443</strong> for the member port</li>
+<li><strong>Click</strong> add</li>
+</ol>
+<p><img alt="image31" src="media/image031.png" /></p>
 </div>
 </div>
 

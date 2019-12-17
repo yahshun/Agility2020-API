@@ -6,24 +6,19 @@ In this section you create a pool that contains the IP address of the IIS server
 Task – Create the Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Enter "AD" for the name
-#. Ensure the Authentication Type is **AAA**
-#. Ensure the Choose Authentication Server Type is set to **Active Directory**
-#. Select **Create New** from the Choose Authentication Server dropdown box
+#. Navigate to Local Traffic>>Pools>>Pool List, then **click** the + symbol to create a new Pool
 
-|image11|
-
-#.Enter **f5lab.local** for the Domain Name
-#. Enter **AD_POOL** for the Domain Controller Pool Name
-#. Enter **10.1.20.7** for the Domain Controller IP address
-#. Enter **dc.f5lab.local** for the Domain Controller Hostname
-#. Enter **admin** for the Admin Name
-#. Enter **admin** for the Admin Password
-#. Click Save
-
-|image12|
+|image30|
 
 
+#. Enter mTLS_POOL for the Pool Name
+#. Select **https** from the list of available monitors
+#. Enter **10.1.20.6** for the member address
+#. Enter **443** for the member port
+#. **Click** add
 
-.. |image11| image:: /media/image011.png
-.. |image12| image:: /media/image012.png
+|image31|
+
+
+.. |image30| image:: /media/image030.png
+.. |image31| image:: /media/image031.png
