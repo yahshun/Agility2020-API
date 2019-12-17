@@ -76,7 +76,7 @@
         <span class="nav-sidebartoc">
             <ul>
 <li><a class="reference internal" href="#">2.1.6. Lab – Create the Virtual Server</a><ul>
-<li><a class="reference internal" href="#task-configure-a-radius-aaa-server">2.1.6.1. Task – Configure a RADIUS AAA Server</a></li>
+<li><a class="reference internal" href="#task-configure-virtual-server">2.1.6.1. Task – Configure Virtual Server</a></li>
 </ul>
 </li>
 </ul>
@@ -120,30 +120,31 @@
   <div class="section" id="lab-create-the-virtual-server">
 <h1>2.1.6. Lab – Create the Virtual Server<a class="headerlink" href="#lab-create-the-virtual-server" title="Permalink to this headline">¶</a></h1>
 <p>In this section you will configure a RADIUS server to enable simulated MFA capabilities.</p>
-<div class="section" id="task-configure-a-radius-aaa-server">
-<h2>2.1.6.1. Task – Configure a RADIUS AAA Server<a class="headerlink" href="#task-configure-a-radius-aaa-server" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-configure-virtual-server">
+<h2>2.1.6.1. Task – Configure Virtual Server<a class="headerlink" href="#task-configure-virtual-server" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><strong>Check</strong> Enable MultiFactor Authentication</li>
+<li>Navigate to Local Traffic&gt;&gt;Virtual Servers&gt;&gt;Virtual Server List, then <strong>click</strong> the + symbol to create a new virtual Server</li>
 </ol>
-<p><img alt="image13" src="media/image013.png" /></p>
+<p><img alt="image32" src="media/image032.png" /></p>
 <ol class="arabic simple">
-<li>Select <strong>Custom Radius Based</strong></li>
+<li>Enter <strong>mtls_vs</strong> for the Name</li>
+<li>Enter <strong>10.1.10.100</strong> for the DestinationAddress/Mask</li>
+<li>Enter <strong>443</strong> for the Service Port</li>
+<li>Select <strong>http</strong> for HTTP Profile(Client)</li>
+<li>Select <strong>CLIENT_CERTSSO</strong> from the SSL Profile(Slient) List</li>
 </ol>
-<p><img alt="image14" src="media/image014.png" /></p>
-<p>#.Select <strong>Create New</strong> from the Choose RADIUS Server dropdown</p>
-<p><img alt="image15" src="media/image015.png" /></p>
+<p><img alt="image33" src="media/image033.png" /></p>
 <ol class="arabic simple">
-<li>Enter the Server Pool Name <strong>RADIUS_POOL</strong></li>
-<li>Enter the Server Address <strong>10.1.20.8</strong></li>
-<li>Enter the Secret <strong>P&#64;$$w0rd</strong></li>
-<li><strong>Click</strong> Save</li>
+<li>Select <strong>SERVER_CERTSSO</strong> from the SSL Profile(Server) List</li>
+<li>Select <strong>Auto Map</strong> from the Source Address Translation dropdown Box</li>
+<li>Select <strong>Cert_SSO</strong> from the Access Profile dropdown Box</li>
 </ol>
-<p><img alt="image16" src="media/image016.png" /></p>
+<p><img alt="image34" src="media/image034.png" /></p>
 <ol class="arabic simple">
-<li>Verify Custom RADIUS based Authentication appears</li>
-<li><strong>Click</strong> Save &amp; Next</li>
+<li>Select <strong>mTLS_POOL</strong> for the Default Pool</li>
+<li>** Click** Finished</li>
 </ol>
-<p><img alt="image17" src="media/image017.png" /></p>
+<p><img alt="image35" src="media/image035.png" /></p>
 </div>
 </div>
 

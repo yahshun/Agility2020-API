@@ -16,6 +16,7 @@ Task – Create the Pool
 #. Enter **10.1.20.6** for the member address
 #. Enter **443** for the member port
 #. **Click** add
+#. **Click** Finished
 
 |image31|
 
