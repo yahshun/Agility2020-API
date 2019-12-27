@@ -1,14 +1,17 @@
 Class - |classname|
 ===================
 
-The 15.1 Ephemeral Authentication lab is a combination of multiple features included in Access Policy Manager to enhance security for Authentication schemes. The module will cover the implementation of C3D features enhanced in APM and often referred to as CertSSO.  The second module covers the Privilege User Access Solution with a specific focus on ephemeral authentication demostrating integration with network devices for SSH support as well integration with code responsitories.
+As the dependency of API usage increases across organizations so do the tools used to protect them.  API historically were protected through dedicated API gateways performing complex tasks such as transformations between API types such as Rest to XML but still required a web. Application firewall to perform content validation against various attack types beyond schema validation. The complex requirements for API gateways have decreased as the adoption of REST has increased in organizations .  API gateways have been narrowed to three specific requirements: authentication, authorization, and content validation.
 
-This class covers the following topics related to Ephemeral Authentication:
+	Using F5’s Advanced WAF module in conjunction with Access Policy Managers(APM) an organization can not only achieve the requirements needed for a traditional API gateway but increased Security and authorization controls.
 
-- LDAP Ephemeral Authentication
-- RADIUS Ephemeral Authentication
-- HTML5 SSH
-- Client Constrained Delegation APM Enhancements
+
+During this hands-on lab you will learn how to configure the following:
+
+•	Build an API protection profile using OpenAPI spec files 
+•	Configure the BIG-IP as resource server for OAuth and OIDC for course-grain access control
+•	Configure APM’s per-request policy engineer to provide fine-grain access control 
+•	Configure Advanced WAF to protect against common API attacks
 
 Expected time to complete: **1 hour**
 

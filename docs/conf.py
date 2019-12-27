@@ -5,10 +5,10 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "Access 301: Ephemeral Authentication"
+classname = "API Protection"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/yahshun/Agility2020-EA.git"
+github_repo = "https://github.com/yahshun/Agility2020-API.git"
 
 # OPTIONAL: Google Analytics
 # googleanalytics_id = 'UA-85156643-4'
