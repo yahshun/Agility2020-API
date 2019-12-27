@@ -1,10 +1,46 @@
-Lab – Access Guided Configuration
+Lab – Create Dependency Objects
 -----------------------------------
 
 The first step in deploying an API protection profile is accessing the guided configuration
 
-Task – Access the API Protection Guided Configuration
+Task – Create a DNS Resolver
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1. From the webbrowser, click on the **Network** tab located on the lefthand side.
+
+|image5|
+
+2. Navigate to DNS Resolvers>>DNS Resolver List, then **click** the + symbol to create a new DNS Resolver object
+
+|image6|
+
+3. Enter the Name **INTERNAL_RESOLVER**
+4. Click Save
+
+|image007|
+
+5. Click the **INTERNAL_RESOLVER** object you just created
+
+|image008|
+
+6. Click the center tab **Forward Zones**
+
+|image009|
+
+7. Click **Add** located in the right hand corner
+
+|image010|
+
+8. Enter the Name **.**
+9. Enter the Address **10.1.20.7**
+10. Click **Add**
+11. Click **Finished**
+
+|image011|
+
+
+
 
 1. From the webbrowser, click on the **Access** tab located on the lefthand side.
 
