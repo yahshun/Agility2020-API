@@ -1,4 +1,4 @@
-Lab – Create the Access profile
+Lab – General Properties
 ------------------------------------------------
 
 In this section, you will create and define the setting of the access profile

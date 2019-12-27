@@ -1,4 +1,4 @@
-Lab – Create the SSL Profiles
+Lab – Responses
 ------------------------------------------------
 
 In this section, you will define the virtual server IP address its SSL profile settings 

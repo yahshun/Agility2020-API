@@ -1,57 +1,33 @@
-Lab – Create Authentication objects
+Lab – Access Guided Configuration
 -----------------------------------
 
-The first step in deploying CertSSO is creating the objects required for the user to authenticate to APM.  In this lab the user will authenticate via Active Directory and simulated MFA via RADIUS.  How the user authenticates to APM is independent of how the BIG-IP authenticates the user to the server for Single-Sign-On.  This allows an organization to choose an authentication scheme that matches their organizations needs such as SAML, OAuth, or other method.
+The first step in deploying an API protection profile is accessing the guided configuration
 
-Task – Create an Active Directory AAA Object
+Task – Access the API Protection Guided Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. From the webbrowser, click on the **Access** tab located on the lefthand side.
 
 |image0|
 
-2. Navigate to Authentication>Active Directory, then **click** the + symbol to create a new AAA object
+2. Click **Guided Configuration**
 
 |image1|
 
-3. Enter the following information for the AD Authentication Object
-
-- Name: **f5lab.local**
-- Domain Name: **f5lab.local**
-- Domain Controller Pool Name: **AD_POOL**
-- Domain Controller IP address: **10.1.20.7**
-- Domain Controller Hostname: **dc.f5lab.local**
-- admin name: **admin**
-- admin Password: **admin**
-
-Click **Finished**
+3. Click **API Protection**
 
 |image2|
 
-
-Task – Create a RADIUS AAA Object
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. From the webbrowser, click on the **Access** tab located on the lefthand side.
-
-|image0|
-
-2. 4. Navigate to Authentication>RADIUS, then **click** the + symbol to create a new AAA object
+4. Click **API Protection Proxy**
 
 |image3|
 
-3. Enter the following information for the AD Authentication Object
+5. Click **Next**
 
-- Name: **RADIUS_SERVERS**
-- Server Pool Name: **RADIUS_POOL**
-- secret password: **secret**
-- **Click** Finished
 
+.. NOTE::  BLAH BLAH Different topologies for API Protection.
 
 |image4|
-
-
-
 
 
 .. |image0| image:: /media/image000.png

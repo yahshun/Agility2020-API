@@ -1,4 +1,4 @@
-Lab – Create a Pool
+Lab – Security Settings
 ------------------------------------------------
 
 In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.

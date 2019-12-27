@@ -1,4 +1,4 @@
-Lab – Create the Virtual Server
+Lab – Provider Settings
 ------------------------------------------------
 
 In this section you will configure a RADIUS server to enable simulated MFA capabilities.

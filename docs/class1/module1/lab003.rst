@@ -1,4 +1,4 @@
-Lab – Create the Access Policy
+Lab – Paths
 ------------------------------------------------
 
 In this section, edit the policy using Visual Policy Editor to enable users to login via AD+MFA, then transition to CertSSO
