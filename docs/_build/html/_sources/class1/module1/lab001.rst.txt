@@ -18,52 +18,30 @@ Task – Create a DNS Resolver
 3. Enter the Name **INTERNAL_RESOLVER**
 4. Click Save
 
-|image007|
+|image7|
 
 5. Click the **INTERNAL_RESOLVER** object you just created
 
-|image008|
+|image8|
 
 6. Click the center tab **Forward Zones**
 
-|image009|
+|image9|
 
 7. Click **Add** located in the right hand corner
 
-|image010|
+|image10|
 
 8. Enter the Name **.**
 9. Enter the Address **10.1.20.7**
 10. Click **Add**
 11. Click **Finished**
 
-|image011|
+|image11|
 
 
 
 
-1. From the webbrowser, click on the **Access** tab located on the lefthand side.
-
-|image0|
-
-2. Click **Guided Configuration**
-
-|image1|
-
-3. Click **API Protection**
-
-|image2|
-
-4. Click **API Protection Proxy**
-
-|image3|
-
-5. Click **Next**
-
-
-.. NOTE::  BLAH BLAH Different topologies for API Protection.
-
-|image4|
 
 
 .. |image5| image:: /media/image005.png
