@@ -1,5 +1,5 @@
-Module – Deploy an API Protection Profile
-=============================================
+Module – Deploy API Protection using Guided Configuration
+===========================================================
 
 NEED Description
 

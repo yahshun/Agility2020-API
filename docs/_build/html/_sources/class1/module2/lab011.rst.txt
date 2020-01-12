@@ -1,21 +1,41 @@
-Lab – Summary
+Lab – Testing
 ------------------------------------------------
 
-The Summary page is designed for reviewing the configuation that is about to be deployed.  In the event a change is required anywhere in the configuration the pencil icon on the right side can be selected to quickly edit the appropriate section.
+In this section you will configure a RADIUS server to enable simulated MFA capabilities.
 
-Task – Review the Summary page
+
+Task – Configure a RADIUS AAA Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. BLAH BLAH BLAH
+#. **Check** Enable MultiFactor Authentication
 
-Task – Deploy the configuration 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|image13|
 
-#. **Click** Deploy
+#. Select **Custom Radius Based**
 
-|image26|
+|image14|
 
-.. |image26| image:: /media/image026.png
+#.Select **Create New** from the Choose RADIUS Server dropdown
+
+|image15|
+
+#. Enter the Server Pool Name **RADIUS_POOL**
+#. Enter the Server Address **10.1.20.8**
+#. Enter the Secret **P@$$w0rd**
+#. **Click** Save
+
+|image16|
+
+#. Verify Custom RADIUS based Authentication appears
+#. **Click** Save & Next
+
+|image17|
 
 
+
+.. |image13| image:: /media/image013.png
+.. |image14| image:: /media/image014.png
+.. |image15| image:: /media/image015.png
+.. |image16| image:: /media/image016.png
+.. |image17| image:: /media/image017.png

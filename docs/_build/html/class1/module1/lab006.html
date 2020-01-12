@@ -5,7 +5,7 @@
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
   <!--Production:-->
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.1.6. Lab – Provider Settings</title>
+    <title>2.1.6. Lab – Security Settings</title>
   
 
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <!-- F5 metadata -->
   <meta name="kb_doc_type" content="Manual"/>
   <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.1.6. Lab – Provider Settings"/>
+  <meta name="title" content="2.1.6. Lab – Security Settings"/>
   <meta name="product" content="API Protection"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
@@ -36,7 +36,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.1.6. Lab – Provider Settings &#8212; API Protection  documentation</title>
+    <title>2.1.6. Lab – Security Settings &#8212; API Protection  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
@@ -51,8 +51,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.1.7. Lab – SSO" href="lab007.html" />
-    <link rel="prev" title="2.1.5. Lab – Security Settings" href="lab005.html" />
+    <link rel="next" title="2.1.7. Lab – Provider Settings" href="lab007.html" />
+    <link rel="prev" title="2.1.5. Lab – Responses" href="lab005.html" />
   </head><body>
   <div id="clouddocs-header"></div>
 
@@ -75,8 +75,8 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.1.6. Lab – Provider Settings</a><ul>
-<li><a class="reference internal" href="#task-configure-virtual-server">2.1.6.1. Task – Configure Virtual Server</a></li>
+<li><a class="reference internal" href="#">2.1.6. Lab – Security Settings</a><ul>
+<li><a class="reference internal" href="#task-create-the-pool">2.1.6.1. Task – Create the Pool</a></li>
 </ul>
 </li>
 </ul>
@@ -87,9 +87,10 @@
         <span class="nav-sidebartoc">
             <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - API Protection</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Deploy an API Protection Profile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Deploy API Protection using Guided Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../module2/module1.html">2.2. Module – Deploy an API Protection Profile</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
@@ -109,41 +110,31 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.1.6. Lab – Provider Settings</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.1.6. Lab – Security Settings</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-provider-settings">
-<h1>2.1.6. Lab – Provider Settings<a class="headerlink" href="#lab-provider-settings" title="Permalink to this headline">¶</a></h1>
-<p>In this section you will configure a RADIUS server to enable simulated MFA capabilities.</p>
-<div class="section" id="task-configure-virtual-server">
-<h2>2.1.6.1. Task – Configure Virtual Server<a class="headerlink" href="#task-configure-virtual-server" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="lab-security-settings">
+<h1>2.1.6. Lab – Security Settings<a class="headerlink" href="#lab-security-settings" title="Permalink to this headline">¶</a></h1>
+<p>In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.</p>
+<div class="section" id="task-create-the-pool">
+<h2>2.1.6.1. Task – Create the Pool<a class="headerlink" href="#task-create-the-pool" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Navigate to Local Traffic&gt;&gt;Virtual Servers&gt;&gt;Virtual Server List, then <strong>click</strong> the + symbol to create a new virtual Server</li>
+<li>Navigate to Local Traffic&gt;&gt;Pools&gt;&gt;Pool List, then <strong>click</strong> the + symbol to create a new Pool</li>
 </ol>
-<p><img alt="image32" src="media/image032.png" /></p>
+<p><img alt="image30" src="media/image030.png" /></p>
 <ol class="arabic simple">
-<li>Enter <strong>mtls_vs</strong> for the Name</li>
-<li>Enter <strong>10.1.10.100</strong> for the DestinationAddress/Mask</li>
-<li>Enter <strong>443</strong> for the Service Port</li>
-<li>Select <strong>http</strong> for HTTP Profile(Client)</li>
-<li>Select <strong>CLIENT_CERTSSO</strong> from the SSL Profile(Slient) List</li>
+<li>Enter mTLS_POOL for the Pool Name</li>
+<li>Select <strong>https</strong> from the list of available monitors</li>
+<li>Enter <strong>10.1.20.6</strong> for the member address</li>
+<li>Enter <strong>443</strong> for the member port</li>
+<li><strong>Click</strong> add</li>
+<li><strong>Click</strong> Finished</li>
 </ol>
-<p><img alt="image33" src="media/image033.png" /></p>
-<ol class="arabic simple">
-<li>Select <strong>SERVER_CERTSSO</strong> from the SSL Profile(Server) List</li>
-<li>Select <strong>Auto Map</strong> from the Source Address Translation dropdown Box</li>
-<li>Select <strong>Cert_SSO</strong> from the Access Profile dropdown Box</li>
-</ol>
-<p><img alt="image34" src="media/image034.png" /></p>
-<ol class="arabic simple">
-<li>Select <strong>mTLS_POOL</strong> for the Default Pool</li>
-<li>** Click** Finished</li>
-</ol>
-<p><img alt="image35" src="media/image035.png" /></p>
+<p><img alt="image31" src="media/image031.png" /></p>
 </div>
 </div>
 
@@ -153,10 +144,10 @@
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="lab005.html" title="2.1.5. Lab – Security Settings" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="lab005.html" title="2.1.5. Lab – Responses" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab007.html" title="2.1.7. Lab – SSO" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab007.html" title="2.1.7. Lab – Provider Settings" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

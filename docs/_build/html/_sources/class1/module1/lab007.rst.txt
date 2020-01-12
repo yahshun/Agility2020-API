@@ -1,41 +1,39 @@
-Lab – SSO
+Lab – Provider Settings
 ------------------------------------------------
 
 In this section you will configure a RADIUS server to enable simulated MFA capabilities.
 
 
-Task – Configure a RADIUS AAA Server
+Task – Configure Virtual Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-#. **Check** Enable MultiFactor Authentication
+#. Navigate to Local Traffic>>Virtual Servers>>Virtual Server List, then **click** the + symbol to create a new virtual Server
 
-|image13|
+|image32|
 
-#. Select **Custom Radius Based**
+#. Enter **mtls_vs** for the Name
+#. Enter **10.1.10.100** for the DestinationAddress/Mask
+#. Enter **443** for the Service Port
+#. Select **http** for HTTP Profile(Client)
+#. Select **CLIENT_CERTSSO** from the SSL Profile(Slient) List
 
-|image14|
-
-#.Select **Create New** from the Choose RADIUS Server dropdown
-
-|image15|
-
-#. Enter the Server Pool Name **RADIUS_POOL**
-#. Enter the Server Address **10.1.20.8**
-#. Enter the Secret **P@$$w0rd**
-#. **Click** Save
-
-|image16|
-
-#. Verify Custom RADIUS based Authentication appears
-#. **Click** Save & Next
-
-|image17|
+|image33|
 
 
+#. Select **SERVER_CERTSSO** from the SSL Profile(Server) List
+#. Select **Auto Map** from the Source Address Translation dropdown Box
+#. Select **Cert_SSO** from the Access Profile dropdown Box
 
-.. |image13| image:: /media/image013.png
-.. |image14| image:: /media/image014.png
-.. |image15| image:: /media/image015.png
-.. |image16| image:: /media/image016.png
-.. |image17| image:: /media/image017.png
+|image34|
+
+#. Select **mTLS_POOL** for the Default Pool
+#. ** Click** Finished
+
+|image35|
+
+
+.. |image32| image:: /media/image032.png
+.. |image33| image:: /media/image033.png
+.. |image34| image:: /media/image034.png
+.. |image35| image:: /media/image035.png

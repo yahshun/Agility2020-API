@@ -1,41 +1,25 @@
-Lab – Create the Virtual Server
+Lab – Security Settings
 ------------------------------------------------
 
-In this section you will configure a RADIUS server to enable simulated MFA capabilities.
+In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.
 
-
-Task – Configure a RADIUS AAA Server
+Task – Create the Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#. Navigate to Local Traffic>>Pools>>Pool List, then **click** the + symbol to create a new Pool
 
-#. **Check** Enable MultiFactor Authentication
-
-|image13|
-
-#. Select **Custom Radius Based**
-
-|image14|
-
-#.Select **Create New** from the Choose RADIUS Server dropdown
-
-|image15|
-
-#. Enter the Server Pool Name **RADIUS_POOL**
-#. Enter the Server Address **10.1.20.8**
-#. Enter the Secret **P@$$w0rd**
-#. **Click** Save
-
-|image16|
-
-#. Verify Custom RADIUS based Authentication appears
-#. **Click** Save & Next
-
-|image17|
+|image30|
 
 
+#. Enter mTLS_POOL for the Pool Name
+#. Select **https** from the list of available monitors
+#. Enter **10.1.20.6** for the member address
+#. Enter **443** for the member port
+#. **Click** add
+#. **Click** Finished
 
-.. |image13| image:: /media/image013.png
-.. |image14| image:: /media/image014.png
-.. |image15| image:: /media/image015.png
-.. |image16| image:: /media/image016.png
-.. |image17| image:: /media/image017.png
+|image31|
+
+
+.. |image30| image:: /media/image030.png
+.. |image31| image:: /media/image031.png

@@ -1,39 +1,41 @@
-Lab – Customization
+Lab – Summary
 ------------------------------------------------
 
-.. TODO:: Needs lab description
+In this section you will configure a RADIUS server to enable simulated MFA capabilities.
 
-In the previous lab we learned how to download the |bip| |ve| image.  Now, we
-can install the image onto a hypervisor.
 
-Task – Upload the image to your Hypervisor
+Task – Configure a RADIUS AAA Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. TODO:: Needs task description
 
-In this task you will upload the image to your hypervisor.
+#. **Check** Enable MultiFactor Authentication
 
-Follow these steps to complete this task:
+|image13|
 
-.. rst-class:: task-stepsx
+#. Select **Custom Radius Based**
 
-#. Open your hypervisor management console
-#. Figure out how to upload the image
+|image14|
 
-   .. ERROR:: These are bad instructions...
+#.Select **Create New** from the Choose RADIUS Server dropdown
 
-#. Great!  You're done
+|image15|
 
-Task – Start a |bip| |ve| Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Enter the Server Pool Name **RADIUS_POOL**
+#. Enter the Server Address **10.1.20.8**
+#. Enter the Secret **P@$$w0rd**
+#. **Click** Save
 
-.. TODO:: Needs task description
+|image16|
 
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
+#. Verify Custom RADIUS based Authentication appears
+#. **Click** Save & Next
 
-Follow these steps to complete this task:
+|image17|
 
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
+
+
+.. |image13| image:: /media/image013.png
+.. |image14| image:: /media/image014.png
+.. |image15| image:: /media/image015.png
+.. |image16| image:: /media/image016.png
+.. |image17| image:: /media/image017.png

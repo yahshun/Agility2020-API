@@ -1,39 +1,25 @@
-Lab – Provider Settings
+Lab – Security Settings
 ------------------------------------------------
 
-In this section you will configure a RADIUS server to enable simulated MFA capabilities.
+In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.
 
-
-Task – Configure Virtual Server
+Task – Create the Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+#. Navigate to Local Traffic>>Pools>>Pool List, then **click** the + symbol to create a new Pool
 
-#. Navigate to Local Traffic>>Virtual Servers>>Virtual Server List, then **click** the + symbol to create a new virtual Server
-
-|image32|
-
-#. Enter **mtls_vs** for the Name
-#. Enter **10.1.10.100** for the DestinationAddress/Mask
-#. Enter **443** for the Service Port
-#. Select **http** for HTTP Profile(Client)
-#. Select **CLIENT_CERTSSO** from the SSL Profile(Slient) List
-
-|image33|
+|image30|
 
 
-#. Select **SERVER_CERTSSO** from the SSL Profile(Server) List
-#. Select **Auto Map** from the Source Address Translation dropdown Box
-#. Select **Cert_SSO** from the Access Profile dropdown Box
+#. Enter mTLS_POOL for the Pool Name
+#. Select **https** from the list of available monitors
+#. Enter **10.1.20.6** for the member address
+#. Enter **443** for the member port
+#. **Click** add
+#. **Click** Finished
 
-|image34|
-
-#. Select **mTLS_POOL** for the Default Pool
-#. ** Click** Finished
-
-|image35|
+|image31|
 
 
-.. |image32| image:: /media/image032.png
-.. |image33| image:: /media/image033.png
-.. |image34| image:: /media/image034.png
-.. |image35| image:: /media/image035.png
+.. |image30| image:: /media/image030.png
+.. |image31| image:: /media/image031.png

@@ -1,25 +1,62 @@
-Lab – Security Settings
+Lab – Responses
 ------------------------------------------------
 
-In this section you create a pool that contains the IP address of the IIS server hosting the website requiring mTLS.
+In this section, you will define the virtual server IP address its SSL profile settings 
 
-Task – Create the Pool
+Task – Create a Client SSL Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Navigate to Local Traffic>>Pools>>Pool List, then **click** the + symbol to create a new Pool
+#. Navigate to Local Traffic>>Profiles>>SSL>>Client, then **click** the + symbol to create a new SSL Profile
 
-|image30|
+|image23|
 
-
-#. Enter mTLS_POOL for the Pool Name
-#. Select **https** from the list of available monitors
-#. Enter **10.1.20.6** for the member address
-#. Enter **443** for the member port
+#. Enter the name **CLIENT_CERTSSO**
+#. **Check** Custom box to the right of Certificate Key Chain
 #. **Click** add
+
+|image24|
+
+#. Select **acme.com-wildcard** from the certificate dropdown box
+#. Select **acme.com-wildcard** from the key dropdown box
+#. **Click** Add
+
+|image25|
+
+#. **Check** the custom box to the right of Client Certificate Constrained Delegation
+#. Select **Enabled** from the Client Certificate Constrained Delegation Dropdown box
+
+|image26|
+
+
+**Click** Finished
+
+Task – Create a Server SSL Profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. **Click** Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings
+
+|image27|
+
+#. Enter **SERVER_CERTSSO** for profile name
+#. **Check** the two custom boxes next to Certificate and Key
+#. Select **default.crt** from the certificate dropbox box
+#. Select **default.key** from the key dropdown box
+
+|image28|
+
+#. **Check** the three custom boxes next to Client Certificate Constrained Delegation, CA Certificate, and CA Key
+#. Select **Enabled** from the Client Certificate Constrained Delegation Dropdown Box
+#. Select **f5lab.local-wildcard** from the CA Certificate dropdown box
+#. Select **f5lab.local-wildcard** from the CA Key dropdown box
 #. **Click** Finished
 
-|image31|
+|image29|
 
 
-.. |image30| image:: /media/image030.png
-.. |image31| image:: /media/image031.png
+.. |image23| image:: /media/image023.png
+.. |image24| image:: /media/image024.png
+.. |image25| image:: /media/image025.png
+.. |image26| image:: /media/image026.png
+.. |image27| image:: /media/image027.png
+.. |image28| image:: /media/image028.png
+.. |image29| image:: /media/image029.png

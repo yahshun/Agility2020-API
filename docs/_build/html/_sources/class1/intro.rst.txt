@@ -24,8 +24,8 @@ Password: **admin**
 Lab Topology
 ~~~~~~~~~~~~
 
+|image0|
 
-  .. image:: /media/image000.png
 
 The following components have been included in your lab environment:
 
@@ -57,11 +57,14 @@ components:
 |                        | - External   10.1.10.5  |                          | 
 |                        | - Internal   10.1.20.5  |                          |
 +------------------------+-------------------------+--------------------------+
-| dc.f5lab.local         | - Management 10.1.1.7   | - administator/i3NqCqRQ  | 
+| dc.f5lab.local         | - Management 10.1.1.7   | - admin/admin            | 
 |                        | - Internal   10.1.20.7  |                          | 
 +------------------------+-------------------------+--------------------------+
-| iis.f5lab.local        | - Management 10.1.1.6   | - administator/i3NqCqRQ  | 
-|                        | - Internal   10.1.20.6  |                          | 
+| iis.f5lab.local        | - Management 10.1.1.6   | - admin/admin            | 
+|                        | - Internal              |			      |
+|			 |            - 10.1.20.6  |                          | 
+|			 |            - 10.1.20.16 |                          |
+|			 |            - 10.1.20.26 |                          |
 +------------------------+-------------------------+--------------------------+
 | web.f5lab.local        | - Management 10.1.1.9   |                          | 
 |                        | - Internal   10.1.20.9  |                          |
@@ -71,4 +74,5 @@ components:
 |                        | - Internal   10.1.20.8  |                          | 
 +------------------------+-------------------------+--------------------------+      
 
+.. |image0| image:: /_static/class1/image000.png
 

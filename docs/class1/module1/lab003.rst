@@ -1,99 +1,27 @@
-Lab – Paths
+Lab – General Properties
 ------------------------------------------------
 
-In this section, edit the policy using Visual Policy Editor to enable users to login via AD+MFA, then transition to CertSSO
+In this section, you will define which components you want to create as part of the API protection configuration
 
-Task – Open Visual Policy Editor
+
+Task – Configure API Protection Properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-#. On the CERT_SSO profile line **click** edit under Per-Session Policy
+1. Configure the follow API Properties
 
-|image8|
+.. NOTE:: The JSON OpenAPI spec file is located BLAH
 
-#. **Click** the + symbol located on the fallback branch located between the Start and Deny boxes
+-Configuration Name: *api_protection
+-Choose File: **Active Directory OPenAPI Spec v2.json**
+-Options: **Use Pool** is checked
+-Authorization Method: **Auth 2.0** is checked
+-DNS Resolver: **INTERNAL_RESOLVER**
 
-|image9|
+2. Click **Save & Next**
 
-#. Select **Logon Page** under the Logon Tab 
-#. Click **Add Item**
-
-|image11|
-
-#. Add an additional field to the logon page by selecting **password ** from the Type dropdown on line 3
-#. Enter **OTP** for Post Variable Name
-#. Enter **OTP** for Session Variable Name
-#. Enter **OTP** for Logon Page Input Field #3
-#. **Click** Save
 |image12|
 
-#. **Click** the + symbol located on the fallback branch located between the Logon Page and Deny boxes
+.. |image12| image:: /_static/class1/module1/image012.png
 
-|image13|
-
-#. Select **RADIUS Auth** under the Authentication Tab 
-#. Click **Add Item**
-
-|image14|
-
-#. Select **RADIUS_SERVERS** from the AAA Server dropdown box
-#. Change the password source to **%{session.logon.last.OTP}**
-#. **Click** Save
-
-|image15|
-
-#. **Click** the + symbol located on the Successful branch located between RADIUS Auth and Deny boxes
-#. Click **Add Item**
-
-|image16|
-
-#. Select **AD Auth** under the Authentication Tab
-#. Click **Add Item**
-
-|image17|
-
-
-#. Select **f5lab.local** from the Server dropdown box
-#. **Click** Save
-
-|image18|
-
-#. **Click** the + symbol located on the Successful branch located between AD Auth and Deny box
-#. Click **Add Item**
-
-|image10|
-
-#. Select **Variable Assign** under the Assignment Tab
-#. Click **Add Item**
-
-|image19|
-
-#. **Click** the Deny ending icon located on the fallback branch of the Variable Assign Agent
-
-|image20|
-
-#. **Click** Allow
-#. **Click** Save
-
-|image21|
-
-#. **Apply Access Policy** located in the top left corner to commit the policy changes
-
-
-
-.. |image8| image:: /media/image008.png
-.. |image9| image:: /media/image009.png
-.. |image10| image:: /media/image010.png
-.. |image11| image:: /media/image011.png
-.. |image12| image:: /media/image012.png
-.. |image13| image:: /media/image013.png
-.. |image14| image:: /media/image014.png
-.. |image15| image:: /media/image015.png
-.. |image16| image:: /media/image016.png
-.. |image17| image:: /media/image017.png
-.. |image18| image:: /media/image018.png
-.. |image19| image:: /media/image019.png
-.. |image20| image:: /media/image020.png
-.. |image21| image:: /media/image021.png
-.. |image22| image:: /media/image022.png

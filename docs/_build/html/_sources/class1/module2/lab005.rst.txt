@@ -1,44 +1,62 @@
-Lab – Create a Pool
+Lab – Responses
 ------------------------------------------------
 
-In this section you will configure two locations for User Identities.  You will first configure Active Directory and secondly you will configure certificate authentication using OCSP.
+In this section, you will define the virtual server IP address its SSL profile settings 
 
-Task – Configure Active Directory AAA
+Task – Create a Client SSL Profile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Enter "AD" for the name
-#. Ensure the Authentication Type is **AAA**
-#. Ensure the Choose Authentication Server Type is set to **Active Directory**
-#. Select **Create New** from the Choose Authentication Server dropdown box
+#. Navigate to Local Traffic>>Profiles>>SSL>>Client, then **click** the + symbol to create a new SSL Profile
 
-|image11|
+|image23|
 
-#.Enter **f5lab.local** for the Domain Name
-#. Enter **AD_POOL** for the Domain Controller Pool Name
-#. Enter **10.1.20.7** for the Domain Controller IP address
-#. Enter **dc.f5lab.local** for the Domain Controller Hostname
-#. Enter **admin** for the Admin Name
-#. Enter **admin** for the Admin Password
-#. Click Save
+#. Enter the name **CLIENT_CERTSSO**
+#. **Check** Custom box to the right of Certificate Key Chain
+#. **Click** add
 
-|image12|
+|image24|
 
+#. Select **acme.com-wildcard** from the certificate dropdown box
+#. Select **acme.com-wildcard** from the key dropdown box
+#. **Click** Add
 
-Task – Configure Certificate Authentication
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|image25|
 
-.. TODO:: Needs task description
+#. **Check** the custom box to the right of Client Certificate Constrained Delegation
+#. Select **Enabled** from the Client Certificate Constrained Delegation Dropdown box
 
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
-
-Follow these steps to complete this task:
-
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
+|image26|
 
 
+**Click** Finished
 
-.. |image11| image:: /media/image011.png
-.. |image12| image:: /media/image012.png
+Task – Create a Server SSL Profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. **Click** Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings
+
+|image27|
+
+#. Enter **SERVER_CERTSSO** for profile name
+#. **Check** the two custom boxes next to Certificate and Key
+#. Select **default.crt** from the certificate dropbox box
+#. Select **default.key** from the key dropdown box
+
+|image28|
+
+#. **Check** the three custom boxes next to Client Certificate Constrained Delegation, CA Certificate, and CA Key
+#. Select **Enabled** from the Client Certificate Constrained Delegation Dropdown Box
+#. Select **f5lab.local-wildcard** from the CA Certificate dropdown box
+#. Select **f5lab.local-wildcard** from the CA Key dropdown box
+#. **Click** Finished
+
+|image29|
+
+
+.. |image23| image:: /media/image023.png
+.. |image24| image:: /media/image024.png
+.. |image25| image:: /media/image025.png
+.. |image26| image:: /media/image026.png
+.. |image27| image:: /media/image027.png
+.. |image28| image:: /media/image028.png
+.. |image29| image:: /media/image029.png

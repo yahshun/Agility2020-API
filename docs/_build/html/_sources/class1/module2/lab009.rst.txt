@@ -1,51 +1,41 @@
-Lab – Contextual Access
+Lab – Virtual Server
 ------------------------------------------------
 
-In this section you will define contextual access for the two previously created applications.  Context access is where all of the previously created objects are put together to provide fine-grain access control.
-
-Task – Create Contextual Access for basic.acme.com
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this section you will configure a RADIUS server to enable simulated MFA capabilities.
 
 
-#. Enter **basic.acme.com** for the contextual access name
-#. Select **basic.acme.com** from the Resource dropdown box
-#. Select **FW_CHECK** from the Device Posture dropdown box
-#. Select **AD** from the Primary Authentication dropdown box
-#. Select **BASIC_SSO** from the Single Sign-On dropdown box
-#. **Check** Enable Additional Checks
+Task – Configure a RADIUS AAA Server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image23|
 
-#. Enter **POSTURE_AND_RADIUS** for the name of the trigger
-#. **Check** Client Posture Information
-#. **Select** Signed
+#. **Check** Enable MultiFactor Authentication
+
+|image13|
+
+#. Select **Custom Radius Based**
+
+|image14|
+
+#.Select **Create New** from the Choose RADIUS Server dropdown
+
+|image15|
+
+#. Enter the Server Pool Name **RADIUS_POOL**
+#. Enter the Server Address **10.1.20.8**
+#. Enter the Secret **P@$$w0rd**
 #. **Click** Save
 
-|image24|
+|image16|
 
-#. **Click** Save
+#. Verify Custom RADIUS based Authentication appears
+#. **Click** Save & Next
 
-|image25|
-
-
-
-Task – Start a |bip| |ve| Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. TODO:: Needs task description
-
-In this task we will start and instance of |bip| using the image uploaded in
-the previous task.
-
-Follow these steps to complete this task:
-
-#. Open your hypervisor management console
-#. Click the |bip| image
-#. Click the 'Start' button (or it's equivalent)
+|image17|
 
 
-.. |image23| image:: /media/image023.png
-.. |image24| image:: /media/image024.png
-.. |image25| image:: /media/image025.png
 
-
+.. |image13| image:: /media/image013.png
+.. |image14| image:: /media/image014.png
+.. |image15| image:: /media/image015.png
+.. |image16| image:: /media/image016.png
+.. |image17| image:: /media/image017.png
