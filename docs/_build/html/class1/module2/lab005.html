@@ -5,7 +5,7 @@
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
   <!--Production:-->
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.2.5. Lab – Responses</title>
+    <title>2.1.5. Lab – Implement Fine-Grain Access Controls</title>
   
 
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <!-- F5 metadata -->
   <meta name="kb_doc_type" content="Manual"/>
   <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.2.5. Lab – Responses"/>
+  <meta name="title" content="2.1.5. Lab – Implement Fine-Grain Access Controls"/>
   <meta name="product" content="API Protection"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
@@ -36,7 +36,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.2.5. Lab – Responses &#8212; API Protection  documentation</title>
+    <title>2.1.5. Lab – Implement Fine-Grain Access Controls &#8212; API Protection  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
@@ -51,8 +51,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2.6. Lab – Security Settings" href="lab006.html" />
-    <link rel="prev" title="2.2.4. Lab – Test Course Grain Access" href="lab004.html" />
+    <link rel="next" title="2.1.6. Lab – Implement Rate Limiting" href="lab006.html" />
+    <link rel="prev" title="2.1.4. Lab – Test Course Grain Access" href="lab004.html" />
   </head><body>
   <div id="clouddocs-header"></div>
 
@@ -75,9 +75,11 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.2.5. Lab – Responses</a><ul>
-<li><a class="reference internal" href="#task-create-a-client-ssl-profile">2.2.5.1. Task – Create a Client SSL Profile</a></li>
-<li><a class="reference internal" href="#task-create-a-server-ssl-profile">2.2.5.2. Task – Create a Server SSL Profile</a></li>
+<li><a class="reference internal" href="#">2.1.5. Lab – Implement Fine-Grain Access Controls</a><ul>
+<li><a class="reference internal" href="#task-retrieve-group-membership-subsession-variable">2.1.5.1. Task – Retrieve Group Membership Subsession Variable</a></li>
+<li><a class="reference internal" href="#task-edit-the-per-request-policy">2.1.5.2. Task – Edit the per-request policy</a></li>
+<li><a class="reference internal" href="#task-test-the-fine-grain-access-control-with-user1">2.1.5.3. Task – Test the Fine-Grain Access Control with user1</a></li>
+<li><a class="reference internal" href="#task-test-the-fine-grain-access-control-with-user2">2.1.5.4. Task – Test the Fine-Grain Access Control with user2</a></li>
 </ul>
 </li>
 </ul>
@@ -90,8 +92,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - API Protection</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Module – Deploy API Protection using Guided Configuration</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.2. Module – Deploy an API Protection Profile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Deploy an API Protection Profile</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
@@ -111,62 +112,180 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.2.5. Lab – Responses</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.1.5. Lab – Implement Fine-Grain Access Controls</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-responses">
-<h1>2.2.5. Lab – Responses<a class="headerlink" href="#lab-responses" title="Permalink to this headline">¶</a></h1>
-<p>In this section, you will define the virtual server IP address its SSL profile settings</p>
-<div class="section" id="task-create-a-client-ssl-profile">
-<h2>2.2.5.1. Task – Create a Client SSL Profile<a class="headerlink" href="#task-create-a-client-ssl-profile" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="lab-implement-fine-grain-access-controls">
+<h1>2.1.5. Lab – Implement Fine-Grain Access Controls<a class="headerlink" href="#lab-implement-fine-grain-access-controls" title="Permalink to this headline">¶</a></h1>
+<p>Up to this point any authenticated user to the API is authorized to use them.  In this section we will strict user1’s ability to create users, but will still be able to modify the user’s employee number.</p>
+<div class="section" id="task-retrieve-group-membership-subsession-variable">
+<h2>2.1.5.1. Task – Retrieve Group Membership Subsession Variable<a class="headerlink" href="#task-retrieve-group-membership-subsession-variable" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Navigate to Local Traffic&gt;&gt;Profiles&gt;&gt;SSL&gt;&gt;Client, then <strong>click</strong> the + symbol to create a new SSL Profile</li>
+<li>From the Jumpbox decktop click on the <strong>BIG-IP1</strong> Putty Icon</li>
 </ol>
-<p><img alt="image23" src="media/image023.png" /></p>
-<ol class="arabic simple">
-<li>Enter the name <strong>CLIENT_CERTSSO</strong></li>
-<li><strong>Check</strong> Custom box to the right of Certificate Key Chain</li>
-<li><strong>Click</strong> add</li>
-</ol>
-<p><img alt="image24" src="media/image024.png" /></p>
-<ol class="arabic simple">
-<li>Select <strong>acme.com-wildcard</strong> from the certificate dropdown box</li>
-<li>Select <strong>acme.com-wildcard</strong> from the key dropdown box</li>
-<li><strong>Click</strong> Add</li>
-</ol>
-<p><img alt="image25" src="media/image025.png" /></p>
-<ol class="arabic simple">
-<li><strong>Check</strong> the custom box to the right of Client Certificate Constrained Delegation</li>
-<li>Select <strong>Enabled</strong> from the Client Certificate Constrained Delegation Dropdown box</li>
-</ol>
-<p><img alt="image26" src="media/image026.png" /></p>
-<p><strong>Click</strong> Finished</p>
+<p><img alt="image47" src="../../_images/image047.png" /></p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">NEED TO TALK TO LUCAS</p>
 </div>
-<div class="section" id="task-create-a-server-ssl-profile">
-<h2>2.2.5.2. Task – Create a Server SSL Profile<a class="headerlink" href="#task-create-a-server-ssl-profile" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="task-edit-the-per-request-policy">
+<h2>2.1.5.2. Task – Edit the per-request policy<a class="headerlink" href="#task-edit-the-per-request-policy" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><strong>Click</strong> Show Advanced Setting located in the top right corner to expose the server-side SSL profile settings</li>
+<li>From the Jumpbox, access the BIG-IP GUI <a class="reference external" href="https://10.1.1.4">https://10.1.1.4</a> (you can double-click on the BIG-IP1 bookmark from Chrome).</li>
 </ol>
-<p><img alt="image27" src="media/image027.png" /></p>
+<p>#. Login into the BIG-IP Configuration Utility with the following credentials:
+User: <strong>admin</strong>
+Password: <strong>admin</strong></p>
 <ol class="arabic simple">
-<li>Enter <strong>SERVER_CERTSSO</strong> for profile name</li>
-<li><strong>Check</strong> the two custom boxes next to Certificate and Key</li>
-<li>Select <strong>default.crt</strong> from the certificate dropbox box</li>
-<li>Select <strong>default.key</strong> from the key dropdown box</li>
+<li>Click on the <strong>Access</strong> tab located on the left side.</li>
 </ol>
-<p><img alt="image28" src="media/image028.png" /></p>
+<p><img alt="image0" src="../../_images/image000.png" /></p>
 <ol class="arabic simple">
-<li><strong>Check</strong> the three custom boxes next to Client Certificate Constrained Delegation, CA Certificate, and CA Key</li>
-<li>Select <strong>Enabled</strong> from the Client Certificate Constrained Delegation Dropdown Box</li>
-<li>Select <strong>f5lab.local-wildcard</strong> from the CA Certificate dropdown box</li>
-<li>Select <strong>f5lab.local-wildcard</strong> from the CA Key dropdown box</li>
-<li><strong>Click</strong> Finished</li>
+<li>Navigate to API Protection &gt;&gt; Profile.  Click <strong>Profile</strong> to modify the previously created API protection Profile.  Not the + Plus symbol.</li>
 </ol>
-<p><img alt="image29" src="media/image029.png" /></p>
+<p><img alt="image48" src="../../_images/image048.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Edit</strong> Under Per-Request Policy</li>
+</ol>
+<p><img alt="image49" src="../../_images/image049.png" /></p>
+<ol class="arabic simple">
+<li>Click the <strong>+ (Plus Symbol)</strong> on the GET /aduser/create branch</li>
+</ol>
+<p><img alt="image50" src="../../_images/image050.png" /></p>
+<ol class="arabic simple">
+<li>Click the <strong>General Purpose</strong> Tab</li>
+<li>Select <strong>Empty</strong></li>
+<li>Click <strong>Add Item</strong></li>
+</ol>
+<p><img alt="image51" src="../../_images/image051.png" /></p>
+<ol class="arabic simple">
+<li>Enter the name <strong>Claim Check</strong></li>
+</ol>
+<p><img alt="image53" src="../../_images/image053.png" /></p>
+<ol class="arabic simple">
+<li>Click the <strong>Branch Rules</strong> Tab</li>
+<li>Click the <strong>Add Branch Rule</strong></li>
+</ol>
+<p><img alt="image52" src="../../_images/image052.png" /></p>
+<ol class="arabic simple">
+<li>Enter Name <strong>CreateUser</strong></li>
+<li>Click <strong>Change</strong></li>
+</ol>
+<p><img alt="image54" src="../../_images/image054.png" /></p>
+<ol class="arabic simple">
+<li>Click the <strong>Advanced</strong> Tab</li>
+<li>Enter the string in the notes section to restrict access to only members of the <strong>CreateUser</strong> Group</li>
+<li>Click <strong>Finished</strong></li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">expr {[mcget {subsession.oauth.scope./Common/as-jwt-provider.jwt.groups}] contains “CreateUser”}</p>
+</div>
+<p><img alt="image55" src="../../_images/image055.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Save</strong></li>
+</ol>
+<p><img alt="image56" src="../../_images/image056.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Reject</strong> on the CreateUser Branch to permit access</li>
+</ol>
+<p><img alt="image57" src="../../_images/image057.png" /></p>
+<ol class="arabic simple">
+<li>Select <strong>Allow</strong></li>
+<li>Click <strong>Save</strong></li>
+</ol>
+<p><img alt="image58" src="../../_images/image058.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Allow</strong> on the fallback branch to deny unprivileged requests</li>
+</ol>
+<p><img alt="image59" src="../../_images/image059.png" /></p>
+<ol class="arabic simple">
+<li>Select <strong>Deny</strong></li>
+<li>Click <strong>Save</strong></li>
+</ol>
+<p><img alt="image60" src="../../_images/image060.png" /></p>
+<ol class="arabic simple">
+<li>Review the Policy Flow.</li>
+</ol>
+<p><img alt="image61" src="../../_images/image061.png" /></p>
+</div>
+<div class="section" id="task-test-the-fine-grain-access-control-with-user1">
+<h2>2.1.5.3. Task – Test the Fine-Grain Access Control with user1<a class="headerlink" href="#task-test-the-fine-grain-access-control-with-user1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>From the Jumpbox, open Postman</li>
+</ol>
+<p><img alt="image23" src="../../_images/image023.png" /></p>
+<ol class="arabic simple">
+<li>Expand the <strong>API Protection</strong> Collection</li>
+<li>Select the request <strong>GET-Create User-JWT-Pass</strong></li>
+</ol>
+<p><img alt="image45" src="../../_images/image045.png" /></p>
+<ol class="arabic simple">
+<li>Select the <strong>Authorization</strong> Tab</li>
+<li>Click <strong>Get New Access Token</strong></li>
+</ol>
+<p><img alt="image44" src="../../_images/image044.png" /></p>
+<ol class="arabic simple">
+<li>Review the Postman Configuration.  Nothing should need to be modified</li>
+<li>Click <strong>Request Token</strong></li>
+</ol>
+<p><img alt="image27" src="../../_images/image027.png" /></p>
+<ol class="arabic simple">
+<li>Login using Username: <strong>user1</strong>, Password: <strong>user1</strong></li>
+</ol>
+<p><img alt="image28" src="../../_images/image028.png" /></p>
+<ol class="arabic simple">
+<li>Scroll down the token and click <strong>Use Token</strong></li>
+</ol>
+<p><img alt="image29" src="../../_images/image029.png" /></p>
+<ol class="arabic simple">
+<li>The Token field is now populated</li>
+</ol>
+<p><img alt="image34" src="../../_images/image034.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Send</strong></li>
+<li>You receive a 403 Forbidden when using user1. User1 does not contain the proper claim data.</li>
+</ol>
+<p><img alt="image26" src="../../_images/image026.png" /></p>
+</div>
+<div class="section" id="task-test-the-fine-grain-access-control-with-user2">
+<h2>2.1.5.4. Task – Test the Fine-Grain Access Control with user2<a class="headerlink" href="#task-test-the-fine-grain-access-control-with-user2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Select the request <strong>GET-Create User-JWT-Pass</strong></li>
+</ol>
+<p><img alt="image45" src="../../_images/image045.png" /></p>
+<ol class="arabic simple">
+<li>Select the <strong>Authorization</strong> Tab</li>
+<li>Click <strong>Get New Access Token</strong></li>
+</ol>
+<p><img alt="image44" src="../../_images/image044.png" /></p>
+<ol class="arabic simple">
+<li>Review the Postman Configuration.  Nothing should need to be modified</li>
+<li>Click <strong>Request Token</strong></li>
+</ol>
+<p><img alt="image27" src="../../_images/image027.png" /></p>
+<ol class="arabic simple">
+<li>Login using Username: <strong>user2</strong>, Password: <strong>user2</strong></li>
+</ol>
+<p><img alt="image62" src="../../_images/image062.png" /></p>
+<ol class="arabic simple">
+<li>Scroll down the token and click <strong>Use Token</strong></li>
+</ol>
+<p><img alt="image29" src="../../_images/image029.png" /></p>
+<ol class="arabic simple">
+<li>The Token field is now populated</li>
+</ol>
+<p><img alt="image34" src="../../_images/image034.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Send</strong></li>
+<li>You receive a 200 OK when using user2. User2 does contain the proper claim data.</li>
+</ol>
+<p><img alt="image46" src="../../_images/image046.png" /></p>
 </div>
 </div>
 
@@ -176,10 +295,10 @@
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="lab004.html" title="2.2.4. Lab – Test Course Grain Access" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="lab004.html" title="2.1.4. Lab – Test Course Grain Access" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab006.html" title="2.2.6. Lab – Security Settings" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab006.html" title="2.1.6. Lab – Implement Rate Limiting" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

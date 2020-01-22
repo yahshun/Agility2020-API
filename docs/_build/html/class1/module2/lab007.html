@@ -5,7 +5,7 @@
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
   <!--Production:-->
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.2.7. Lab – Provider Settings</title>
+    <title>2.1.7. Lab – Onboard a New API</title>
   
 
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <!-- F5 metadata -->
   <meta name="kb_doc_type" content="Manual"/>
   <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.2.7. Lab – Provider Settings"/>
+  <meta name="title" content="2.1.7. Lab – Onboard a New API"/>
   <meta name="product" content="API Protection"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
@@ -36,7 +36,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.2.7. Lab – Provider Settings &#8212; API Protection  documentation</title>
+    <title>2.1.7. Lab – Onboard a New API &#8212; API Protection  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
@@ -51,8 +51,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2.8. Lab – SSO" href="lab008.html" />
-    <link rel="prev" title="2.2.6. Lab – Security Settings" href="lab006.html" />
+    <link rel="next" title="2.1.8. Lab – Content Validation" href="lab008.html" />
+    <link rel="prev" title="2.1.6. Lab – Implement Rate Limiting" href="lab006.html" />
   </head><body>
   <div id="clouddocs-header"></div>
 
@@ -75,8 +75,10 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.2.7. Lab – Provider Settings</a><ul>
-<li><a class="reference internal" href="#task-configure-virtual-server">2.2.7.1. Task – Configure Virtual Server</a></li>
+<li><a class="reference internal" href="#">2.1.7. Lab – Onboard a New API</a><ul>
+<li><a class="reference internal" href="#task-verify-no-access-to-api">2.1.7.1. Task – Verify no access to API</a></li>
+<li><a class="reference internal" href="#task-add-the-new-api-path">2.1.7.2. Task – Add the new API path</a></li>
+<li><a class="reference internal" href="#task-test-access-to-the-new-path">2.1.7.3. Task –  Test Access to the new path</a></li>
 </ul>
 </li>
 </ul>
@@ -89,8 +91,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - API Protection</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Module – Deploy API Protection using Guided Configuration</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.2. Module – Deploy an API Protection Profile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Deploy an API Protection Profile</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
@@ -110,41 +111,137 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.2.7. Lab – Provider Settings</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.1.7. Lab – Onboard a New API</li>
           </ul>
       </nav>
       
       
 
     
-  <div class="section" id="lab-provider-settings">
-<h1>2.2.7. Lab – Provider Settings<a class="headerlink" href="#lab-provider-settings" title="Permalink to this headline">¶</a></h1>
-<p>In this section you will configure a RADIUS server to enable simulated MFA capabilities.</p>
-<div class="section" id="task-configure-virtual-server">
-<h2>2.2.7.1. Task – Configure Virtual Server<a class="headerlink" href="#task-configure-virtual-server" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="lab-onboard-a-new-api">
+<h1>2.1.7. Lab – Onboard a New API<a class="headerlink" href="#lab-onboard-a-new-api" title="Permalink to this headline">¶</a></h1>
+<p>Organizations change and with that change new APIs are introduced requiring modifications to the API Gateway.  In this section you will learn how to add additional paths</p>
+<div class="section" id="task-verify-no-access-to-api">
+<h2>2.1.7.1. Task – Verify no access to API<a class="headerlink" href="#task-verify-no-access-to-api" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Navigate to Local Traffic&gt;&gt;Virtual Servers&gt;&gt;Virtual Server List, then <strong>click</strong> the + symbol to create a new virtual Server</li>
+<li>From the Jumpbox, open Postman</li>
 </ol>
-<p><img alt="image32" src="media/image032.png" /></p>
+<p><img alt="image23" src="../../_images/image023.png" /></p>
+<ol class="arabic simple" start="2">
+<li>Expand the API Protection Collection</li>
+</ol>
+<ol class="arabic simple" start="6">
+<li>Select the request <strong>PATCH-Change User Password-JWT</strong></li>
+</ol>
+<p><img alt="image63" src="../../_images/image063.png" /></p>
+<ol class="arabic simple" start="7">
+<li>Select the <strong>Authorization</strong> Tab</li>
+</ol>
+<p><img alt="image43" src="../../_images/image043.png" /></p>
+<ol class="arabic simple" start="8">
+<li>Click <strong>Get New Access Token</strong></li>
+</ol>
+<p><img alt="image44" src="../../_images/image044.png" /></p>
+<ol class="arabic simple" start="9">
+<li>Review the Postman Configuration.  Nothing should need to be modified</li>
+<li>Click <strong>Request Token</strong></li>
+</ol>
+<p><img alt="image27" src="../../_images/image027.png" /></p>
+<ol class="arabic simple" start="11">
+<li>Login using Username: <strong>user1</strong>, Password: <strong>user1</strong></li>
+</ol>
+<p><img alt="image28" src="../../_images/image028.png" /></p>
+<ol class="arabic simple" start="12">
+<li>Scroll down the token and click <strong>Use Token</strong></li>
+</ol>
+<p><img alt="image29" src="../../_images/image029.png" /></p>
+<ol class="arabic simple" start="13">
+<li>Notice the Access Token field is now populated</li>
+</ol>
+<p><img alt="image34" src="../../_images/image034.png" /></p>
+<ol class="arabic simple" start="14">
+<li>Click <strong>Send</strong></li>
+<li>You receive a <strong>403 Forbidden</strong> because the the new API has not been published at the Gateway</li>
+</ol>
+<p><img alt="image39" src="../../_images/image039.png" /></p>
+</div>
+<div class="section" id="task-add-the-new-api-path">
+<h2>2.1.7.2. Task – Add the new API path<a class="headerlink" href="#task-add-the-new-api-path" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Enter <strong>mtls_vs</strong> for the Name</li>
-<li>Enter <strong>10.1.10.100</strong> for the DestinationAddress/Mask</li>
-<li>Enter <strong>443</strong> for the Service Port</li>
-<li>Select <strong>http</strong> for HTTP Profile(Client)</li>
-<li>Select <strong>CLIENT_CERTSSO</strong> from the SSL Profile(Slient) List</li>
+<li>From the Jumpbox, access the BIG-IP GUI <a class="reference external" href="https://10.1.1.4">https://10.1.1.4</a> (you can double-click on the BIG-IP1 bookmark from Chrome).</li>
 </ol>
-<p><img alt="image33" src="media/image033.png" /></p>
+<p>#. Login into the BIG-IP Configuration Utility with the following credentials:
+- User: <strong>admin</strong>
+- Password: <strong>admin</strong></p>
 <ol class="arabic simple">
-<li>Select <strong>SERVER_CERTSSO</strong> from the SSL Profile(Server) List</li>
-<li>Select <strong>Auto Map</strong> from the Source Address Translation dropdown Box</li>
-<li>Select <strong>Cert_SSO</strong> from the Access Profile dropdown Box</li>
+<li>Click on the <strong>Access</strong> tab located on the left side.</li>
 </ol>
-<p><img alt="image34" src="media/image034.png" /></p>
+<p><img alt="image0" src="../../_images/image000.png" /></p>
 <ol class="arabic simple">
-<li>Select <strong>mTLS_POOL</strong> for the Default Pool</li>
-<li>** Click** Finished</li>
+<li>Navigate to API Protection &gt;&gt; Profile.  Click <strong>Profile</strong> to modify the previously created API protection Profile.  Not the + Plus symbol.</li>
 </ol>
-<p><img alt="image35" src="media/image035.png" /></p>
+<p><img alt="image48" src="../../_images/image048.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>API-Protection</strong></li>
+</ol>
+<p><img alt="image64" src="../../_images/image064.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Paths</strong></li>
+</ol>
+<p><img alt="image65" src="../../_images/image065.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Create</strong></li>
+</ol>
+<p><img alt="image66" src="../../_images/image066.png" /></p>
+<ol class="arabic simple">
+<li>The URI <strong>/aduser/password</strong></li>
+<li>Select the Method <strong>PATCH</strong></li>
+<li>Click <strong>Add</strong></li>
+</ol>
+<p><img alt="image67" src="../../_images/image067.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Save</strong></li>
+</ol>
+<p><img alt="image68" src="../../_images/image068.png" /></p>
+</div>
+<div class="section" id="task-test-access-to-the-new-path">
+<h2>2.1.7.3. Task –  Test Access to the new path<a class="headerlink" href="#task-test-access-to-the-new-path" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>From the Jumpbox, open Postman</li>
+</ol>
+<p><img alt="image23" src="../../_images/image023.png" /></p>
+<ol class="arabic simple">
+<li>Expand the <strong>API Protection</strong> Collection</li>
+<li>Select the request <strong>PATCH-Change User Password-JWT</strong></li>
+</ol>
+<p><img alt="image45" src="../../_images/image045.png" /></p>
+<ol class="arabic simple">
+<li>Select the <strong>Authorization</strong> Tab</li>
+<li>Click <strong>Get New Access Token</strong></li>
+</ol>
+<p><img alt="image43" src="../../_images/image043.png" /></p>
+<ol class="arabic simple">
+<li>Review the Postman Configuration.  Nothing should need to be modified</li>
+<li>Click <strong>Request Token</strong></li>
+</ol>
+<p><img alt="image27" src="../../_images/image027.png" /></p>
+<ol class="arabic simple">
+<li>Login using Username: <strong>user1</strong>, Password: <strong>user1</strong></li>
+</ol>
+<p><img alt="image28" src="../../_images/image028.png" /></p>
+<ol class="arabic simple">
+<li>Scroll down the token and click <strong>Use Token</strong></li>
+</ol>
+<p><img alt="image29" src="../../_images/image029.png" /></p>
+<ol class="arabic simple">
+<li>The Token field is now populated</li>
+</ol>
+<p><img alt="image34" src="../../_images/image034.png" /></p>
+<ol class="arabic simple">
+<li>Click <strong>Send</strong></li>
+<li>You receive a 200 OK.  The API is now published.</li>
+</ol>
+<p><img alt="image46" src="../../_images/image046.png" /></p>
 </div>
 </div>
 
@@ -154,10 +251,10 @@
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="lab006.html" title="2.2.6. Lab – Security Settings" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="lab006.html" title="2.1.6. Lab – Implement Rate Limiting" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab008.html" title="2.2.8. Lab – SSO" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab008.html" title="2.1.8. Lab – Content Validation" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

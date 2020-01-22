@@ -5,7 +5,7 @@
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3-staging.js"></script>
   <!--Production:-->
   <script src="https://assets.adobedtm.com/50164577268f481934e5d57dbfb78f929164cd0d/satelliteLib-ea775cfabef5fca8b04e9392f20c986c0724a7c3.js"></script>
-    <title>2.2.1. Lab – Create a JWT Provider</title>
+    <title>2.1.1. Lab – Create a JWT Provider</title>
   
 
   <meta charset="utf-8">
@@ -14,7 +14,7 @@
   <!-- F5 metadata -->
   <meta name="kb_doc_type" content="Manual"/>
   <meta name="kb_doc_type" content="User Guide"/>
-  <meta name="title" content="2.2.1. Lab – Create a JWT Provider"/>
+  <meta name="title" content="2.1.1. Lab – Create a JWT Provider"/>
   <meta name="product" content="API Protection"/>
   <meta name="version" content=""/>
   <meta name="updated_date"  content="None"/>
@@ -36,7 +36,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>2.2.1. Lab – Create a JWT Provider &#8212; API Protection  documentation</title>
+    <title>2.1.1. Lab – Create a JWT Provider &#8212; API Protection  documentation</title>
     <link rel="stylesheet" href="../../_static/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/css/f5_agility_theme.css" type="text/css" />
@@ -51,8 +51,8 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.2.2. Lab – Create an API Protection Profile" href="lab002.html" />
-    <link rel="prev" title="2.2. Module – Deploy an API Protection Profile" href="module1.html" />
+    <link rel="next" title="2.1.2. Lab – Create an API Protection Profile" href="lab002.html" />
+    <link rel="prev" title="2.1. Module – Deploy an API Protection Profile" href="module1.html" />
   </head><body>
   <div id="clouddocs-header"></div>
 
@@ -75,11 +75,11 @@
         <h5>Current Page</h5>
         <span class="nav-sidebartoc">
             <ul>
-<li><a class="reference internal" href="#">2.2.1. Lab – Create a JWT Provider</a><ul>
-<li><a class="reference internal" href="#task-create-a-key-configuration">2.2.1.1. Task – Create a key configuration</a></li>
-<li><a class="reference internal" href="#task-create-an-authorization-provider">2.2.1.2. Task – Create an Authorization provider</a></li>
-<li><a class="reference internal" href="#task-customize-the-token-configuration">2.2.1.3. Task – Customize the Token Configuration</a></li>
-<li><a class="reference internal" href="#id1">2.2.1.4. Task – Customize the Token Configuration</a></li>
+<li><a class="reference internal" href="#">2.1.1. Lab – Create a JWT Provider</a><ul>
+<li><a class="reference internal" href="#task-create-a-key-configuration">2.1.1.1. Task – Create a key configuration</a></li>
+<li><a class="reference internal" href="#task-create-an-authorization-provider">2.1.1.2. Task – Create an Authorization provider</a></li>
+<li><a class="reference internal" href="#task-customize-the-token-configuration">2.1.1.3. Task – Customize the Token Configuration</a></li>
+<li><a class="reference internal" href="#task-create-a-jwt-provider">2.1.1.4. Task – Create a JWT Provider</a></li>
 </ul>
 </li>
 </ul>
@@ -92,8 +92,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">1. Getting Started</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../class1.html">2. Class - API Protection</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../module1/module1.html">2.1. Module – Deploy API Protection using Guided Configuration</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.2. Module – Deploy an API Protection Profile</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="module1.html">2.1. Module – Deploy an API Protection Profile</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../examples.html">3. Examples of Common Formatting</a></li>
@@ -113,7 +112,7 @@
     <article class="docs-container site-article-inner">
             <nav class="site-breadcrumb-nav site-nav">
           <ul class="site-breadcrumb-list">
-            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.2.1. Lab – Create a JWT Provider</li>
+            <li class="breadcrumb-item"><button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn site-hidden"><i class="fa fa-align-justify"></i></button>&#x20 <a href="/">Community Training Classes &amp; Labs</a> &gt; <a href="../../index.html">API Protection </a> &gt; 2.1.1. Lab – Create a JWT Provider</li>
           </ul>
       </nav>
       
@@ -121,45 +120,55 @@
 
     
   <div class="section" id="lab-create-a-jwt-provider">
-<h1>2.2.1. Lab – Create a JWT Provider<a class="headerlink" href="#lab-create-a-jwt-provider" title="Permalink to this headline">¶</a></h1>
+<h1>2.1.1. Lab – Create a JWT Provider<a class="headerlink" href="#lab-create-a-jwt-provider" title="Permalink to this headline">¶</a></h1>
 <p>The cornerstone of the API protection profile is the ability to authorize users using JWT.  Unlike Guided Configuration that creates the JWT Provider for you based on a few defined parameters, you must create the provider manually.</p>
 <div class="section" id="task-create-a-key-configuration">
-<h2>2.2.1.1. Task – Create a key configuration<a class="headerlink" href="#task-create-a-key-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.1.1. Task – Create a key configuration<a class="headerlink" href="#task-create-a-key-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ensure you are logged into BIGIP1</p>
+</div>
 <ol class="arabic simple">
 <li>From the webbrowser, click on the <strong>Access</strong> tab located on the left side.</li>
 </ol>
-<p><img alt="image0" src="../../_images/image0002.png" /></p>
+<p><img alt="image0" src="../../_images/image000.png" /></p>
 <ol class="arabic simple" start="2">
-<li>Navigate to Federation &gt;&gt; JSON Web Token &gt;&gt; Key Configuration.  Click the <strong>+</strong> symbol.</li>
+<li>Navigate to Federation &gt;&gt; JSON Web Token &gt;&gt; Key Configuration.  Click the  <strong>+ (Plus Symbol)</strong>.</li>
 </ol>
-<p><img alt="image1" src="../../_images/image0012.png" /></p>
+<p><img alt="image1" src="../../_images/image001.png" /></p>
 <ol class="arabic simple" start="3">
 <li>Configure the following parameters:</li>
 </ol>
-<p>-Name: <strong>api-jwt-key</strong>
--ID: <strong>lab</strong>
--Octet: <strong>Octet</strong>
--Signing Algorithm: HS256
--Shared Secret: <strong>secret</strong></p>
+<ul class="simple">
+<li>Name: <strong>api-jwt-key</strong></li>
+<li>ID: <strong>lab</strong></li>
+<li>Octet: <strong>Octet</strong></li>
+<li>Signing Algorithm: <strong>HS256</strong></li>
+<li>Shared Secret: <strong>secret</strong></li>
+</ul>
 <ol class="arabic simple" start="4">
 <li>Click <strong>Save</strong></li>
 </ol>
-<p><img alt="image2" src="../../_images/image0021.png" /></p>
+<p><img alt="image2" src="../../_images/image002.png" /></p>
 </div>
 <div class="section" id="task-create-an-authorization-provider">
-<h2>2.2.1.2. Task – Create an Authorization provider<a class="headerlink" href="#task-create-an-authorization-provider" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.1.2. Task – Create an Authorization provider<a class="headerlink" href="#task-create-an-authorization-provider" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="5">
-<li>Navigate to Federation &gt;&gt; OAuth Client/Resource Server &gt;&gt; Provider.  Click the <strong>+</strong> symbol.</li>
+<li>Navigate to Federation &gt;&gt; OAuth Client/Resource Server &gt;&gt; Provider.  Click the <strong>+ (Plus Symbol)</strong>.</li>
 </ol>
-<p><img alt="image3" src="../../_images/image0031.png" />
-6. Configure the following parameters:</p>
-<p>-Name: <strong>api-as-provider</strong>
--Trusted Certificate Authorities: <strong>ca.acme.com.crt</strong>
--OpenID URL: replace f5-oauth.local with prebuilt-as.acme.com</p>
+<p><img alt="image3" src="../../_images/image003.png" /></p>
+<ol class="arabic simple" start="6">
+<li>Configure the following parameters:</li>
+</ol>
+<ul class="simple">
+<li>Name: <strong>api-as-provider</strong></li>
+<li>Trusted Certificate Authorities: <strong>ca.acme.com.crt</strong></li>
+<li>OpenID URL: replace f5-oauth.local with <strong>prebuilt-as.acme.com</strong></li>
+</ul>
 <ol class="arabic simple" start="7">
 <li>Click Discover</li>
 </ol>
-<p><img alt="image4" src="../../_images/image0041.png" /></p>
+<p><img alt="image4" src="../../_images/image004.png" /></p>
 <ol class="arabic simple" start="8">
 <li>The Authentication URI, Token URI, Token Validation Scope URI, and UserInfo URI should be updated.</li>
 </ol>
@@ -169,9 +178,9 @@
 </ol>
 </div>
 <div class="section" id="task-customize-the-token-configuration">
-<h2>2.2.1.3. Task – Customize the Token Configuration<a class="headerlink" href="#task-customize-the-token-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>2.1.1.3. Task – Customize the Token Configuration<a class="headerlink" href="#task-customize-the-token-configuration" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="10">
-<li>Navigate to Federation &gt;&gt; JSON Web Token &gt;&gt; Token Configuration.  Click the <strong>+</strong> symbol.</li>
+<li>Navigate to Federation &gt;&gt; JSON Web Token &gt;&gt; Token Configuration. Click <strong>Token Configuration</strong>, not the + (Plus Symbol)</li>
 </ol>
 <p><img alt="image6" src="../../_images/image006.png" /></p>
 <ol class="arabic simple" start="11">
@@ -184,11 +193,11 @@
 </ol>
 <p><img alt="image8" src="../../_images/image008.png" /></p>
 </div>
-<div class="section" id="id1">
-<h2>2.2.1.4. Task – Customize the Token Configuration<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-create-a-jwt-provider">
+<h2>2.1.1.4. Task – Create a JWT Provider<a class="headerlink" href="#task-create-a-jwt-provider" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple" start="14">
 <li><ol class="first arabic" start="10">
-<li>Navigate to Federation &gt;&gt; JSON Web Token &gt;&gt; Provider List.  Click the <strong>+</strong> symbol.</li>
+<li>Navigate to Federation &gt;&gt; JSON Web Token &gt;&gt; Provider List.  Click the <strong>+ (Plus Symbol)</strong>.</li>
 </ol>
 </li>
 </ol>
@@ -208,10 +217,10 @@
      <div class="row next-prev-btn-row">
        <div class="col-lg-12">
        
-        <a href="module1.html" title="2.2. Module – Deploy an API Protection Profile" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
+        <a href="module1.html" title="2.1. Module – Deploy an API Protection Profile" accesskey="p" class="btn btn-primary pull-left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Previous</a>
        
        
-          <a href="lab002.html" title="2.2.2. Lab – Create an API Protection Profile" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+          <a href="lab002.html" title="2.1.2. Lab – Create an API Protection Profile" accesskey="n" class="btn btn-primary pull-right">Next <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
        
      </div>
      </div>

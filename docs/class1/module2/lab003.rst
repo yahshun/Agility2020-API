@@ -4,7 +4,7 @@ Lab – Create the api.acme.com virtual server
 In this section, you will define which components you want to create as part of the API protection configuration
 
 
-Task – create a virtual server
+Task – Create a virtual server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -13,20 +13,19 @@ Task – create a virtual server
 
 |image18|
 
-2. Navigate to Virtual Servers >> Virtual Server List.  Click the **+** symbol.
+2. Navigate to Virtual Servers >> Virtual Server List.  Click the **+ (plus symbol)**.
 
 |image19|
 
 3. Enter the following Perimeters
 
--Name: **api.acme.com**
--Destination Address/Mask: **10.1.10.102**
--Service Port: **443**
--http Profile (Client): **http**
--SSL Profile(Client): **f5demo**
--SSL Profile(Server): **prebuilt-apiadmin-serverssl**
--Source Address Translation: **Auto Map**
--API Protection: **api-protection**
+- Name: **api.acme.com**
+- Destination Address/Mask: **10.1.10.102**
+- Service Port: **443**
+- http Profile (Client): **http**
+- SSL Profile(Client): **f5demo**
+- Source Address Translation: **Auto Map**
+- API Protection: **api-protection**
 
 4. Click **Finished**
 

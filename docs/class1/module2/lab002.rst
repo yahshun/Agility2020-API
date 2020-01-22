@@ -11,15 +11,15 @@ Task – Create an API Protection Profile
 
 |image0|
 
-2. Navigate to API Protection >> Profile.  Click the **+** symbol.
+2. Navigate to API Protection >> Profile.  Click the **+ (plus symbol)**.
 
 |image11|
 
-..note json file is located on the jumpbox in c:\Labfiles\Agility2020-API Protection
+.. note :: json file is located on the jumpbox in c:\\Labfiles\\Agility2020-API Protection
 
 3. Enter the Follow Perimeters
 
-- Name: **API-Protection**
+- Name: **api-protection**
 - OpenAPI File: **Active Directory OpenAPI.json**
 - SSL Profile: **prebuilt-apiadmin-serverssl**
 - DNS Resolver: **prebuilt-dns-resolver**
@@ -41,16 +41,17 @@ Task – Explorer the Path Configuration
 |image13|
 
 
-Task – Associates a JWT Provider
+Task – Associate a JWT Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 9. Click **Access Control** from the top ribbon
-10. Click **Edit**
+10. Click **Edit (Per Request Policy)**
 
 |image14|
 
 11. Notice the same paths displayed in the API Protection profile appear here.  Currently there is no fine-grain access control.  We will implement it later in the lab.
-12. Click the **+** symbol next the Subroutine: OAuth Scope Check AuthZ
+
+12. Click the **+ (plus symbol)** next the Subroutine **OAuth Scope Check AuthZ** to expand its properties: 
 
 |image15|
 

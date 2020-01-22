@@ -9,8 +9,8 @@ Using F5’s Advanced WAF module in conjunction with Access Policy Managers(APM)
 During this hands-on lab you will learn how to configure the following:
 
 •	Build an API protection profile using OpenAPI spec files 
-•	Configure the BIG-IP as resource server for OAuth and OIDC for course-grain access control
-•	Configure APM’s per-request policy engineer to provide fine-grain access control 
+•	Configure the BIG-IP as OAuth Resource Server for course-grain access control
+•	Configure APM’s per-request policy engine to provide fine-grain access control 
 •	Configure Advanced WAF to protect against common API attacks
 
 Expected time to complete: **1 hour**
