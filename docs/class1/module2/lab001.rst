@@ -1,18 +1,18 @@
 Lab – Create a JWT Provider
------------------------------------------
+===========================
 
-The cornerstone of the API protection profile is the ability to authorize users using JWT.  Unlike Guided Configuration that creates the JWT Provider for you based on a few defined parameters, you must create the provider manually.
+The cornerstone of the API protection profile is the ability to authorize users using JWT. Unlike Guided Configuration that creates the JWT Provider for you based on a few defined parameters, you must create the provider manually.
 
 Task – Create a key configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 .. note :: Ensure you are logged into BIGIP1
 
-1. From the webbrowser, click on the **Access** tab located on the left side.
+1. From the web browser, click on the **Access** tab located on the left side.
 
 |image0|
 
-2. Navigate to Federation >> JSON Web Token >> Key Configuration.  Click the  **+ (Plus Symbol)**.
+2. Navigate to Federation >> JSON Web Token >> Key Configuration. Click the  **+ (Plus Symbol)**
 
 |image1|
 
@@ -29,57 +29,60 @@ Task – Create a key configuration
 |image2|
 
 
-Task – Create an Authorization provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Create an Authorization Provider
+---------------------------------------
 
-5. Navigate to Federation >> OAuth Client/Resource Server >> Provider.  Click the **+ (Plus Symbol)**.
+1. Navigate to Federation >> OAuth Client/Resource Server >> Provider. Click the **+ (Plus Symbol)**
 
 |image3|
 
-6. Configure the following parameters:
+2. Configure the following parameters:
 
 - Name: **api-as-provider**
 - Trusted Certificate Authorities: **ca.acme.com.crt**
 - OpenID URL: replace f5-oauth.local with **prebuilt-as.acme.com**
 
-7. Click Discover
+3. Click Discover
 
 |image4|
 
-8.  The Authentication URI, Token URI, Token Validation Scope URI, and UserInfo URI should be updated.
+4. The Authentication URI, Token URI, Token Validation Scope URI, and UserInfo URI should be updated
 
 |image5|
 
-9. Click **Save** 
+5. Click **Save**
 
 
 Task – Customize the Token Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------
 
-10. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol) 
+1. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol)
 
 |image6|
 
-11. Click on **auto_jwt_api-as-provider**
+2. Click on **auto_jwt_api-as-provider**
 
 |image7|
 
-12. Move **api-jwk-key** from Available to Allowed
-13. Click **save**
+3. Move **api-jwk-key** from Available to Allowed
+
+4. Click **Save**
 
 |image8|
 
 
 Task – Create a JWT Provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
-14. 10. Navigate to Federation >> JSON Web Token >> Provider List.  Click the **+ (Plus Symbol)**.
+1. Navigate to Federation >> JSON Web Token >> Provider List. Click the **+ (Plus Symbol)**
 
 |image9|
 
-15. Enter the name: **as-jwt-provider**
-16. Click **add** so api-as-provider is added to list of providers
-17. Click **Save**
+2. Enter the name: **as-jwt-provider**
+
+3. Click **Add** so api-as-provider is added to list of providers
+
+4. Click **Save**
 
 |image10|
 
@@ -94,7 +97,3 @@ Task – Create a JWT Provider
 .. |image8| image:: /_static/class1/module2/image008.png
 .. |image9| image:: /_static/class1/module2/image009.png
 .. |image10| image:: /_static/class1/module2/image010.png
-
-
-
-

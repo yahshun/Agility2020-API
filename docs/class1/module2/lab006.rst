@@ -1,117 +1,126 @@
 Lab – Implement Rate Limiting
---------------------------------------------
+=============================
 
-The API Protection profile allows a BIG-IP administrator to throttle the amount of connections to an API through the use of Key Names. 
+The API Protection Profile allows a BIG-IP administrator to throttle the amount of connections to an API through the use of Key Names.
 
 
 Task – Update the pre-built Key Names
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
-#. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
+1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
 
-#. Login into the BIG-IP Configuration Utility with the following credentials:
+2. Login into the BIG-IP Configuration Utility with the following credentials:
 - User: **admin**
 - Password: **admin**
 
-
-#. Click on the **Access** tab located on the left side.
+3. Click on the **Access** tab located on the left side
 
 |image0|
 
-#. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile.  Not the + Plus symbol.
+4. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API Protection Profile (not the + Plus symbol)
 
 |image48|
 
-#. Click **API-Protection**
+5. Click **API-Protection**
 
 |image64|
 
-#. Click **Rate Limiting** from the top ribbon
+6. Click **Rate Limiting** from the top ribbon
 
 |image69|
 
 .. Note ::  The API protection profile default settings contains five Key Names created, but their values are empty.  Additional Keys can be created if necessary
 
 
-#. Click **api-protection_auto_rate_limiting_key1**
+7. Click **api-protection_auto_rate_limiting_key1**
 
-|image70| 
+|image70|
 
-#. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.user}**
-#. Click **Edit**
+8. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.user}**
+
+9. Click **Edit**
 
 |image71|
 
-#. Click **api-protection_auto_rate_limiting_key2**
+10. Click **api-protection_auto_rate_limiting_key2**
 
-|image72| 
+|image72|
 
-#. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.groupid}**
-#. Click **Edit**
+11. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.groupid}**
+
+12. Click **Edit**
 
 |image73|
 
-#. Click **api-protection_auto_rate_limiting_key3**
+13. Click **api-protection_auto_rate_limiting_key3**
 
-|image74| 
+|image74|
 
-#. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.client}**
-#. Click **Edit**
+14. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.client}**
+
+15. Click **Edit**
 
 |image75|
 
-#. Click **api-protection_auto_rate_limiting_key4**
+16. Click **api-protection_auto_rate_limiting_key4**
 
-|image76| 
+|image76|
 
-#. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.tier}**
-#. Click **Edit**
+17. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.tier}**
+
+18. Click **Edit**
 
 |image77|
 
-#. Click **api-protection_auto_rate_limiting_key5**
+19. Click **api-protection_auto_rate_limiting_key5**
 
-|image78| 
+|image78|
 
-#. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.org}**
-#. Click **Edit**
+20. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.org}**
+
+21. Click **Edit**
 
 |image79|
 
-#. Click **Save**
+22. Click **Save**
 
 |image80|
 
-Task – Create a Rate Limiting Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Click **Create** in the rate limiting section
+Task – Create a Rate Limiting Policy
+------------------------------------
+
+1. Click **Create** in the rate limiting section
 
 |image81|
 
-#. Enter the Name **acme-rate-limits**
-#.  Move all five keys under Selected Kyes
-#. Enter 10 for the number of requests per minutes
-#. Enter 5 for the number requests per seconds
-#. Click Add.
+2. Enter the Name **acme-rate-limits**
+
+3. Move all five keys under **Selected Keys**
+
+4. Enter **10** for the number of requests per minute
+
+5. Enter **5** for the number requests per second
+
+6. Click **Add**.
 
 |image82|
 
-#. Click **Save**
+7. Click **Save**
 
 |image83|
 
 
 
 Task – Apply the Rate Limiting Policy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------
 
+.. TODO:: Add task content
 
 Task – Test Rate Limiting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
-
-
+.. TODO:: Add task content
 
 
 
@@ -164,8 +173,4 @@ Task – Test Rate Limiting
 .. |image81| image:: /_static/class1/module2/image081.png
 .. |image82| image:: /_static/class1/module2/image082.png
 .. |image83| image:: /_static/class1/module2/image083.png
-
-
-
-
 

@@ -124,7 +124,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = classname
-copyright = u'2017, F5 Networks, Inc.'
+copyright = u'2020, F5 Networks, Inc.'
 author = u'F5 Networks, Inc.'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -146,7 +146,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'examples.rst', 'markdown.md']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -256,6 +256,3 @@ texinfo_documents = [
      author, classname, classname,
      'Training'),
 ]
-
-
-

@@ -1,140 +1,140 @@
 Lab – API Protection Dashboard
---------------------------------------------
+==============================
 
-Organizations change and with that change new APIs are introduced requiring modifications to the API Gateway.  In this section you will learn how to add additional paths 
+Organizations change. With this change, new APIs are introduced requiring modifications to the API Gateway. In this section you will learn how to add additional paths.
 
-Task – Verify no access to API 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Verify no access to API
+------------------------------
 
-1. From the Jumpbox, open Postman 
+1. From the Jumpbox, open **Postman**
 
 |image23|
 
-2. Expand the API Protection Collection
+2. Expand the **API Protection** Collection
 
-6. Select the request **PATCH-Change User Password-JWT**
+3. Select the request **PATCH-Change User Password-JWT**
 
 |image63|
 
-7. Select the **Authorization** Tab
+4. Select the **Authorization** tab
 
 |image43|
 
 
-8. Click **Get New Access Token**
+5. Click **Get New Access Token**
 
 |image44|
 
-9. Review the Postman Configuration.  Nothing should need to be modified
-10. Click **Request Token**
+6. Review the Postman Configuration.  Nothing should need to be modified
+
+7. Click **Request Token**
 
 |image27|
 
-11. Login using Username: **user1**, Password: **user1**
+8. Login using Username: **user1**, Password: **user1**
 
 |image28|
 
-12. Scroll down the token and click **Use Token**
+9. Scroll down to the token and click **Use Token**
 
 |image29|
 
-13. Notice the Access Token field is now populated
+10. Notice the Access Token field is now populated
 
 |image34|
 
-14. Click **Send**
-15. You receive a **403 Forbidden** because the the new API has not been published at the Gateway
+11. Click **Send**
+
+12. You receive a **403 Forbidden** response status code because the the new API has not been published at the Gateway
 
 |image39|
 
 
 
+Task – Add the new API path
+---------------------------
 
-Task – Add the new API path 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
 
-#. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
-
-#. Login into the BIG-IP Configuration Utility with the following credentials:
+2. Login into the BIG-IP Configuration Utility with the following credentials:
 - User: **admin**
 - Password: **admin**
 
-
-#. Click on the **Access** tab located on the left side.
+3. Click on the **Access** tab located on the left side
 
 |image0|
 
-#. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile.  Not the + Plus symbol.
+4. Navigate to API Protection >> Profile. Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
-#. Click **API-Protection**
+5. Click **API-Protection**
 
 |image64|
 
-#. Click **Paths**
+6. Click **Paths**
 
 |image65|
 
-#. Click **Create**
+7. Click **Create**
 
 |image66|
 
-#. The URI **/aduser/password**
-#. Select the Method **PATCH**
-#. Click **Add**
+8. The URI **/aduser/password**
+
+9. Select the Method **PATCH**
+
+10. Click **Add**
 
 |image67|
 
-#. Click **Save**
+11. Click **Save**
 
 |image68|
 
 
-Task –  Test Access to the new path  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task –  Test Access to the new path
+-----------------------------------
 
-#. From the Jumpbox, open Postman 
+1. From the Jumpbox, open **Postman**
 
 |image23|
 
-#. Expand the **API Protection** Collection
+2. Expand the **API Protection** Collection
 
-
-#. Select the request **PATCH-Change User Password-JWT**
+3. Select the request **PATCH-Change User Password-JWT**
 
 |image45|
 
-#. Select the **Authorization** Tab
-#. Click **Get New Access Token**
+4. Select the **Authorization** tab
+
+5. Click **Get New Access Token**
 
 |image43|
 
-#. Review the Postman Configuration.  Nothing should need to be modified
-#. Click **Request Token**
+6. Review the Postman Configuration. Nothing should need to be modified
+
+7. Click **Request Token**
 
 |image27|
 
-#. Login using Username: **user1**, Password: **user1**
+8. Login using Username: **user1**, Password: **user1**
 
 |image28|
 
-#. Scroll down the token and click **Use Token**
+9. Scroll down to the token and click **Use Token**
 
 |image29|
 
-
-#. The Token field is now populated
+10. The **Token** field is now populated
 
 |image34|
 
-#. Click **Send**
+11. Click **Send**
 
-
-#. You receive a 200 OK.  The API is now published.
+12. You receive a **200 OK** response status code. The API is now published
 
 |image46|
-
 
 
 .. |image0| image:: /_static/class1/module2/image000.png
@@ -171,9 +171,4 @@ Task –  Test Access to the new path
 .. |image66| image:: /_static/class1/module2/image066.png
 .. |image67| image:: /_static/class1/module2/image067.png
 .. |image68| image:: /_static/class1/module2/image068.png
-
-
-
-
-
 

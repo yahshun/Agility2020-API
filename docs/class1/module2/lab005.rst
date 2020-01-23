@@ -1,184 +1,189 @@
-Lab – Implement Fine-Grain Access Controls
---------------------------------------------
+Lab – Implement Fine-Grained Access Controls
+============================================
 
-Up to this point any authenticated user to the API is authorized to use them.  In this section we will strict user1's ability to create users, but will still be able to modify the user's employee number.
+Up to this point any authenticated user to the API is authorized to use them. In this section we will restrict user1's ability to create users, but will still be able to modify the user's employee number.
 
 Task – Retrieve Group Membership Subsession Variable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 
-1. From the Jumpbox decktop click on the **BIG-IP1** Putty Icon 
+1. From the Jumpbox decktop click on the **BIG-IP1** Putty Icon
 
 |image47|
 
 .. TODO::   NEED TO TALK TO LUCAS
 
 
+Task – Edit the per-request policy
+----------------------------------
 
-Task – Edit the per-request policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
 
-#. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
-
-#. Login into the BIG-IP Configuration Utility with the following credentials:
+2. Login into the BIG-IP Configuration Utility with the following credentials:
 User: **admin**
 Password: **admin**
 
-
-#. Click on the **Access** tab located on the left side.
+3. Click on the **Access** tab located on the left side
 
 |image0|
 
-#. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile.  Not the + Plus symbol.
+4. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
-#. Click **Edit** Under Per-Request Policy
+5. Click **Edit** Under Per-Request Policy
 
 |image49|
 
-#. Click the **+ (Plus Symbol)** on the GET /aduser/create branch
+6. Click the **+ (Plus Symbol)** on the GET /aduser/create branch
 
 |image50|
 
-#. Click the **General Purpose** Tab
-#. Select **Empty** 
-#. Click **Add Item**
+7. Click the **General Purpose** tab
+
+8. Select **Empty**
+
+9. Click **Add Item**
 
 |image51|
 
-#. Enter the name **Claim Check**
+10. Enter the name **Claim Check**
 
 |image53|
 
-#. Click the **Branch Rules** Tab
-#. Click the **Add Branch Rule**
+11. Click the **Branch Rules** tab
+
+12. Click the **Add Branch Rule**
 
 |image52|
 
-#. Enter Name **CreateUser**
-#. Click **Change**
+13. Enter Name **CreateUser**
+
+14. Click **Change**
 
 |image54|
 
 
-#. Click the **Advanced** Tab
-#. Enter the string in the notes section to restrict access to only members of the **CreateUser** Group
-#. Click **Finished**
+15. Click the **Advanced** tab
+
+16. Enter the string in the notes section to restrict access to only members of the **CreateUser** Group
+
+17. Click **Finished**
 
 .. Note :: expr {[mcget {subsession.oauth.scope./Common/as-jwt-provider.jwt.groups}] contains "CreateUser"}
 
 |image55|
 
-#. Click **Save**
+18. Click **Save**
 
 |image56|
 
-#. Click **Reject** on the CreateUser Branch to permit access 
+19. Click **Reject** on the CreateUser Branch to permit access
 
 |image57|
 
-#. Select **Allow**
-#. Click **Save**
+20. Select **Allow**
+
+21. Click **Save**
 
 |image58|
 
-#. Click **Allow** on the fallback branch to deny unprivileged requests
+22. Click **Allow** on the fallback branch to deny unprivileged requests
 
 |image59|
 
-#. Select **Deny**
-#. Click **Save**
+23. Select **Deny**
+
+24. Click **Save**
 
 |image60|
 
-#. Review the Policy Flow.
+25. Review the Policy Flow
 
 |image61|
 
 
-Task – Test the Fine-Grain Access Control with user1  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Test the Fine-Grained Access Control with user1
+------------------------------------------------------
 
 
-#. From the Jumpbox, open Postman 
+1. From the Jumpbox, open **Postman**
 
 |image23|
 
-#. Expand the **API Protection** Collection
+2. Expand the **API Protection** Collection
 
-
-#. Select the request **GET-Create User-JWT-Pass**
+3. Select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-#. Select the **Authorization** Tab
-#. Click **Get New Access Token**
+4. Select the **Authorization** tab
+
+5. Click **Get New Access Token**
 
 |image44|
 
-#. Review the Postman Configuration.  Nothing should need to be modified
-#. Click **Request Token**
+6. Review the Postman Configuration.  Nothing should need to be modified
+
+7. Click **Request Token**
 
 |image27|
 
-#. Login using Username: **user1**, Password: **user1**
+8. Login using Username: **user1**, Password: **user1**
 
 |image28|
 
-#. Scroll down the token and click **Use Token**
+9. Scroll down to the token and click **Use Token**
 
 |image29|
 
 
-#. The Token field is now populated
+10. The **Token** field is now populated
 
 |image34|
 
-#. Click **Send**
+11. Click **Send**
 
-
-#. You receive a 403 Forbidden when using user1. User1 does not contain the proper claim data.
+12. You receive a **403 Forbidden** response status code when using user1. User1 does not contain the proper claim data.
 
 
 |image26|
 
 
-Task – Test the Fine-Grain Access Control with user2  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Test the Fine-Grained Access Control with user2
+------------------------------------------------------
 
 
-#. Select the request **GET-Create User-JWT-Pass**
+1. Select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-#. Select the **Authorization** Tab
-#. Click **Get New Access Token**
+2. Select the **Authorization** tab
+
+3. Click **Get New Access Token**
 
 |image44|
 
-#. Review the Postman Configuration.  Nothing should need to be modified
-#. Click **Request Token**
+4. Review the Postman Configuration. Nothing should need to be modified
+
+5. Click **Request Token**
 
 |image27|
 
-#. Login using Username: **user2**, Password: **user2**
+6. Login using Username: **user2**, Password: **user2**
 
 |image62|
 
-#. Scroll down the token and click **Use Token**
+7. Scroll down to the token and click **Use Token**
 
 |image29|
 
-
-#. The Token field is now populated
+8. The **Token** field is now populated
 
 |image34|
 
-#. Click **Send**
+9. Click **Send**
 
-
-#. You receive a 200 OK when using user2. User2 does contain the proper claim data.
-
+10. You receive a **200 OK** response status code when using user2. User2 does contain the proper claim data
 
 |image46|
 
@@ -211,8 +216,4 @@ Task – Test the Fine-Grain Access Control with user2
 .. |image61| image:: /_static/class1/module2/image061.png
 .. |image62| image:: /_static/class1/module2/image062.png
 .. |image63| image:: /_static/class1/module2/image063.png
-
-
-
-
 
