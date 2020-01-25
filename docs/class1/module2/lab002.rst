@@ -34,11 +34,11 @@ Task – Create an API Protection Profile
 Task – Explore the Path Configuration
 -------------------------------------
 
-1. Note the Spec file contained four paths to various URIs
+6. Note the Spec file contained four paths to various URIs
 
-2. Each URI only supports the Method GET
+7. Each URI only supports the Method GET
 
-3. The APIs server URL is http://adapi.f5lab.local:81
+8. The APIs server URL is http://adapi.f5lab.local:81
 
 |image13|
 
@@ -46,31 +46,31 @@ Task – Explore the Path Configuration
 Task – Associate a JWT Provider
 -------------------------------
 
-4. Click **Access Control** from the top ribbon
+9. Click **Access Control** from the top ribbon
 
-5. Click **Edit (Per Request Policy)**
+10. Click **Edit (Per Request Policy)**
 
 |image14|
 
-6. Notice the same paths displayed in the API Protection profile appear here. Currently there is no fine-grained access control.  We will implement it later in the lab
+11. Notice the same paths displayed in the API Protection profile appear here. Currently there is no fine-grained access control.  We will implement it later in the lab
 
-7. Click the **+ (plus symbol)** next the Subroutine **OAuth Scope Check AuthZ** to expand its properties:
+12. Click the **+ (plus symbol)** next the Subroutine **OAuth Scope Check AuthZ** to expand its properties:
 
 |image15|
 
 .. note :: The OAuth scope agent currently has a red asterisk since no provider is associated with it.
 
-8. Click **OAuth Scope**
+13. Click **OAuth Scope**
 
 |image16|
 
-9. Enter the following parameters:
+14. Enter the following parameters:
 
 - Token Validation Mode: **Internal**
 - JWT Provider List: **as-jwt-provider**
 - Response: **api-protection_auto_response1**
 
-10. Click **Save**
+15. Click **Save**
 
 |image17|
 

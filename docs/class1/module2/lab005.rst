@@ -9,7 +9,7 @@ Task – Retrieve Group Membership Subsession Variable
 .. note :: In order to implement fine-grained control the session variables that contain the data must be known. This first session shows you how to display the session variables and their values.
 
 
-1. From the Jumpbox, open **Postman** 
+1. From the Jumpbox, open **Postman**
 
 |image23|
 
@@ -23,12 +23,12 @@ Task – Retrieve Group Membership Subsession Variable
 
 |image43|
 
-
 5. Click **Get New Access Token**
 
 |image44|
 
 6. Review the Postman Configuration. Nothing should need to be modified
+
 7. Click **Request Token**
 
 |image27|
@@ -41,11 +41,11 @@ Task – Retrieve Group Membership Subsession Variable
 
 |image29|
 
-10. Notice the Access Token field is now populated
+10. Notice the **Access Token** field is now populated
 
 |image34|
 
-11. From the Jumpbox desktop click on the **BIG-IP1** Putty icon 
+11. From the Jumpbox desktop click on the **BIG-IP1** Putty icon
 
 |image47|
 
@@ -67,13 +67,11 @@ Task – Retrieve Group Membership Subsession Variable
 
 16. Exit the logs using Ctrl+Z
 
-17. Enter the command **sessiondump -subkeys <subsessionID>**.  
+17. Enter the command **sessiondump -subkeys <subsessionID>**
 
 |image86|
 
-
 18.  Scroll through input until you find the session variable for **subsession.oauth.scope.last.jwt.groups**
-
 
 |image87|
 
@@ -81,89 +79,88 @@ Task – Retrieve Group Membership Subsession Variable
 Task – Edit the per-request policy
 ----------------------------------
 
-1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
+19. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
 
-2. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
+20. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
 
-3. Login into the BIG-IP Configuration Utility with the following credentials:
+21. Login into the BIG-IP Configuration Utility with the following credentials:
 User: **admin**
 Password: **admin**
 
-4. Click on the **Access** tab located on the left side
+22. Click on the **Access** tab located on the left side
 
 |image0|
 
-5. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
+23. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
-6. Click **Edit** Under Per-Request Policy
+24. Click **Edit** Under Per-Request Policy
 
 |image49|
 
-7. Click the **+ (Plus Symbol)** on the GET /aduser/create branch
+25. Click the **+ (Plus Symbol)** on the GET /aduser/create branch
 
 |image50|
 
-8. Click the **General Purpose** tab
+26. Click the **General Purpose** tab
 
-9. Select **Empty**
+27. Select **Empty**
 
-10. Click **Add Item**
+28. Click **Add Item**
 
 |image51|
 
-11. Enter the name **Claim Check**
+29. Enter the name **Claim Check**
 
 |image53|
 
-12. Click the **Branch Rules** tab
+30. Click the **Branch Rules** tab
 
-13. Click the **Add Branch Rule**
+31. Click the **Add Branch Rule**
 
 |image52|
 
-14. Enter Name **CreateUser**
+32. Enter Name **CreateUser**
 
-15. Click **Change**
+33. Click **Change**
 
 |image54|
 
-16. Click the **Advanced** tab
+34. Click the **Advanced** tab
 
-17. Enter the string in the notes section to restrict access to only members of the **CreateUser** Group
+35. Enter the string in the notes section to restrict access to only members of the **CreateUser** Group
 
-18. Click **Finished**
+36. Click **Finished**
 
 .. Note :: expr {[mcget {subsession.oauth.scope./Common/as-jwt-provider.jwt.groups}] contains "CreateUser"}
 
 |image55|
 
-19. Click **Save**
+37. Click **Save**
 
 |image56|
-
-20. Click **Reject** on the CreateUser Branch to permit access
+38. Click **Reject** on the CreateUser Branch to permit access
 
 |image57|
 
-21. Select **Allow**
+39. Select **Allow**
 
-22. Click **Save**
+40. Click **Save**
 
 |image58|
 
-23. Click **Allow** on the fallback branch to deny unprivileged requests
+41. Click **Allow** on the fallback branch to deny unprivileged requests
 
 |image59|
 
-24. Select **Deny**
+42. Select **Deny**
 
-25. Click **Save**
+43. Click **Save**
 
 |image60|
 
-26. Review the Policy Flow
+44. Review the Policy Flow
 
 |image61|
 
@@ -171,43 +168,43 @@ Password: **admin**
 Task – Test the Fine-Grained Access Control with user1
 ------------------------------------------------------
 
-1. From the Jumpbox, open **Postman**
+45. From the Jumpbox, open **Postman**
 
 |image23|
 
-2. Expand the **API Protection** Collection
+46. Expand the **API Protection** Collection
 
-3. Select the request **GET-Create User-JWT-Pass**
+47. Select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-4. Select the **Authorization** tab
+48. Select the **Authorization** tab
 
-5. Click **Get New Access Token**
+49. Click **Get New Access Token**
 
 |image44|
 
-6. Review the Postman Configuration. Nothing should need to be modified
+50. Review the Postman Configuration. Nothing should need to be modified
 
-7. Click **Request Token**
+51. Click **Request Token**
 
 |image27|
 
-8. Login using Username: **user1**, Password: **user1**
+52. Login using Username: **user1**, Password: **user1**
 
 |image28|
 
-9. Scroll down to the token and click **Use Token**
+53. Scroll down to the token and click **Use Token**
 
 |image29|
 
-10. The **Token** field is now populated
+54. The **Token** field is now populated
 
 |image34|
 
-11. Click **Send**
+55. Click **Send**
 
-12. You receive a **403 Forbidden** response status code when using user1. User1 does not contain the proper claim data.
+56. You receive a **403 Forbidden** response status code when using user1. User1 does not contain the proper claim data.
 
 |image26|
 
@@ -215,40 +212,39 @@ Task – Test the Fine-Grained Access Control with user1
 Task – Test the Fine-Grained Access Control with user2
 ------------------------------------------------------
 
-1. Select the request **GET-Create User-JWT-Pass**
+57. Select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-2. Select the **Authorization** tab
+58. Select the **Authorization** tab
 
-3. Click **Get New Access Token**
+59. Click **Get New Access Token**
 
 |image44|
 
-4. Review the Postman Configuration. Nothing should need to be modified
+60. Review the Postman Configuration. Nothing should need to be modified
 
-5. Click **Request Token**
+61. Click **Request Token**
 
 |image27|
 
-6. Login using Username: **user2**, Password: **user2**
+62. Login using Username: **user2**, Password: **user2**
 
 |image62|
 
-7. Scroll down to the token and click **Use Token**
+63. Scroll down to the token and click **Use Token**
 
 |image29|
 
-8. The **Token** field is now populated
+64. The **Token** field is now populated
 
 |image34|
 
-9. Click **Send**
+65. Click **Send**
 
-10. You receive a **200 OK** response status code when using user2. User2 does contain the proper claim data
+66. You receive a **200 OK** response status code when using user2. User2 does contain the proper claim data
 
 |image46|
-
 
 
 .. |image0| image:: /_static/class1/module2/image000.png

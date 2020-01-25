@@ -53,41 +53,41 @@ Task – Verify no access to API
 Task – Add the new API path
 ---------------------------
 
-1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
+13. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
 
-2. Login into the BIG-IP Configuration Utility with the following credentials:
+14. Login into the BIG-IP Configuration Utility with the following credentials:
 - User: **admin**
 - Password: **admin**
 
-3. Click on the **Access** tab located on the left side.
+15. Click on the **Access** tab located on the left side.
 
 |image0|
 
-4. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
+16. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
-5. Click **API-Protection**
+17. Click **API-Protection**
 
 |image64|
 
-6. Click **Paths**
+18. Click **Paths**
 
 |image65|
 
-7. Click **Create**
+19. Click **Create**
 
 |image66|
 
-8. The URI **/aduser/password**
+20. The URI **/aduser/password**
 
-9. Select the Method **PATCH**
+21. Select the Method **PATCH**
 
-10. Click **Add**
+22. Click **Add**
 
 |image67|
 
-11. Click **Save**
+23. Click **Save**
 
 |image68|
 
@@ -95,49 +95,46 @@ Task – Add the new API path
 Task –  Test Access to the new path
 -----------------------------------
 
-1. From the Jumpbox, open **Postman**
+24. From the Jumpbox, open **Postman**
 
 |image23|
 
-2. Expand the **API Protection** Collection
+25. Expand the **API Protection** Collection
 
 
-3. Select the request **PATCH-Change User Password-JWT**
+26. Select the request **PATCH-Change User Password-JWT**
 
 |image45|
 
-4. Select the **Authorization** tab
+27. Select the **Authorization** tab
 
-5. Click **Get New Access Token**
+28. Click **Get New Access Token**
 
 |image43|
 
-6. Review the Postman Configuration. Nothing should need to be modified
+29. Review the Postman Configuration. Nothing should need to be modified
 
-7. Click **Request Token**
+30. Click **Request Token**
 
 |image27|
 
-8. Login using Username: **user1**, Password: **user1**
+31. Login using Username: **user1**, Password: **user1**
 
 |image28|
 
-9. Scroll down to the token and click **Use Token**
+32. Scroll down to the token and click **Use Token**
 
 |image29|
 
-
-10. The **Token** field is now populated
+33. The **Token** field is now populated
 
 |image34|
 
-11. Click **Send**
+34. Click **Send**
 
-
-12. You receive a **200 OK** response status code. The API is now published
+35. You receive a **200 OK** response status code. The API is now published
 
 |image46|
-
 
 
 .. |image0| image:: /_static/class1/module2/image000.png

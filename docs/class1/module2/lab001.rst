@@ -32,41 +32,41 @@ Task – Create a key configuration
 Task – Create an Authorization Provider
 ---------------------------------------
 
-1. Navigate to Federation >> OAuth Client/Resource Server >> Provider. Click the **+ (Plus Symbol)**
+5. Navigate to Federation >> OAuth Client/Resource Server >> Provider. Click the **+ (Plus Symbol)**
 
 |image3|
 
-2. Configure the following parameters:
+6. Configure the following parameters:
 
 - Name: **api-as-provider**
 - Trusted Certificate Authorities: **ca.acme.com.crt**
 - OpenID URL: replace f5-oauth.local with **prebuilt-as.acme.com**
 
-3. Click Discover
+7. Click Discover
 
 |image4|
 
-4. The Authentication URI, Token URI, Token Validation Scope URI, and UserInfo URI should be updated
+8. The Authentication URI, Token URI, Token Validation Scope URI, and UserInfo URI should be updated
 
 |image5|
 
-5. Click **Save**
+9. Click **Save**
 
 
 Task – Customize the Token Configuration
 ----------------------------------------
 
-1. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol)
+10. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol)
 
 |image6|
 
-2. Click on **auto_jwt_api-as-provider**
+11. Click on **auto_jwt_api-as-provider**
 
 |image7|
 
-3. Move **api-jwk-key** from Available to Allowed
+12. Move **api-jwk-key** from Available to Allowed
 
-4. Click **Save**
+13. Click **Save**
 
 |image8|
 
@@ -74,15 +74,15 @@ Task – Customize the Token Configuration
 Task – Create a JWT Provider
 ----------------------------
 
-1. Navigate to Federation >> JSON Web Token >> Provider List. Click the **+ (Plus Symbol)**
+14. Navigate to Federation >> JSON Web Token >> Provider List. Click the **+ (Plus Symbol)**
 
 |image9|
 
-2. Enter the name: **as-jwt-provider**
+15. Enter the name: **as-jwt-provider**
 
-3. Click **Add** so api-as-provider is added to list of providers
+16. Click **Add** so api-as-provider is added to list of providers
 
-4. Click **Save**
+17. Click **Save**
 
 |image10|
 

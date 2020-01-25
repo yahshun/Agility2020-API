@@ -217,7 +217,7 @@ Task – Apply the Rate Limiting Policy
 Task – Test Rate Limiting
 -------------------------
 
-61. From the Jumpbox, open Postman 
+61. From the Jumpbox, open Postman
 
 |image23|
 
@@ -282,6 +282,7 @@ Task – Test Rate Limiting
 79. On the 6th request you begin to receive a **429 Too Many Requests** response status code
 
 |image99|
+
 
 .. |image0| image:: /_static/class1/module2/image000.png
 .. |image23| image:: /_static/class1/module2/image023.png
