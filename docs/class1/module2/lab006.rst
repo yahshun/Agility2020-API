@@ -3,126 +3,285 @@ Lab – Implement Rate Limiting
 
 The API Protection Profile allows a BIG-IP administrator to throttle the amount of connections to an API through the use of Key Names.
 
+Task – Test access pre-ratelimiting
+-----------------------------------
 
-Task – Update the pre-built Key Names
--------------------------------------
+1. From the Jumpbox, open **Postman**
 
-1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome).
+|image23|
 
-2. Login into the BIG-IP Configuration Utility with the following credentials:
+2. Expand the **API Protection** Collection
+
+3. Select the request **GET-Retrieve User Attributes-JWT-Pass**
+
+|image42|
+
+4. Select the **Authorization** Tab
+
+|image43|
+
+5. Click **Get New Access Token**
+
+|image44|
+
+6. Review the Postman Configuration.  Nothing should need to be modified
+
+7. Click **Request Token**
+
+|image27|
+
+8. Login using Username: **user1**, Password: **user1**
+
+|image28|
+
+9. Scroll down the token and click **Use Token**
+
+|image29|
+
+10. Notice the **Access Token** field is now populated
+
+|image34|
+
+11. Click **Send**
+
+12. You receive a **200 OK** response status code with attributes for user1 in the body of the response
+
+|image31|
+
+13. Click **Save**
+
+|image88|
+
+14. Click **Runner** located in the left corner
+
+|image89|
+
+15. Expand the **API Protection** collection
+
+|image90|
+
+16. Deselect all requests except **GET-Retrieve User Attributes-JWT-Pass**
+
+17. Set the iterations to **100**
+
+18. Click **Run API Protection**
+
+|image91|
+
+19. You receive a **200 OK** for every request
+
+|image92|
+
+
+Task – Define the rate limiting keys
+------------------------------------
+
+20. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
+
+21. Login into the BIG-IP Configuration Utility with the following credentials:
+
 - User: **admin**
 - Password: **admin**
 
-3. Click on the **Access** tab located on the left side
+22. Click on the **Access** tab located on the left side.
 
 |image0|
 
-4. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API Protection Profile (not the + Plus symbol)
+23. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile.  Not the + Plus symbol.
 
 |image48|
 
-5. Click **API-Protection**
+24. Click **api-protection**
 
 |image64|
 
-6. Click **Rate Limiting** from the top ribbon
+25. Click **Rate Limiting** from the top ribbon
+
 
 |image69|
 
 .. Note ::  The API protection profile default settings contains five Key Names created, but their values are empty.  Additional Keys can be created if necessary
 
+26. Click **api-protection_auto_rate_limiting_key1**
 
-7. Click **api-protection_auto_rate_limiting_key1**
+27. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.user}**
 
-|image70|
+28. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.user}**
 
-8. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.user}**
-
-9. Click **Edit**
+29. Click **Edit**
 
 |image71|
 
-10. Click **api-protection_auto_rate_limiting_key2**
+30. Click **api-protection_auto_rate_limiting_key2**
 
-|image72|
+31. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.groupid}**
 
-11. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.groupid}**
+32. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.groupid}**
 
-12. Click **Edit**
+33. Click **Edit**
 
 |image73|
 
-13. Click **api-protection_auto_rate_limiting_key3**
+34. Click **api-protection_auto_rate_limiting_key3**
 
 |image74|
 
-14. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.client}**
+35. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.client}**
 
-15. Click **Edit**
+36. Click **Edit**
 
 |image75|
 
-16. Click **api-protection_auto_rate_limiting_key4**
+37. Click **api-protection_auto_rate_limiting_key4**
 
-|image76|
+38. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.tier}**
 
-17. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.tier}**
-
-18. Click **Edit**
+39. Click **Edit**
 
 |image77|
 
-19. Click **api-protection_auto_rate_limiting_key5**
+40. Click **api-protection_auto_rate_limiting_key5**
 
 |image78|
 
-20. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.org}**
+41. Enter the Key Value **%{subsession.oauth.scope./Common/as-jwt-provider.jwt.org}**
 
-21. Click **Edit**
+42. Click **Edit**
 
 |image79|
 
-22. Click **Save**
+43. Click **Save**
 
 |image80|
-
 
 Task – Create a Rate Limiting Policy
 ------------------------------------
 
-1. Click **Create** in the rate limiting section
+44. Click **Create** in the rate limiting section
 
 |image81|
 
-2. Enter the Name **acme-rate-limits**
+45. Enter the Name **acme-rate-limits**
 
-3. Move all five keys under **Selected Keys**
+46. Move all five keys under **Selected Keys**
 
-4. Enter **10** for the number of requests per minute
+47. Enter **10** for the number of requests per minute
 
-5. Enter **5** for the number requests per second
+48. Enter **5** for the number requests per second
 
-6. Click **Add**.
+49. Click **Add**.
 
 |image82|
 
-7. Click **Save**
+50. Click **Save**
 
 |image83|
-
 
 
 Task – Apply the Rate Limiting Policy
 -------------------------------------
 
-.. TODO:: Add task content
+51. Click **Rate Limiting** from the ribbon
+
+|image93|
+
+52. Click **Edit** Per Request Policy
+
+|image94|
+
+53. Click the **+ (Plus Symbol)** on the **Out** branch of the **OAuth Scope Check AuthZ** Macro
+
+|image95|
+
+54. Click the **Traffic Management** tab
+
+55. Select **API Rate Limiting**
+
+56. Click **Add Item**
+
+|image96|
+
+57. Click **Add new entry**
+
+58. Select **acme-rate-limits**
+
+59. Click **Save**
+
+|image97|
+
+60. Verify the Rate Limiting agent now appears in the appropriate location
+
+|image98|
+
 
 Task – Test Rate Limiting
 -------------------------
 
-.. TODO:: Add task content
+61. From the Jumpbox, open Postman 
 
+|image23|
 
+62. Expand the API Protection Collection
+
+63. Select the request **GET-Retrieve User Attributes-JWT-Pass**
+
+|image42|
+
+64. Select the **Authorization** Tab
+
+|image43|
+
+65. Click **Get New Access Token**
+
+|image44|
+
+66. Review the Postman Configuration. Nothing should need to be modified
+
+67. Click **Request Token**
+
+|image27|
+
+68. Login using Username: **user1**, Password: **user1**
+
+|image28|
+
+69. Scroll down the token and click **Use Token**
+
+|image29|
+
+70. Notice the Access Token field is now populated
+
+|image34|
+
+71. Click **Send**
+
+72. You receive a **200 OK** response status code with attributes for user1 in the body of the response
+
+|image31|
+
+73. Click **Save**
+
+|image88|
+
+74. Click **Runner** located in the left corner
+
+|image89|
+
+75. Expand the **API Protection** collection
+
+|image90|
+
+76. Deselect all requests except **GET-Retrieve User Attributes-JWT-Pass**
+
+77. Set the iterations to **100**
+
+78. Click **Run API Protection**
+
+|image91|
+
+79. On the 6th request you begin to receive a **429 Too Many Requests** response status code
+
+|image99|
 
 .. |image0| image:: /_static/class1/module2/image000.png
 .. |image23| image:: /_static/class1/module2/image023.png
@@ -130,8 +289,10 @@ Task – Test Rate Limiting
 .. |image27| image:: /_static/class1/module2/image027.png
 .. |image28| image:: /_static/class1/module2/image028.png
 .. |image29| image:: /_static/class1/module2/image029.png
+.. |image31| image:: /_static/class1/module2/image031.png
 .. |image34| image:: /_static/class1/module2/image034.png
 .. |image39| image:: /_static/class1/module2/image039.png
+.. |image42| image:: /_static/class1/module2/image042.png
 .. |image43| image:: /_static/class1/module2/image043.png
 .. |image44| image:: /_static/class1/module2/image044.png
 .. |image45| image:: /_static/class1/module2/image045.png
@@ -173,4 +334,20 @@ Task – Test Rate Limiting
 .. |image81| image:: /_static/class1/module2/image081.png
 .. |image82| image:: /_static/class1/module2/image082.png
 .. |image83| image:: /_static/class1/module2/image083.png
+.. |image84| image:: /_static/class1/module2/image084.png
+.. |image85| image:: /_static/class1/module2/image085.png
+.. |image86| image:: /_static/class1/module2/image086.png
+.. |image87| image:: /_static/class1/module2/image087.png
+.. |image88| image:: /_static/class1/module2/image088.png
+.. |image89| image:: /_static/class1/module2/image089.png
+.. |image90| image:: /_static/class1/module2/image090.png
+.. |image91| image:: /_static/class1/module2/image091.png
+.. |image92| image:: /_static/class1/module2/image092.png
+.. |image93| image:: /_static/class1/module2/image093.png
+.. |image94| image:: /_static/class1/module2/image094.png
+.. |image95| image:: /_static/class1/module2/image095.png
+.. |image96| image:: /_static/class1/module2/image096.png
+.. |image97| image:: /_static/class1/module2/image097.png
+.. |image98| image:: /_static/class1/module2/image098.png
+.. |image99| image:: /_static/class1/module2/image099.png
 

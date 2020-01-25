@@ -21,7 +21,6 @@ Task – Create an API Protection Profile
 
 - Name: **api-protection**
 - OpenAPI File: **Active Directory OpenAPI.json**
-- SSL Profile: **prebuilt-apiadmin-serverssl**
 - DNS Resolver: **prebuilt-dns-resolver**
 - Authorization: **OAuth 2.0**
 
@@ -39,7 +38,7 @@ Task – Explore the Path Configuration
 
 2. Each URI only supports the Method GET
 
-3. The APIs server URL is https://adapi.f5lab.local:8443
+3. The APIs server URL is http://adapi.f5lab.local:81
 
 |image13|
 
