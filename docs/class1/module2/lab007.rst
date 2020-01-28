@@ -131,7 +131,7 @@ Task –  Test Access to the new path
 #. Click **Send**
 
 
-#. You receive a 200 OK.  The API is now published.
+#. You receive a **200 OK** that the endpoint is now published.
 
 |image46|
 
