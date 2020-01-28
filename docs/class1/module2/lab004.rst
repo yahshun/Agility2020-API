@@ -1,47 +1,47 @@
-Lab – Test Course Grain Access
---------------------------------
+Lab – Test Course-Grained Access
+================================
 
 In this section, you will sample API requests to the new created api.acme.com virtual server to test functionality
 
 
-Task – Send a valid GET without JWT to retrieve user1's attributes 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Send a valid GET without JWT to retrieve user1's attributes
+------------------------------------------------------------------
 
-1. From the Jumpbox, open Postman 
+1. From the Jumpbox, open **Postman**
 
 |image23|
 
-2. Expand the API Protection Collection
+2. Expand the **API Protection** Collection
+
 3. Select the request **GET-Retrieve User Attributes-No JWT-Fail**
 
 |image24|
-
 
 4. Click **Send**
 
 |image25|
 
-5. You receive a **403 Forbidden Response** since you do not have a valid JWT.
+5. You receive a **403 Forbidden** response status code since you do not have a valid JWT
 
 |image26|
 
-Task – Send a valid GET with JWT to retrieve user1's attributes  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Send a valid GET with JWT to retrieve user1's attributes
+---------------------------------------------------------------
 
 6. Select the request **GET-Retrieve User Attributes-JWT-Pass**
 
 |image42|
 
-7. Select the **Authorization** Tab
+7. Select the **Authorization** tab
 
 |image43|
-
 
 8. Click **Get New Access Token**
 
 |image44|
 
-9. Review the Postman Configuration.  Nothing should need to be modified
+9. Review the Postman Configuration. Nothing should need to be modified
+
 10. Click **Request Token**
 
 |image27|
@@ -50,141 +50,158 @@ Task – Send a valid GET with JWT to retrieve user1's attributes
 
 |image28|
 
-12. Scroll down the token and click **Use Token**
+12. Scroll down to the token and click **Use Token**
 
 |image29|
 
-13. Notice the Access Token field is now populated
+13. Notice the **Access Token** field is now populated
 
 |image34|
 
 14. Click **Send**
-15. You receive a **200 OK** with attributes for user1 in the body of the response
+
+15. You receive a **200 OK** response status code with attributes for user1 in the body of the response
 
 |image31|
 
 
-Task – Send a valid GET with JWT to set user1's employeeNumber  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Task – Send a valid GET with JWT to set user1's employeeNumber
+--------------------------------------------------------------
 
 16. Select the request **GET-Set User Attributes-JWT-Pass**
 
 |image32|
 
-17. Select the **Authorization** Tab
-18. Select the previously created token from the Available Tokens dropdown.
+17. Select the **Authorization** tab
+
+18. Select the previously created token from the **Available Tokens** dropdown
 
 |image33|
 
-19. The Token field is now populated
+19. The **Token** field is now populated
 
 |image34|
 
 20. Click **Send**
 
-.. note :: If you receive a 403 repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
+.. note :: If you receive a 403 response status code, repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
 
-.. note :: You can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token
+.. note :: You can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token.
 
-
-21. You receive a 200 OK with a response body that contains user1's employeeNumber **123456**
+21. You receive a **200 OK** response status code with a response body that contains user1's employeeNumber **123456**
 
 |image35|
 
-Task – Send a valid GET with JWT to create a user  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Task – Send a valid GET with JWT to create a user
+-------------------------------------------------
 
 22. Select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-23. Select the **Authorization** Tab
-24. Select the previously created token from the Available Tokens dropdown.
+23. Select the **Authorization** tab
+
+24. Select the previously created token from the **Available Tokens** dropdown
 
 |image33|
 
-25. The Token field is now populated
+25. The **Token** field is now populated
 
 |image34|
 
 26. Click **Send**
 
-.. note :: If you receive a 403 repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
+.. note :: If you receive a 403 response status code, repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
 
-.. note :: You can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token
+.. note :: You can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token.
 
-
-27. You receive a 200 OK with a response body that contains Bob Smith's user attributes.
+27. You receive a **200 OK** response status code with a response body that contains Bob Smith's user attributes
 |image46|
 
 
-Task – Send invalid GET requests with JWT to set a nonexistent user attributes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Task – Send invalid GET request with JWT to set a nonexistent user's attributes
+-------------------------------------------------------------------------------
 
 28. Select the request **GET-Set Invalid Attributes-JWT-Fail**
 
 |image36|
 
-29. Select the **Authorization** Tab
-30. Select the previously created token from the Available Tokens dropdown.
-31. The Token field is now populated
+29. Select the **Authorization** tab
+
+30. Select the previously created token from the **Available Tokens** dropdown
+
+31. The **Token** field is now populated
+
 32. Click **Send**
 
-.. note :: If you receive a 403 repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
+.. note :: If you receive a 403 response status code, repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
 
-.. note :: you can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token
+.. note :: you can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token.
 
-
-33. You receive a **400 Bad Request**.  This is expected because the user doesn't actually exist
+33. You receive a **400 Bad Request** response status code. This is expected because the user doesn't actually exist
 
 |image37|
 
+
 Task – Send a POST request to a valid URI to set User1's attributes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------
 
 34. Select the request **POST-Set User Attributes-JWT-Fail**
 
 |image38|
 
-35. Select the Authorization Tab
+35. Select the **Authorization** tab
+
 36. Click **Get New Access Token**
-37. Review the Postman Configuration.  Nothing should need to be modified
+
+37. Review the Postman Configuration. Nothing should need to be modified
+
 38. Click **Request Token**
+
 39. Login using Username: **user1**, Password: **user1**
-40. Scroll down the token and click **User Token**
-41. Notice the the Token field is now populated
+
+40. Scroll down to the token and click **User Token**
+
+41. Notice the **Token** field is now populated
+
 42. Click **Send**
-43. You receive a **403 Forbidden**.  This is expected because the POST Method was not specified in the API protection profile for the URI /aduser/get
+
+43. You receive a **403 Forbidden** response status code. This is expected because the POST Method was not specified in the API Protection Profile for the URI /aduser/get
 
 |image39|
 
 Task – Send a GET request to an invalid URI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 44. Select the request **GET-Invalid URI-JWT-Fail**
 
 |image40|
 
-45. Select the **Authorization** Tab
+45. Select the **Authorization** tab
+
 46. Click **Get New Access Token**
+
 47. Review the Postman Configuration.  Nothing should need to be modified
+
 48. Click **Request Token**
+
 49. Login using Username: **user1**, Password: **user1**
-50. Scroll down the token and click **User Token**
-51. Notice the the Token field is now populated
+
+50. Scroll down to the token and click **User Token**
+
+51. Notice the the **Token** field is now populated
+
 52. Click **Send**
-53. You receive a 403 Forbidden.  This is expected because the URI /hacker/attack was not specified in the API Protection Profile
+
+53. You receive a **403 Forbidden** response status code. This is expected because the URI /hacker/attack was not specified in the API Protection Profile
 
 |image39|
 
+
 Task - Send a XXXXX attack to a valid URI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
-
+-----------------------------------------
+.. TODO:: fix the above task title
 
 
 .. |image23| image:: /_static/class1/module2/image023.png
@@ -209,7 +226,3 @@ Task - Send a XXXXX attack to a valid URI
 .. |image44| image:: /_static/class1/module2/image044.png
 .. |image45| image:: /_static/class1/module2/image045.png
 .. |image46| image:: /_static/class1/module2/image046.png
-
-
-
-
