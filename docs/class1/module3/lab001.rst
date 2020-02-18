@@ -1,0 +1,74 @@
+Lab – Prepping the Lab
+=======================================================================
+
+By default, security events are not logged, in this lab the student will create a security logging profile with Application Security, Bot Defense and DOS Protection enabled.
+
+
+Task 1 – Create and assign a Security Logging Profile
+------------------------------------------------------------
+
+.. note :: Ensure you are logged into BIGIP1
+
+1. From the web browser, click on the **Security -> Event Logs -> Logging Profile** and click **Create**.
+
+
+2. For the Profile Name enter **api.acme.com_logprofile**.
+
+|module3Lab1Task1-image1|
+
+
+3. Enable **Application Security** a Application Security configuration menu will open up at the bottom. Change the Request Type from Illegal requests only to **All requests**.
+
+|module3Lab1Task1-image2|
+
+4. Enable **DoS Protection**, a  DoS Protection configuration menu will open up at the bottom. Enable **Local Publisher**
+
+|module3Lab1Task1-image3|
+
+
+5. Enable **Bot Defense**, a  Bot Defense configuration menu will open up at the bottom. Enable **Local Publisher** and all other checkboxes, leave Remote Publsiher set to none.
+
+|module3Lab1Task1-image4|
+
+6. Click **Create**
+
+7. Apply the bot profile to the api.acme.com virtual by navigating to **Local Traffic -> Virtual Servers -> api.acme.com -> Security -> Policies** and set the Selected Log Profile to **api.acme.com_logprofile**.
+
+|module3Lab1Task1-image5|
+
+8. Click **Update**. The virtual will now log Application Security, DoS and Bot related events under **Security -> Event Logs** when an appropriate security profiles have been applied to the virtual.
+
+
+Task 2 – Modify WAF Policy to allow 400 codes
+------------------------------------------------------------
+
+1. From the web browser, click on the **Security -> Application Security -> Policies List -> api-protection**.
+
+2. Scroll down to the **Allowed Response Status Codes** and enter 400, click **Add**.
+
+
+|module3Lab1Task2-image1|
+
+|
+
+Click **Save** and **Apply Policy**
+
+
+
+..  |module3Lab1Task2-image1| image:: /_static/class1/module3/module3Lab1Task2-image1.png
+        :width: 800px
+
+..  |module3Lab1Task1-image5| image:: /_static/class1/module3/module3Lab1Task1-image5.png
+        :width: 400px
+..  |module3Lab1Task1-image4| image:: /_static/class1/module3/module3Lab1Task1-image4.png
+        :width: 400px
+..  |module3Lab1Task1-image3| image:: /_static/class1/module3/module3Lab1Task1-image3.png
+        :width: 400px
+..  |module3Lab1Task1-image2| image:: /_static/class1/module3/module3Lab1Task1-image2.png
+        :width: 800px
+..  |module3Lab1Task1-image1| image:: /_static/class1/module3/module3Lab1Task1-image1.png
+        :width: 800px
+
+
+
+
