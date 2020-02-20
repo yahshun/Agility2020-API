@@ -2,7 +2,9 @@ Lab – Tweaking the WAF Policy to provide additional security
 =======================================================================
 
 
-APIs are a collection of technologies just like any other application, in the lab that api is built on top of a windows server using powershell. This lab demonstrate how to tune the WAF policy to use attack signatures to provide additional protection against malicious clients.
+APIs are a collection of technologies just like any other application, in the lab the api is built on top of a windows server using powershell. This lab demonstrate how to tune the WAF policy to use attack signatures and meta-character enforcement to provide additional protection against malicious clients.
+
+Meta-character enforcement allows the WAF admin to enforce which characters are allowed into a web application, whether it be in the header, url or parameter. In this lab we examine parameter meta-character enforcement.
 
 
 Task 1 – Configure Attack Signatures and Change WAF Policy to Blocking
@@ -85,11 +87,21 @@ The result is
 
 
 14. Navigate to **Security -> Application Security -> Policies List -> api-protection**.
-This time set the Enforcement Mode to **Blocking**. Be sure to click **Save**, the **Apply Policy**.
+This time set the Enforcement Mode to **Blocking**. Be sure to click **Save**, then **Apply Policy**.
 
 |module3Lab3Task1-image12|
 
-15. Navigate to **Security -> Event Logs -> Application -> Requests** and find this latest request.
+15. Once again run the following command **curl -k "https://api.acme.com/vulnerable?Inject=|powershell%20badprogram.ps1" -v**
+
+|
+
+**Pay special attention to the double quotes ("") around the url.**
+
+|
+
+Notice the user-agent curl is no longer highlighted (since the signature was disabled).
+
+16. Navigate to **Security -> Event Logs -> Application -> Requests** and find this latest request.
 
 |module3Lab3Task1-image13|
 
@@ -97,7 +109,7 @@ This time set the Enforcement Mode to **Blocking**. Be sure to click **Save**, t
 
 Notice the enforcement action is now **Block**.
 
-16. Hover over the highlighted payload and notice that the powershell attack signature is triggered.
+17. Hover over the highlighted payload and notice that the powershell attack signature is triggered.
 
 |module3Lab3Task1-image14|
 
@@ -109,17 +121,17 @@ What if that character was a legimate value for a parameter?
 
 
 
-17. Go back to the command prompt on the jumphost and run
+18. Go back to the command prompt on the jumphost and run
 
 |
 
  **curl -k "https://api.acme.com/vulnerable?param1=|legitimate%20value" -v**
 
-18. Navigate to **Security -> Event Logs -> Application -> Requests** and find this latest request. Notice the **|** is considered illegal. However its not blocked, the Enforcement Action is None
+19. Navigate to **Security -> Event Logs -> Application -> Requests** and find this latest request. Notice the **|** is considered illegal. However its not blocked, the Enforcement Action is None
 
 |module3Lab3Task1-image16|
 
-19. To see why this parameter character violation is not being blocked, but is being logged (alarmed). Navaigate to **Security -> Application Security -> Policy Building -> Learning and Blocking Settings** and enable the **Block** column for the **Illegal meta character in value**
+20. To see why this parameter character violation is not being blocked, but is being logged (alarmed). Navaigate to **Security -> Application Security -> Policy Building -> Learning and Blocking Settings** and enable the **Block** column for the **Illegal meta character in value**
 
 |module3Lab3Task1-image17|
 
@@ -128,24 +140,21 @@ What if that character was a legimate value for a parameter?
 Click **Change**
 
 
-20. Click **Save** then **Apply Policy**
+21. Click **Save** then **Apply Policy**
 
-21. Go back to the command prompt on the jumphost and run 
+22. Go back to the command prompt on the jumphost and run 
 
 |
 
 **curl -k "https://api.acme.com/vulnerable?param1=|legitimate%20value" -v**
 
-**IGNORE beyond this**
+28. Navigate to **Security -> Event Logs -> Application -> Requests** and find this latest request. Notice the **|** is considered illegal and is now blocked.
 
-27. Navigate to **Secfurity -> Application Security -> Parameters -> Parameters List** and click on the ** * ** (wildcard parameter)
-
-
-
-Notice the user-agent curl is no longer highlighted (since the signature was disabled).
+|module3Lab3Task1-image18|
 
 
-
+..  |module3Lab3Task1-image18| image:: /_static/class1/module3/module3Lab3Task1-image18.png
+        :width: 800px
 ..  |module3Lab3Task1-image17| image:: /_static/class1/module3/module3Lab3Task1-image17.png
         :width: 800px
 ..  |module3Lab3Task1-image16| image:: /_static/class1/module3/module3Lab3Task1-image16.png

@@ -48,7 +48,7 @@ For **Bot Defense Profile** select **Enabled** and select **api.acme.com_botprof
 Task 2 - Place Bot Profile in blocking and allow appropriate clients
 ----------------------------------------------------------------------
 
-The bot profile was left in transparent to demonstrate the behavior, now we will configured the bot profile to 
+The bot profile was left in transparent to demonstrate the behavior, now we will configure the bot profile to 
 block bot traffic. What do you expect? Keep in mind that the bot profile allows for fine-grained control of categories of bots, which bot fits in those categories. We will explore this later.
 
 1. Navigate back to **Security -> Bot Defense -> Bot Defense Profiles -> api.acme.com_botprofile**, change the **Enforcement Mode** to  **Blocking** and click **Save**.

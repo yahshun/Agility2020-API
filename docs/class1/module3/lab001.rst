@@ -2,8 +2,9 @@ Lab – Prepping the Lab
 =======================================================================
 
 By default, security events are not logged, in this lab the student will create a security logging profile with Application Security, Bot Defense and DOS Protection enabled.
+The student will also place the waf policy in trasnparent to show the difference in behavior when client traffic that is deemed malicious is and is not blocked.
 
-Task – Add Vulnerable API 
+Task 1 – Add Vulnerable API 
 ------------------------------
 
 1. From the web browser, navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
@@ -91,8 +92,8 @@ Task – Add Vulnerable API
 
 
 
-Task – Create and assign a Security Logging Profile
-------------------------------------------------------------
+Task 2 – Create and assign a Security Logging Profile to the virtual
+-------------------------------------------------------------------------
 
 .. note :: Ensure you are logged into BIGIP1
 
@@ -101,59 +102,61 @@ Task – Create and assign a Security Logging Profile
 
 2. For the Profile Name enter **api.acme.com_logprofile**.
 
-|module3Lab1Task1-image1|
+|module3Lab1Task2-image1|
 
 
 3. Enable **Application Security** a Application Security configuration menu will open up at the bottom. Change the Request Type from Illegal requests only to **All requests**.
 
-|module3Lab1Task1-image2|
+|module3Lab1Task2-image2|
 
 4. Enable **DoS Protection**, a  DoS Protection configuration menu will open up at the bottom. Enable **Local Publisher**
 
-|module3Lab1Task1-image3|
+|module3Lab1Task2-image3|
 
 
 5. Enable **Bot Defense**, a  Bot Defense configuration menu will open up at the bottom. Enable **Local Publisher** and all other checkboxes, leave Remote Publsiher set to none.
 
-|module3Lab1Task1-image4|
+|module3Lab1Task2-image4|
 
 6. Click **Create**
 
 7. Apply the bot profile to the api.acme.com virtual by navigating to **Local Traffic -> Virtual Servers -> api.acme.com -> Security -> Policies** and set the Selected Log Profile to **api.acme.com_logprofile**.
 
-|module3Lab1Task1-image5|
+|module3Lab1Task2-image5|
 
 8. Click **Update**. The virtual will now log Application Security, DoS and Bot related events under **Security -> Event Logs** when an appropriate security profiles have been applied to the virtual.
 
 
-Task – Modify WAF Policy to allow 400 codes
-------------------------------------------------------------
+Task 3 – Set the WAF policy to Transparent and assign it to the virtual
+----------------------------------------------------------------------------
 
-1. From the web browser, click on the **Security -> Application Security -> Policies List -> api-protection**.
+1. From the web browser, click on the **Security -> Application Security -> Policies List -> api-protection**. Notice the Enforcement Mode is set to **Blocking**. Set the Enforcement Mode to **Transparent**. Be sure to click **Save**, then **Apply Policy**.
 
-2. Scroll down to the **Allowed Response Status Codes** and enter 400, click **Add**.
+|module3Lab1Task3-image1|
 
+2. Apply the waf policy to the api.acme.com virtual by navigating to **Local Traffic -> Virtual Servers -> api.acme.com -> Security -> Policies** and set the Application Security Policy to enabled and the Policy to  **api-protection**.
 
-|module3Lab1Task2-image1|
+|module3Lab1Task3-image2|
 
-|
-
-Click **Save** and **Apply Policy**
-
+3. Click **Update**.
 
 
-..  |module3Lab1Task2-image1| image:: /_static/class1/module3/module3Lab1Task2-image1.png
+..  |module3Lab1Task3-image2| image:: /_static/class1/module3/module3Lab1Task3-image2.png
+        :width: 800
+
+..  |module3Lab1Task3-image1| image:: /_static/class1/module3/module3Lab1Task3-image1.png
+        :width: 800
+
+
+..  |module3Lab1Task2-image5| image:: /_static/class1/module3/module3Lab1Task1-image5.png
+        :width: 400px
+..  |module3Lab1Task2-image4| image:: /_static/class1/module3/module3Lab1Task1-image4.png
+        :width: 400px
+..  |module3Lab1Task2-image3| image:: /_static/class1/module3/module3Lab1Task1-image3.png
+        :width: 400px
+..  |module3Lab1Task2-image2| image:: /_static/class1/module3/module3Lab1Task1-image2.png
         :width: 800px
-
-..  |module3Lab1Task1-image5| image:: /_static/class1/module3/module3Lab1Task1-image5.png
-        :width: 400px
-..  |module3Lab1Task1-image4| image:: /_static/class1/module3/module3Lab1Task1-image4.png
-        :width: 400px
-..  |module3Lab1Task1-image3| image:: /_static/class1/module3/module3Lab1Task1-image3.png
-        :width: 400px
-..  |module3Lab1Task1-image2| image:: /_static/class1/module3/module3Lab1Task1-image2.png
-        :width: 800px
-..  |module3Lab1Task1-image1| image:: /_static/class1/module3/module3Lab1Task1-image1.png
+..  |module3Lab1Task2-image1| image:: /_static/class1/module3/module3Lab1Task1-image1.png
         :width: 800
 
 .. |image0| image:: /_static/class1/module3/image000.png
