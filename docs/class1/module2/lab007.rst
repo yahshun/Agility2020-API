@@ -6,45 +6,24 @@ Organizations change. With this change, new APIs are introduced requiring modifi
 Task – Verify no access to API
 ------------------------------
 
-1. From the Jumpbox, open **Postman**
-
-|image23|
-
-2. Expand the API Protection Collection
-
-3. Select the request **PATCH-Change User Password-JWT**
+1. From Postman, select the request **PATCH-Change User Password-JWT**
 
 |image63|
 
-4. Select the **Authorization** tab
+2. Select the **Authorization** tab
 
-|image43|
+3. Select the previously created **User1** token from the **Available Tokens** dropdown
 
-5. Click **Get New Access Token**
+|image33|
 
-|image44|
-
-6. Review the Postman Configuration. Nothing should need to be modified
-
-7. Click **Request Token**
-
-|image27|
-
-8. Login using Username: **user1**, Password: **user1**
-
-|image28|
-
-9. Scroll down to the token and click **Use Token**
-
-|image29|
-
-10. Notice the Access Token field is now populated
+4. The **Token** field is now populated
 
 |image34|
 
-11. Click **Send**
+5. Click **Send**
 
-12. You receive a **403 Forbidden** response status code because the the new API has not been published at the Gateway
+
+6. You receive a **403 Forbidden** response status code because the the new API has not been published at the Gateway
 
 |image39|
 
@@ -52,41 +31,31 @@ Task – Verify no access to API
 Task – Add the new API path
 ---------------------------
 
-13. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
-
-14. Login into the BIG-IP Configuration Utility with the following credentials:
-- User: **admin**
-- Password: **admin**
-
-15. Click on the **Access** tab located on the left side
-
-|image0|
-
-16. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
+1. From the browser, navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
-17. Click **API-Protection**
+2. Click **API-Protection**
 
 |image64|
 
-18. Click **Paths**
+3. Click **Paths**
 
 |image65|
 
-19. Click **Create**
+4. Click **Create**
 
 |image66|
 
-20. The URI **/aduser/password**
+5. The URI **/aduser/password**
 
-21. Select the Method **PATCH**
+6. Select the Method **PATCH**
 
-22. Click **Add**
+7. Click **Add**
 
 |image67|
 
-23. Click **Save**
+8. Click **Save**
 
 |image68|
 
@@ -94,47 +63,26 @@ Task – Add the new API path
 Task –  Test Access to the new path
 -----------------------------------
 
-24. From the Jumpbox, open Postman
 
-|image23|
-
-25. Expand the **API Protection** Collection
-
-26. Select the request **PATCH-Change User Password-JWT**
+1. From Postman, select the request **PATCH-Change User Password-JWT**
 
 |image45|
 
-27. Select the **Authorization** tab
+2. Select the **Authorization** tab
 
-28. Click **Get New Access Token**
+3. Select the previously created **User1** token from the **Available Tokens** dropdown
 
-|image43|
+|image33|
 
-29. Review the Postman Configuration.  Nothing should need to be modified
-
-30. Click **Request Token**
-
-|image27|
-
-31. Login using Username: **user1**, Password: **user1**
-
-|image28|
-
-32. Scroll down to the token and click **Use Token**
-
-|image29|
-
-33. The **Token** field is now populated
+4. The **Token** field is now populated
 
 |image34|
 
-34. Click **Send**
+5. Click **Send**
 
-<<<<<<< HEAD
-#. You receive a **200 OK** that the endpoint is now published.
-=======
-35. You receive a **200 OK** response status code. The API is now published
->>>>>>> 4e40e1a573d3e37da9b4373af6d9ed94e232e546
+6. You receive a **200 OK** that the endpoint is now published.
+
+
 
 |image46|
 
@@ -145,6 +93,7 @@ Task –  Test Access to the new path
 .. |image27| image:: /_static/class1/module2/image027.png
 .. |image28| image:: /_static/class1/module2/image028.png
 .. |image29| image:: /_static/class1/module2/image029.png
+.. |image33| image:: /_static/class1/module2/image033.png
 .. |image34| image:: /_static/class1/module2/image034.png
 .. |image39| image:: /_static/class1/module2/image039.png
 .. |image43| image:: /_static/class1/module2/image043.png

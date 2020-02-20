@@ -21,6 +21,7 @@ Task – Retrieve Group Membership Subsession Variable
 
 
 4. From Postman, Select the request **GET-Retrieve User Attributes-JWT-Pass**
+
 |image42|
 
 5. Select the **Authorization** Tab
@@ -67,72 +68,72 @@ Task – Edit the per-request policy
 
 |image48|
 
-24. Click **Edit** Under Per-Request Policy
+3. Click **Edit** Under Per-Request Policy
 
 |image49|
 
-25. Click the **+ (Plus Symbol)** on the GET /aduser/create branch
+4. Click the **+ (Plus Symbol)** on the GET /aduser/create branch
 
 |image50|
 
-26. Click the **General Purpose** tab
+5. Click the **General Purpose** tab
 
-27. Select **Empty**
+6. Select **Empty**
 
-28. Click **Add Item**
+7. Click **Add Item**
 
 |image51|
 
-29. Enter the name **Claim Check**
+8. Enter the name **Claim Check**
 
 |image53|
 
-30. Click the **Branch Rules** tab
+9. Click the **Branch Rules** tab
 
-31. Click the **Add Branch Rule**
+10. Click the **Add Branch Rule**
 
 |image52|
 
-32. Enter Name **CreateUser**
+11. Enter Name **CreateUser**
 
-33. Click **Change**
+12. Click **Change**
 
 |image54|
 
-34. Click the **Advanced** tab
+13. Click the **Advanced** tab
 
-35. Enter the string in the notes section to restrict access to only members of the **CreateUser** Group
+14. Enter the string in the notes section to restrict access to only members of the **CreateUser** Group
 
-36. Click **Finished**
+15. Click **Finished**
 
 .. Note :: expr {[mcget {subsession.oauth.scope.last.jwt.groups}] contains "CreateUser"}
 
 |image55|
 
-37. Click **Save**
+16. Click **Save**
 
 |image56|
-38. Click **Reject** on the CreateUser Branch to permit access
+17. Click **Reject** on the CreateUser Branch to permit access
 
 |image57|
 
-39. Select **Allow**
+18. Select **Allow**
 
-40. Click **Save**
+19. Click **Save**
 
 |image58|
 
-41. Click **Allow** on the fallback branch to deny unprivileged requests
+20. Click **Allow** on the fallback branch to deny unprivileged requests
 
 |image59|
 
-42. Select **Deny**
+21. Select **Deny**
 
-43. Click **Save**
+22. Click **Save**
 
 |image60|
 
-44. Review the Policy Flow
+23. Review the Policy Flow
 
 |image61|
 
@@ -141,11 +142,11 @@ Task – Test the Fine-Grained Access Control with user1
 ------------------------------------------------------
 
 
-47. From Postman select the request **GET-Create User-JWT-Pass**
+1. From Postman select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-4. Select the **Authorization** Tab
+2. Select the **Authorization** Tab
 
 |image43|
 
@@ -156,7 +157,7 @@ Task – Test the Fine-Grained Access Control with user1
 
 5. Click **Send**
 
-56. You receive a **403 Forbidden** response status code when using user1. User1 does not contain the proper claim data.
+6. You receive a **403 Forbidden** response status code when using user1. User1 does not contain the proper claim data.
 
 |image26|
 
@@ -164,37 +165,37 @@ Task – Test the Fine-Grained Access Control with user1
 Task – Test the Fine-Grained Access Control with user2
 ------------------------------------------------------
 
-57. Select the request **GET-Create User-JWT-Pass**
+1. Select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-58. Select the **Authorization** tab
+2. Select the **Authorization** tab
 
-59. Click **Get New Access Token**
+3. Click **Get New Access Token**
 
 |image44|
 
-60. Enter **User2** for the Token Name and review the Postman Configuration. Nothing else should need to be modified
+4. Enter **User2** for the Token Name and review the Postman Configuration. Nothing else should need to be modified
 
-61. Click **Request Token**
+5. Click **Request Token**
 
 |image27|
 
-62. Login using Username: **user2**, Password: **user2**
+6. Login using Username: **user2**, Password: **user2**
 
 |image62|
 
-63. Scroll down to the token and click **Use Token**
+7. Scroll down to the token and click **Use Token**
 
 |image29|
 
-64. The **Token** field is now populated
+8. The **Token** field is now populated
 
 |image34|
 
-65. Click **Send**
+9. Click **Send**
 
-66. You receive a **200 OK** response status code when using user2. User2 does contain the proper claim data
+10. You receive a **200 OK** response status code when using user2. User2 does contain the proper claim data
 
 |image46|
 
