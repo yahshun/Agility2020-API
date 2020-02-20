@@ -8,70 +8,49 @@ Task – Retrieve Group Membership Subsession Variable
 
 .. note :: In order to implement fine-grained control the session variables that contain the data must be known. This first session shows you how to display the session variables and their values.
 
-
-1. From the Jumpbox, open **Postman**
-
-|image23|
-
-2. Expand the API Protection Collection
-
-3. Select the request **GET-Retrieve User Attributes-JWT-Pass**
-
-|image42|
-
-4. Select the **Authorization** Tab
-
-|image43|
-
-5. Click **Get New Access Token**
-
-|image44|
-
-6. Review the Postman Configuration. Nothing should need to be modified
-
-7. Click **Request Token**
-
-|image27|
-
-8. Login using Username: **user1**, Password: **user1**
-
-|image28|
-
-9. Scroll down the token and click **Use Token**
-
-|image29|
-
-10. Notice the **Access Token** field is now populated
-
-|image34|
-
-11. From the Jumpbox desktop click on the **BIG-IP1** Putty icon
+1. From the Jumpbox desktop click on the **BIG-IP1** Putty icon
 
 |image47|
 
-12. Enter the command **tailf /var/log/apm**.  Hit enter a few times to create some space on the screen
+2. Enter the command **Sessiondump --delete all** to remove any existing APM sessions
+
+
+3. Enter the command **tailf /var/log/apm**.  Hit enter a few times to create some space on the screen
 
 |image84|
 
-13. From the Jumpbox, return to the Postman Request and Click **Send**
 
-14. You receive a **200 OK** response status code with attributes for user1 in the body of the response
+4. From Postman, Select the request **GET-Retrieve User Attributes-JWT-Pass**
+|image42|
+
+5. Select the **Authorization** Tab
+
+|image43|
+
+
+6. Select the previously created **User1** token from the **Available Tokens** dropdown
+
+7. The **Token** field is now populated
+
+8. Click **Send**
+
+9. You receive a **200 OK** response status code with attributes for user1 in the body of the response
 
 |image31|
 
 .. Note :: Your SessionID will be different
 
-15. In the logs you will see a message about a new subsession being created. Copy the subsession ID
+10. Return to the CLI and examine the logs. You will see a message about a new subsession being created. Copy the subsession ID
 
 |image85|
 
-16. Exit the logs using Ctrl+Z
+11. Exit the logs using Ctrl+Z
 
-17. Enter the command **sessiondump -subkeys <subsessionID>**
+12. Enter the command **sessiondump -subkeys <subsessionID>**
 
 |image86|
 
-18.  Scroll through input until you find the session variable for **subsession.oauth.scope.last.jwt.groups**
+13.  Scroll through input until you find the session variable for **subsession.oauth.scope.last.jwt.groups**
 
 |image87|
 
@@ -79,19 +58,12 @@ Task – Retrieve Group Membership Subsession Variable
 Task – Edit the per-request policy
 ----------------------------------
 
-19. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
 
-20. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
-
-21. Login into the BIG-IP Configuration Utility with the following credentials:
-User: **admin**
-Password: **admin**
-
-22. Click on the **Access** tab located on the left side
+1. Return to BIG-IP1's management interface in the browser and click on the **Access** tab located on the left side
 
 |image0|
 
-23. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
+2. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
@@ -133,7 +105,7 @@ Password: **admin**
 
 36. Click **Finished**
 
-.. Note :: expr {[mcget {subsession.oauth.scope./Common/as-jwt-provider.jwt.groups}] contains "CreateUser"}
+.. Note :: expr {[mcget {subsession.oauth.scope.last.jwt.groups}] contains "CreateUser"}
 
 |image55|
 
@@ -168,41 +140,21 @@ Password: **admin**
 Task – Test the Fine-Grained Access Control with user1
 ------------------------------------------------------
 
-45. From the Jumpbox, open **Postman**
 
-|image23|
-
-46. Expand the **API Protection** Collection
-
-47. Select the request **GET-Create User-JWT-Pass**
+47. From Postman select the request **GET-Create User-JWT-Pass**
 
 |image45|
 
-48. Select the **Authorization** tab
+4. Select the **Authorization** Tab
 
-49. Click **Get New Access Token**
+|image43|
 
-|image44|
 
-50. Review the Postman Configuration. Nothing should need to be modified
+3. Select the previously created **User1** token from the **Available Tokens** dropdown
 
-51. Click **Request Token**
+4. The **Token** field is now populated
 
-|image27|
-
-52. Login using Username: **user1**, Password: **user1**
-
-|image28|
-
-53. Scroll down to the token and click **Use Token**
-
-|image29|
-
-54. The **Token** field is now populated
-
-|image34|
-
-55. Click **Send**
+5. Click **Send**
 
 56. You receive a **403 Forbidden** response status code when using user1. User1 does not contain the proper claim data.
 
@@ -222,7 +174,7 @@ Task – Test the Fine-Grained Access Control with user2
 
 |image44|
 
-60. Review the Postman Configuration. Nothing should need to be modified
+60. Enter **User2** for the Token Name and review the Postman Configuration. Nothing else should need to be modified
 
 61. Click **Request Token**
 
