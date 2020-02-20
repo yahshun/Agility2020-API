@@ -42,6 +42,7 @@ Task – Add Vulnerable API
 13. Click **Add Expression**
 
 |image105|
+
 14. Click **Add Expression** on the AND line
 
 |image106|
