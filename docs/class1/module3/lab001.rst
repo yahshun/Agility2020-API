@@ -6,94 +6,84 @@ By default, security events are not logged, in this lab the student will create 
 Task – Add Vulnerable API 
 ------------------------------
 
-1. From the Jumpbox, access the BIG-IP GUI https://10.1.1.4 (you can double-click on the BIG-IP1 bookmark from Chrome)
-
-2. Login into the BIG-IP Configuration Utility with the following credentials:
-- User: **admin**
-- Password: **admin**
-
-3. Click on the **Access** tab located on the left side
-
-|image0|
-
-4. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
+1. From the web browser, navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
 |image48|
 
-5. Click **API-Protection**
+2. Click **API-Protection**
 
 |image64|
 
-6. Click **Edit** Under Per-Request Policy
+3. Click **Edit** Under Per-Request Policy
 
 |image49|
 
-7. Click the **+ (Plus Symbol)** located between Start and Logon Page
+4. Click the **+ (Plus Symbol)** located between Start and Logon Page
 
 |image101|
 
-8. Select the **classification** tab
-9. Select **Request Classification**
-10. Click ** Add Item**
+5. Select the **classification** tab
+6. Select **Request Classification**
+7. Click ** Add Item**
 
 |image102|
 
-11. Select **Branch Rules**
-12. Click **Add Branch Rule**
-13. Enter name ** GET /vulnerable**
-14. Click **Change**
+8. Select **Branch Rules**
+9. Click **Add Branch Rule**
+10. Enter name ** GET /vulnerable**
+11. Click **Change**
 
 |image103|
 
-15. Click **Add Expression**
+12. Click **Add Expression**
 
 |image104|
 
-16. Click **Add Expression**
+13. Click **Add Expression**
 
 |image105|
-17. Click **Add Expression** on the AND line
+14. Click **Add Expression** on the AND line
 
 |image106|
 
-18. Select **Path (value)** from the Request dropdown
-19. Enter **/vulnerable** in the empty text box
-20. Click **Add Expression**
+15. Select **Path (value)** from the Request dropdown
+16. Enter **/vulnerable** in the empty text box
+17. Click **Add Expression**
 
 |image107|
 
-21. Click **Finished**
+18. Click **Finished**
 
 |image108|
 
-22. Click **Save**
+19. Click **Save**
 
 |image109|
 
-23. Click the **+ Plus Symbol** on the GET /vulnerable branch
+20. Click the **+ Plus Symbol** on the GET /vulnerable branch
 
 |image110|
 
-24. Click **API Server Selection**
-25. Click **Add Item**
+21. Click **API Server Selection**
+22. Click **Add Item**
 
 |image111|
 
-26. Select **api-protection_server1** from the dropdown
-27. Click **Save**
+23. Select **api-protection_server1** from the dropdown
+24. Click **Save**
 
 |image112|
 
-28. Click the **Reject** terminal at the end of API Server Selection
+25. Click the **Reject** terminal at the end of API Server Selection
 
 |image113|
 
-29. Select **Allow**
-30. Click **Save**
+26. Select **Allow**
+27. Click **Save**
 
 |image114|
 
-31. The completed policy should look like the below.
+28. The completed policy should look like the below.
 
 |image115|
 
