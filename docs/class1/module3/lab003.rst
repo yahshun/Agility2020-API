@@ -12,10 +12,6 @@ Task 1 – Configure Attack Signatures and Change WAF Policy to Blocking
 
 .. note :: Ensure you are logged into BIGIP1
 
-1. From the web browser, click on the **Security -> Application Security -> Policies List -> api-protection**. Notice the Enforcement Mode is set to **Transparent**.
-
-|module3Lab3Task1-image1|
-
 
 2. Open a command prompt on the jumphost (a shortcut is on the desktop) 
 
@@ -63,7 +59,11 @@ In your environment, you must decide what is legitimate and what is illegitimate
 |module3Lab3Task1-image7|
 
 
-10. Click on the  **Security -> Application Security -> Policies List -> api-protection -> Secuirty Policy Configuration -> Attack Signatures** menu. 
+10. Navigate to Security -> Application Security -> Security Policies -> **Policies List**.
+
+11. Click  **api-protection** 
+
+12. Click **Attack Signatures** 
 
 11. Click the filter icon to easily locate the **Automated client access "curl"** signature.
 
@@ -86,8 +86,7 @@ The result is
 |module3Lab3Task1-image11|
 
 
-14. Navigate to **Security -> Application Security -> Policies List -> api-protection**.
-This time set the Enforcement Mode to **Blocking**. Be sure to click **Save**, then **Apply Policy**.
+14. Click **General Settings**
 
 |module3Lab3Task1-image12|
 
@@ -131,7 +130,7 @@ What if that character was a legimate value for a parameter?
 
 |module3Lab3Task1-image16|
 
-20. To see why this parameter character violation is not being blocked, but is being logged (alarmed). Navaigate to **Security -> Application Security -> Policy Building -> Learning and Blocking Settings** and enable the **Block** column for the **Illegal meta character in value**
+20. To see why this parameter character violation is not being blocked, but is being logged (alarmed). Navaigate to **Security -> Application Security -> Policy Building -> Learning and Blocking Settings** and enable the **Block** column for the **Illegal meta character in value** under the Parameters Section
 
 |module3Lab3Task1-image17|
 

@@ -82,9 +82,7 @@ Task –  Test Access to the new path
 
 6. You receive a **200 OK** that the endpoint is now published.
 
-
-
-|image46|
+|image102|
 
 
 .. |image0| image:: /_static/class1/module2/image000.png
@@ -122,4 +120,5 @@ Task –  Test Access to the new path
 .. |image66| image:: /_static/class1/module2/image066.png
 .. |image67| image:: /_static/class1/module2/image067.png
 .. |image68| image:: /_static/class1/module2/image068.png
+.. |image102| image:: /_static/class1/module2/image102.png
 
