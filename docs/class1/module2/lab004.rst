@@ -1,240 +1,75 @@
-Lab 1.4 - Test Course-Grained Access
+Lab 2.4 - Protect against a SSRF attack
 ========================================
 
-In this section, you will sample API requests to the new created api.acme.com virtual server to test functionality
 
 
-Task 1 - Send a valid GET without JWT to retrieve user1's attributes
------------------------------------------------------------------------
+Task 1 - Implement Static Parameter values
+--------------------------------------------
 
-1. From the Jumpbox, open **Postman**
 
-|image23|
 
-2. Expand the **API Protection** Collection
+1. From Postman, run **Get-SSRF Attack-Google**.  Notice you get content from Google via api.acme.com/vulnerable.  This endpoint is vulnerable to Server Side Request Forgery attacks
 
-3. Select the request **GET-Retrieve User Attributes-No JWT-Fail**
+|image116|
+|image118|
 
-|image24|
+2. From Postman, run **Get-SSRF Attack-unprotected-json**. This site contains example ID and keys in JSON format.  Hackers will uses your servers as a jump off point to gain access to internal resources 
 
-4. Click **Send**
+|image117|
+|image119|
 
-|image25|
 
-5. You receive a **403 Forbidden** response status code since you do not have a valid JWT
+3. Navigate to **Security -> Event Logs -> Application -> Requests** and find both requests.  Notice nothing appears malicious about these requests except for the destinations. 
 
-|image26|
+|image120|
 
-Task 2 - Send a valid GET with JWT to retrieve user1's attributes
--------------------------------------------------------------------
+ 
 
-1. Select the request **GET-Retrieve User Attributes-JWT-Pass**
+4.  We are going to secure the the uri parameter, so it only allows access to Google, but not access to private data hosted internally.
 
-|image42|
 
-2. Select the **Authorization** tab
+5. Navigate to **Security -> Application Security -> Parameters -> Parameters List**.  Click the **+ Plus Symbol**
 
-|image43|
+|image121|
 
-3. Click **Get New Access Token**
+6. Enter the Name **uri**
+7. Uncheck **Perform Staging**
+8. From the Parameter Value Type dropdown select **Static Content Value**
+9. Enter **https://www.google.com** for the New Static Value 
+10. Click **Add**
+11. Click **Create**
 
-|image44|
+|image122|
 
-4. Enter **User1** for the Token Name and review the Postman Configuration. Nothing else should need to be modified
+12. Click **Apply Policy**
 
-5. Click **Request Token**
+13. From Postman, run **Get-SSRF Attack-Google**.  Access to Google is still allowed.
 
-|image27|
+14. From Post, run **Get-SSRF Attack-unprotected-json**. This site is now blocked as intended
 
-6. Login using Username: **user1**, Password: **user1**
+|image123|
 
-|image28|
+15. Navigate to **Security -> Event Logs -> Application -> Requests** and find the latest blocked request.  The uri parameter is highlighted due to Illegal Static Parameter Value.
 
-7. Scroll down to the token and click **Use Token**
+|image124|
 
-|image29|
 
-8. Notice the **Access Token** field is now populated
 
-|image34|
-
-9. Click **Send**
-
-10. You receive a **200 OK** response status code with attributes for user1 in the body of the response
-
-|image31|
-
-
-Task 3 - Send a valid GET with JWT to set user1's employeeNumber
-------------------------------------------------------------------
-
-1. Select the request **GET-Set User Attributes-JWT-Pass**
-
-|image32|
-
-2. Select the **Authorization** tab
-
-3. Select the previously created **User1** token from the **Available Tokens** dropdown
-
-|image33|
-
-4. The **Token** field is now populated
-
-|image34|
-
-5. Click **Send**
-
-.. note :: If you receive a 403 response status code, repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
-
-.. note :: You can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token.
-
-6. You receive a **200 OK** response status code with a response body that contains user1's employeeNumber **123456**
-
-|image35|
-
-
-Task 4 - Send a valid GET with JWT to create a user
------------------------------------------------------
-
-1. Select the request **GET-Create User-JWT-Pass**
-
-|image45|
-
-2. Select the **Authorization** tab
-
-3. Select the previously created **User1** token from the **Available Tokens** dropdown
-
-|image33|
-
-
-4. Click **Send**
-
-.. note :: If you receive a 403 response status code, repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
-
-.. note :: You can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token.
-
-5. You receive a **200 OK** response status code with a response body that contains Bob Smith's user attributes
-|image46|
-
-
-Task 4 - Send invalid GET request with JWT to set a nonexistent user's attributes
-------------------------------------------------------------------------------------
-
-1. Select the request **GET-Set Invalid Attributes-JWT-Fail**
-
-|image36|
-
-2. Select the **Authorization** tab
-
-3. Select the previously created **User1** token from the **Available Tokens** dropdown
-
-4. The **Token** field is now populated
-
-5. Click **Send**
-
-.. note :: If you receive a 403 response status code, repeat steps 10-13 to request a new token.  You can change the name of the token request prior to sending by setting the Token Name.
-
-.. note :: you can delete expired tokens by clicking the Available Tokens dropdown, clicking Manage Tokens, and then clicking the trashcan next to the Token.
-
-6. You receive a **400 Bad Request** response status code. The request successfully passed through the API Gateway, but the server failed to process the request.
-
-|image37|
-
-
-Task 6 - Send a POST request to a valid URI to set User1's attributes
------------------------------------------------------------------------
-
-1. Select the request **POST-Set User Attributes-JWT-Fail**
-
-|image38|
-
-2. Select the **Authorization** tab
-
-3. Select the previously created **User1** token from the **Available Tokens** dropdown
-
-4. The **Token** field is now populated
-
-5. Click **Send**
-
-6. You receive a **403 Forbidden** response status code. This is expected because the POST Method was not specified in the API Protection Profile for the path /aduser/get
-
-|image39|
-
-Task 7 - Send a GET request to an invalid URI
------------------------------------------------
-
-1. Select the request **GET-Invalid URI-JWT-Fail**
-
-|image40|
-
-2. Select the **Authorization** tab
-
-3. Select the previously created **User1** token from the **Available Tokens** dropdown
-
-4. The **Token** field is now populated
-
-5. Click **Send**
-
-6. You receive a **403 Forbidden** response status code. This is expected because the path //hacker//attack was not specified in the API Protection Profile
-
-|image39|
-
-
-
-.. |image0| image:: /_static/class1/module2/image000.png
+.. |image116| image:: /_static/class1/module2/image116.png
+	:width: 400px
+.. |image117| image:: /_static/class1/module2/image117.png
+	:width: 400px
+.. |image118| image:: /_static/class1/module2/image118.png
 	:width: 800px
-.. |image1| image:: /_static/class1/module2/image001.png	
-.. |image2| image:: /_static/class1/module2/image002.png
-.. |image3| image:: /_static/class1/module2/image003.png
-.. |image4| image:: /_static/class1/module2/image004.png
-.. |image5| image:: /_static/class1/module2/image005.png
+.. |image119| image:: /_static/class1/module2/image119.png
 	:width: 800px
-.. |image6| image:: /_static/class1/module2/image006.png
-	:width: 800px	
-.. |image7| image:: /_static/class1/module2/image007.png
-.. |image8| image:: /_static/class1/module2/image008.png
-.. |image9| image:: /_static/class1/module2/image009.png
-.. |image10| image:: /_static/class1/module2/image010.png
-.. |image11| image:: /_static/class1/module2/image011.png
-.. |image12| image:: /_static/class1/module2/image012.png
-	:width: 800px	
-.. |image13| image:: /_static/class1/module2/image013.png
-	:width: 800px	
-.. |image14| image:: /_static/class1/module2/image014.png
-	:width: 800px	
-.. |image15| image:: /_static/class1/module2/image015.png
-	:width: 800px	
-.. |image16| image:: /_static/class1/module2/image016.png
-	:width: 800px	
-.. |image17| image:: /_static/class1/module2/image017.png
+.. |image120| image:: /_static/class1/module2/image120.png
 	:width: 800px
-.. |image18| image:: /_static/class1/module2/image018.png
-.. |image19| image:: /_static/class1/module2/image019.png
-.. |image20| image:: /_static/class1/module2/image020.png
-.. |image21| image:: /_static/class1/module2/image021.png
-	:width: 700px
-.. |image22| image:: /_static/class1/module2/image022.png
-.. |image23| image:: /_static/class1/module2/image023.png
-.. |image24| image:: /_static/class1/module2/image024.png
-.. |image25| image:: /_static/class1/module2/image025.png
-.. |image26| image:: /_static/class1/module2/image026.png
-.. |image27| image:: /_static/class1/module2/image027.png
-	:width: 600px
-.. |image28| image:: /_static/class1/module2/image028.png
-.. |image29| image:: /_static/class1/module2/image029.png
-.. |image31| image:: /_static/class1/module2/image031.png
-.. |image32| image:: /_static/class1/module2/image032.png
-.. |image33| image:: /_static/class1/module2/image033.png
+.. |image121| image:: /_static/class1/module2/image121.png
 	:width: 800px
-.. |image34| image:: /_static/class1/module2/image034.png
-.. |image35| image:: /_static/class1/module2/image035.png
-.. |image36| image:: /_static/class1/module2/image036.png
-.. |image37| image:: /_static/class1/module2/image037.png
-.. |image38| image:: /_static/class1/module2/image038.png
-.. |image39| image:: /_static/class1/module2/image039.png
-.. |image40| image:: /_static/class1/module2/image040.png
-.. |image42| image:: /_static/class1/module2/image042.png
-.. |image43| image:: /_static/class1/module2/image043.png
-.. |image44| image:: /_static/class1/module2/image044.png
-.. |image45| image:: /_static/class1/module2/image045.png
-.. |image46| image:: /_static/class1/module2/image046.png
+.. |image122| image:: /_static/class1/module2/image122.png
+	:width: 800px
+.. |image123| image:: /_static/class1/module2/image123.png
+	:width: 800px
+.. |image124| image:: /_static/class1/module2/image124.png
+	:width: 800px
