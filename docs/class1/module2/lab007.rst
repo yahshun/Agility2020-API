@@ -85,15 +85,61 @@ Task –  Test Access to the new path
 |image102|
 
 
+
 .. |image0| image:: /_static/class1/module2/image000.png
+	:width: 800px
+.. |image1| image:: /_static/class1/module2/image001.png	
+.. |image2| image:: /_static/class1/module2/image002.png
+.. |image3| image:: /_static/class1/module2/image003.png
+.. |image4| image:: /_static/class1/module2/image004.png
+.. |image5| image:: /_static/class1/module2/image005.png
+	:width: 800px
+.. |image6| image:: /_static/class1/module2/image006.png
+	:width: 800px	
+.. |image7| image:: /_static/class1/module2/image007.png
+.. |image8| image:: /_static/class1/module2/image008.png
+.. |image9| image:: /_static/class1/module2/image009.png
+.. |image10| image:: /_static/class1/module2/image010.png
+.. |image11| image:: /_static/class1/module2/image011.png
+.. |image12| image:: /_static/class1/module2/image012.png
+	:width: 800px	
+.. |image13| image:: /_static/class1/module2/image013.png
+	:width: 800px	
+.. |image14| image:: /_static/class1/module2/image014.png
+	:width: 800px	
+.. |image15| image:: /_static/class1/module2/image015.png
+	:width: 800px	
+.. |image16| image:: /_static/class1/module2/image016.png
+	:width: 800px	
+.. |image17| image:: /_static/class1/module2/image017.png
+	:width: 800px
+.. |image18| image:: /_static/class1/module2/image018.png
+.. |image19| image:: /_static/class1/module2/image019.png
+.. |image20| image:: /_static/class1/module2/image020.png
+.. |image21| image:: /_static/class1/module2/image021.png
+	:width: 700px
+.. |image22| image:: /_static/class1/module2/image022.png
 .. |image23| image:: /_static/class1/module2/image023.png
+.. |image24| image:: /_static/class1/module2/image024.png
+.. |image25| image:: /_static/class1/module2/image025.png
 .. |image26| image:: /_static/class1/module2/image026.png
 .. |image27| image:: /_static/class1/module2/image027.png
+	:width: 600px
 .. |image28| image:: /_static/class1/module2/image028.png
 .. |image29| image:: /_static/class1/module2/image029.png
+.. |image31| image:: /_static/class1/module2/image031.png
+.. |image32| image:: /_static/class1/module2/image032.png
 .. |image33| image:: /_static/class1/module2/image033.png
+	:width: 800px
 .. |image34| image:: /_static/class1/module2/image034.png
+.. |image35| image:: /_static/class1/module2/image035.png
+.. |image36| image:: /_static/class1/module2/image036.png
+.. |image37| image:: /_static/class1/module2/image037.png
+.. |image38| image:: /_static/class1/module2/image038.png
 .. |image39| image:: /_static/class1/module2/image039.png
+.. |image40| image:: /_static/class1/module2/image040.png
+.. |image41| image:: /_static/class1/module2/image041.png
+.. |image42| image:: /_static/class1/module2/image042.png
 .. |image43| image:: /_static/class1/module2/image043.png
 .. |image44| image:: /_static/class1/module2/image044.png
 .. |image45| image:: /_static/class1/module2/image045.png
@@ -101,6 +147,7 @@ Task –  Test Access to the new path
 .. |image47| image:: /_static/class1/module2/image047.png
 .. |image48| image:: /_static/class1/module2/image048.png
 .. |image49| image:: /_static/class1/module2/image049.png
+	:width: 800px
 .. |image50| image:: /_static/class1/module2/image050.png
 .. |image51| image:: /_static/class1/module2/image051.png
 .. |image52| image:: /_static/class1/module2/image052.png
@@ -108,17 +155,72 @@ Task –  Test Access to the new path
 .. |image54| image:: /_static/class1/module2/image054.png
 .. |image55| image:: /_static/class1/module2/image055.png
 .. |image56| image:: /_static/class1/module2/image056.png
+	:width: 800px
 .. |image57| image:: /_static/class1/module2/image057.png
 .. |image58| image:: /_static/class1/module2/image058.png
 .. |image59| image:: /_static/class1/module2/image059.png
 .. |image60| image:: /_static/class1/module2/image060.png
 .. |image61| image:: /_static/class1/module2/image061.png
+	:width: 800px
 .. |image62| image:: /_static/class1/module2/image062.png
 .. |image63| image:: /_static/class1/module2/image063.png
 .. |image64| image:: /_static/class1/module2/image064.png
 .. |image65| image:: /_static/class1/module2/image065.png
 .. |image66| image:: /_static/class1/module2/image066.png
+	:width: 800px
 .. |image67| image:: /_static/class1/module2/image067.png
 .. |image68| image:: /_static/class1/module2/image068.png
+.. |image69| image:: /_static/class1/module2/image069.png
+	:width: 800px
+.. |image70| image:: /_static/class1/module2/image070.png
+	:width: 1000px
+.. |image71| image:: /_static/class1/module2/image071.png
+.. |image72| image:: /_static/class1/module2/image072.png
+.. |image73| image:: /_static/class1/module2/image073.png
+.. |image75| image:: /_static/class1/module2/image075.png
+.. |image77| image:: /_static/class1/module2/image077.png
+.. |image79| image:: /_static/class1/module2/image079.png
+.. |image80| image:: /_static/class1/module2/image080.png
+	:width: 1200px
+.. |image81| image:: /_static/class1/module2/image081.png
+	:width: 1000px
+.. |image82| image:: /_static/class1/module2/image082.png
+	:width: 800px
+.. |image83| image:: /_static/class1/module2/image083.png
+	:width: 1200px
+.. |image84| image:: /_static/class1/module2/image084.png
+	:width: 800px
+.. |image85| image:: /_static/class1/module2/image085.png
+	:width: 1200px
+.. |image86| image:: /_static/class1/module2/image086.png
+	:width: 1200px
+.. |image87| image:: /_static/class1/module2/image087.png
+	:width: 1200px
+.. |image88| image:: /_static/class1/module2/image088.png
+	:width: 800px
+.. |image89| image:: /_static/class1/module2/image089.png
+.. |image90| image:: /_static/class1/module2/image090.png
+	:width: 800px
+.. |image91| image:: /_static/class1/module2/image091.png
+	:width: 800px
+.. |image92| image:: /_static/class1/module2/image092.png
+	:width: 800px
+.. |image93| image:: /_static/class1/module2/image093.png
+	:width: 800px
+.. |image94| image:: /_static/class1/module2/image094.png
+	:width: 800px
+.. |image95| image:: /_static/class1/module2/image095.png
+	:width: 800px
+.. |image96| image:: /_static/class1/module2/image096.png
+	:width: 800px
+.. |image97| image:: /_static/class1/module2/image097.png
+	:width: 800px
+.. |image98| image:: /_static/class1/module2/image098.png
+	:width: 800px
+.. |image99| image:: /_static/class1/module2/image099.png
+	:width: 800px
+.. |image101| image:: /_static/class1/module2/image101.png
+.. |image103| image:: /_static/class1/module2/image103.png
+	:width: 800px
 .. |image102| image:: /_static/class1/module2/image102.png
 

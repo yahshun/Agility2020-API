@@ -56,17 +56,17 @@ Task – Create an Authorization Provider
 Task – Customize the Token Configuration
 ----------------------------------------
 
-6. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol)
+1. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol)
 
 |image6|
 
-7. Click on **auto_jwt_api-as-provider**
+2. Click on **auto_jwt_api-as-provider**
 
 |image7|
 
-8. Move **api-jwk-key** from Available to Allowed
+3. Move **api-jwk-key** from Available to Allowed
 
-9. Click **Save**
+4. Click **Save**
 
 |image8|
 
@@ -87,13 +87,18 @@ Task – Create a JWT Provider
 |image10|
 
 .. |image0| image:: /_static/class1/module2/image000.png
+	:width: 800px
 .. |image1| image:: /_static/class1/module2/image001.png
+	
 .. |image2| image:: /_static/class1/module2/image002.png
 .. |image3| image:: /_static/class1/module2/image003.png
 .. |image4| image:: /_static/class1/module2/image004.png
 .. |image5| image:: /_static/class1/module2/image005.png
+	:width: 800px
 .. |image6| image:: /_static/class1/module2/image006.png
+	:width: 800px	
 .. |image7| image:: /_static/class1/module2/image007.png
+
 .. |image8| image:: /_static/class1/module2/image008.png
 .. |image9| image:: /_static/class1/module2/image009.png
 .. |image10| image:: /_static/class1/module2/image010.png
