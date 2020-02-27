@@ -1,11 +1,11 @@
-Lab – Create an API Protection Profile
-======================================
+Lab 1.2 - Create an API Protection Profile
+=============================================
 
 The API Protection profile is a combination of APM and AWAF features to protect any API.
 
 
-Task – Create an API Protection Profile
----------------------------------------
+Task 1 - Create an API Protection Profile
+-------------------------------------------
 
 1. From the web browser, click on the **Access** tab located on the left side
 
@@ -31,8 +31,8 @@ Task – Create an API Protection Profile
 |image12|
 
 
-Task – Explore the Path Configuration
--------------------------------------
+Task 2 - Explore the Path Configuration
+-----------------------------------------
 
 6. Note the Spec file contained four paths to various URIs
 
@@ -43,8 +43,8 @@ Task – Explore the Path Configuration
 |image13|
 
 
-Task – Associate a JWT Provider
--------------------------------
+Task 3 - Associate a JWT Provider
+----------------------------------
 
 9. Click **Access Control** from the top ribbon
 

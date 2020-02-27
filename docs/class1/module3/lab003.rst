@@ -1,4 +1,4 @@
-Lab – Tweaking the WAF Policy to provide additional security
+Lab 2.3 - Tweaking the WAF Policy to provide additional security
 =======================================================================
 
 
@@ -7,7 +7,7 @@ APIs are a collection of technologies just like any other application, in the la
 Meta-character enforcement allows the WAF admin to enforce which characters are allowed into a web application, whether it be in the header, url or parameter. In this lab we examine parameter meta-character enforcement.
 
 
-Task 1 – Configure Attack Signatures and Change WAF Policy to Blocking
+Task 1 - Configure Attack Signatures and Change WAF Policy to Blocking
 --------------------------------------------------------------------------
 
 .. note :: Ensure you are logged into BIGIP1

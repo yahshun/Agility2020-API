@@ -1,11 +1,11 @@
-Lab – Create the api.acme.com virtual server
-============================================
+Lab 1.3 - Create the api.acme.com virtual server
+===================================================
 
 In this section, you will define which components you want to create as part of the API Protection configuration.
 
 
-Task – Create a virtual server
-------------------------------
+Task 1 - Create a virtual server
+----------------------------------
 
 1. From the web browser, click on the **Local Traffic** tab located on the left side
 

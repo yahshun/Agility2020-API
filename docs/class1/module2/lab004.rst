@@ -1,11 +1,11 @@
-Lab – Test Course-Grained Access
-================================
+Lab - Test Course-Grained Access
+===================================
 
 In this section, you will sample API requests to the new created api.acme.com virtual server to test functionality
 
 
-Task – Send a valid GET without JWT to retrieve user1's attributes
-------------------------------------------------------------------
+Task 1 - Send a valid GET without JWT to retrieve user1's attributes
+-----------------------------------------------------------------------
 
 1. From the Jumpbox, open **Postman**
 
@@ -25,8 +25,8 @@ Task – Send a valid GET without JWT to retrieve user1's attributes
 
 |image26|
 
-Task – Send a valid GET with JWT to retrieve user1's attributes
----------------------------------------------------------------
+Task 2 - Send a valid GET with JWT to retrieve user1's attributes
+-------------------------------------------------------------------
 
 1. Select the request **GET-Retrieve User Attributes-JWT-Pass**
 
@@ -65,8 +65,8 @@ Task – Send a valid GET with JWT to retrieve user1's attributes
 |image31|
 
 
-Task – Send a valid GET with JWT to set user1's employeeNumber
---------------------------------------------------------------
+Task 3 - Send a valid GET with JWT to set user1's employeeNumber
+------------------------------------------------------------------
 
 1. Select the request **GET-Set User Attributes-JWT-Pass**
 
@@ -93,8 +93,8 @@ Task – Send a valid GET with JWT to set user1's employeeNumber
 |image35|
 
 
-Task – Send a valid GET with JWT to create a user
--------------------------------------------------
+Task 4 - Send a valid GET with JWT to create a user
+-----------------------------------------------------
 
 1. Select the request **GET-Create User-JWT-Pass**
 
@@ -117,8 +117,8 @@ Task – Send a valid GET with JWT to create a user
 |image46|
 
 
-Task – Send invalid GET request with JWT to set a nonexistent user's attributes
--------------------------------------------------------------------------------
+Task 4 - Send invalid GET request with JWT to set a nonexistent user's attributes
+------------------------------------------------------------------------------------
 
 1. Select the request **GET-Set Invalid Attributes-JWT-Fail**
 
@@ -141,8 +141,8 @@ Task – Send invalid GET request with JWT to set a nonexistent user's attribute
 |image37|
 
 
-Task – Send a POST request to a valid URI to set User1's attributes
--------------------------------------------------------------------
+Task 6 - Send a POST request to a valid URI to set User1's attributes
+-----------------------------------------------------------------------
 
 1. Select the request **POST-Set User Attributes-JWT-Fail**
 
@@ -160,8 +160,8 @@ Task – Send a POST request to a valid URI to set User1's attributes
 
 |image39|
 
-Task – Send a GET request to an invalid URI
--------------------------------------------
+Task 7 - Send a GET request to an invalid URI
+-----------------------------------------------
 
 1. Select the request **GET-Invalid URI-JWT-Fail**
 
@@ -175,7 +175,7 @@ Task – Send a GET request to an invalid URI
 
 5. Click **Send**
 
-6. You receive a **403 Forbidden** response status code. This is expected because the path /hacker/attack was not specified in the API Protection Profile
+6. You receive a **403 Forbidden** response status code. This is expected because the path //hacker//attack was not specified in the API Protection Profile
 
 |image39|
 

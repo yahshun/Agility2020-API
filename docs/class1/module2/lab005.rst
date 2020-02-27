@@ -1,10 +1,10 @@
-Lab – Implement Fine-Grained Access Controls
-============================================
+Lab 1.5 - Implement Fine-Grained Access Controls
+==================================================
 
 Up to this point any authenticated user to the API is authorized to use them. In this section we will restrict user1's ability to create users, but will still be able to modify the user's employee number.
 
-Task – Retrieve Group Membership Subsession Variable
-----------------------------------------------------
+Task 1 - Retrieve Group Membership Subsession Variable
+--------------------------------------------------------
 
 .. note :: In order to implement fine-grained control the session variables that contain the data must be known. This first session shows you how to display the session variables and their values.
 
@@ -50,8 +50,8 @@ Task – Retrieve Group Membership Subsession Variable
 |image87|
 
 
-Task – Edit the per-request policy
-----------------------------------
+Task 2 - Edit the per-request policy
+--------------------------------------
 
 
 1. Return to BIG-IP1's management interface in the browser and click on the **Access** tab located on the left side
@@ -135,8 +135,8 @@ Task – Edit the per-request policy
 |image61|
 
 
-Task – Test the Fine-Grained Access Control with user1
-------------------------------------------------------
+Task 3 - Test the Fine-Grained Access Control with user1
+-----------------------------------------------------------
 
 
 1. From Postman select the request **GET-Create User-JWT-Pass**
@@ -159,8 +159,8 @@ Task – Test the Fine-Grained Access Control with user1
 |image26|
 
 
-Task – Test the Fine-Grained Access Control with user2
-------------------------------------------------------
+Task 4 - Test the Fine-Grained Access Control with user2
+-----------------------------------------------------------
 
 1. Select the request **GET-Create User-JWT-Pass**
 

@@ -1,10 +1,10 @@
-Lab – Create a JWT Provider
-===========================
+Lab 1.1 - Create a JWT Provider
+==================================
 
 The cornerstone of the API protection profile is the ability to authorize users using JWT. Unlike Guided Configuration that creates the JWT Provider for you based on a few defined parameters, you must create the provider manually.
 
-Task – Create a key configuration
----------------------------------
+Task 1 - Create a key configuration
+--------------------------------------
 
 .. note :: Ensure you are logged into BIGIP1
 
@@ -29,8 +29,8 @@ Task – Create a key configuration
 |image2|
 
 
-Task – Create an Authorization Provider
----------------------------------------
+Task 2 - Create an Authorization Provider
+-------------------------------------------
 
 1. Navigate to Federation >> OAuth Client/Resource Server >> Provider. Click the **+ (Plus Symbol)**
 
@@ -53,8 +53,8 @@ Task – Create an Authorization Provider
 5. Click **Save**
 
 
-Task – Customize the Token Configuration
-----------------------------------------
+Task 3 - Customize the Token Configuration
+---------------------------------------------
 
 1. Navigate to Federation >> JSON Web Token >> Token Configuration. Click **Token Configuration**, not the + (Plus Symbol)
 
@@ -71,8 +71,8 @@ Task – Customize the Token Configuration
 |image8|
 
 
-Task – Create a JWT Provider
-----------------------------
+Task 4 - Create a JWT Provider
+--------------------------------
 
 1. Navigate to Federation >> JSON Web Token >> Provider List. Click the **+ (Plus Symbol)**
 

@@ -1,10 +1,10 @@
-Lab – Implement Rate Limiting
-=============================
+Lab 1.6 - Implement Rate Limiting
+===================================
 
 The API Protection Profile allows a BIG-IP administrator to throttle the amount of connections to an API through the use of Key Names.
 
-Task – Test access pre-ratelimiting
------------------------------------
+Task 1 - Test access pre-ratelimiting
+---------------------------------------
 
 1. From Postman, Select the request **GET-Retrieve User Attributes-JWT-Pass**
 
@@ -35,8 +35,8 @@ Task – Test access pre-ratelimiting
 |image92|
 
 
-Task – Define the rate limiting keys
-------------------------------------
+Task 2 - Define the rate limiting keys
+-----------------------------------------
 
 1. Navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile.  Not the + Plus symbol.
 
@@ -99,8 +99,8 @@ Task – Define the rate limiting keys
 
 |image80|
 
-Task – Create a Rate Limiting Policy
-------------------------------------
+Task 3 - Create a Rate Limiting Policy
+----------------------------------------
 
 1. Click **Create** in the rate limiting section
 
@@ -123,8 +123,8 @@ Task – Create a Rate Limiting Policy
 |image83|
 
 
-Task – Apply the Rate Limiting Policy
--------------------------------------
+Task 4 - Apply the Rate Limiting Policy
+-------------------------------------------
 
 1. Click **Rate Limiting** from the ribbon
 
@@ -159,8 +159,8 @@ Task – Apply the Rate Limiting Policy
 |image98|
 
 
-Task – Test Rate Limiting
--------------------------
+Task 5 - Test Rate Limiting
+------------------------------
 
 
 1. From Postman, return to Runner

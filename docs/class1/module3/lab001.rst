@@ -1,10 +1,10 @@
-Lab – Prepping the Lab
+Lab 2.1 – Prepping the Lab
 =======================================================================
 
 By default, security events are not logged, in this lab the student will create a security logging profile with Application Security, Bot Defense and DOS Protection enabled.
 The student will also place the waf policy in trasnparent to show the difference in behavior when client traffic that is deemed malicious is and is not blocked.
 
-Task 1 – Add Vulnerable API 
+Task 1 - Add Vulnerable API 
 ------------------------------
 
 1. From the web browser, navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
@@ -94,7 +94,7 @@ Task 1 – Add Vulnerable API
 
 
 
-Task 2 – Create and assign a Security Logging Profile to the virtual
+Task 2 - Create and assign a Security Logging Profile to the virtual
 -------------------------------------------------------------------------
 
 .. note :: Ensure you are logged into BIGIP1
@@ -129,7 +129,7 @@ Task 2 – Create and assign a Security Logging Profile to the virtual
 8. Click **Update**. The virtual will now log Application Security, DoS and Bot related events under **Security -> Event Logs** when an appropriate security profiles have been applied to the virtual.
 
 
-Task 3 – Set the WAF policy to Transparent and assign it to the virtual
+Task 3 - Set the WAF policy to Transparent and assign it to the virtual
 ----------------------------------------------------------------------------
 
 1. From the web browser, click on the Security -> Application Security -> Security Policies -> Policies List. Click  **api-protection**. Notice the Enforcement Mode is set to **Blocking**. Set the Enforcement Mode to **Transparent**. Be sure to click **Save**, then **Apply Policy**.

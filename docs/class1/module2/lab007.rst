@@ -1,10 +1,10 @@
-Lab – Onboard a New API
-=======================
+Lab 1.7 - Onboard a New API
+=============================
 
 Organizations change. With this change, new APIs are introduced requiring modifications to the API Gateway. In this section you will learn how to add additional paths.
 
-Task – Verify no access to API
-------------------------------
+Task 1 - Verify no access to API
+-----------------------------------
 
 1. From Postman, select the request **PATCH-Change User Password-JWT**
 
@@ -28,8 +28,8 @@ Task – Verify no access to API
 |image39|
 
 
-Task – Add the new API path
----------------------------
+Task 2 - Add the new API path
+--------------------------------
 
 1. From the browser, navigate to API Protection >> Profile.  Click **Profile** to modify the previously created API protection Profile (not the + Plus symbol)
 
@@ -60,8 +60,8 @@ Task – Add the new API path
 |image68|
 
 
-Task –  Test Access to the new path
------------------------------------
+Task 3 - Test Access to the new path
+---------------------------------------
 
 
 1. From Postman, select the request **PATCH-Change User Password-JWT**
