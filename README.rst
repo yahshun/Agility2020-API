@@ -1,11 +1,12 @@
-F5 Agility Lab Template
-=======================
+F5 Agility Lab - API Protection
+==================================
 
-Introduction
-------------
 
-This repo contains a template that should be used when creating lab
-documentation for F5's Agility Labs.
+This repo contains the source content for the Ephemeral Access lab guide.
+
+Github Repo: https://github.com/yahshun/Agility2020-API
+
+RTD Preview: https://agility2020-api.readthedocs.io/en/latest/index.html
 
 Setup
 -----
