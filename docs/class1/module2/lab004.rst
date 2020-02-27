@@ -1,5 +1,5 @@
-Lab - Test Course-Grained Access
-===================================
+Lab 1.4 - Test Course-Grained Access
+========================================
 
 In this section, you will sample API requests to the new created api.acme.com virtual server to test functionality
 
