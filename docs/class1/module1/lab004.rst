@@ -25,7 +25,7 @@ Task 1 - Send a valid GET without JWT to retrieve user1's attributes
 
 |image26|
 
-Task 2 - Send a valid GET with JWT to retrieve user1/'s attributes
+Task 2 - Send a valid GET with JWT to retrieve user1\'s attributes
 -------------------------------------------------------------------
 
 1. Select the request **GET-Retrieve User Attributes-JWT-Pass**
