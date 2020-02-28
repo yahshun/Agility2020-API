@@ -4,7 +4,7 @@ Lab 1.4 - Test Course-Grained Access
 In this section, you will sample API requests to the new created api.acme.com virtual server to test functionality
 
 
-Task 1 - Send a valid GET without JWT to retrieve user's attributes
+Task 1 - Send a valid GET without JWT to retrieve user's attributes 1
 -----------------------------------------------------------------------
 
 1. From the Jumpbox, open **Postman**
